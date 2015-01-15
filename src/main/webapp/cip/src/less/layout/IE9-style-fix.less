@@ -1,0 +1,43 @@
+//TODO: make the IE9 fix more generic than target only to #CampaignBody.
+.ie9 {
+  #campaign-body .week-dropdown button {
+    padding-top:2px;
+    padding-bottom:6px;
+  }
+  #campaign input[type='checkbox'] {
+    left:8px;
+    + label {
+      background-size:55% 55%;
+      background-position:-20px 6px;
+    }
+    + label[for='standardLengths'] {
+      background-position:-53px 6px;
+    }
+    + label[for='flexibleBy'] {
+      background-position:-10px 5px;
+    }
+  
+    + label[for='includeSecondary'] {
+      background-position:-45px 5px;
+    }
+  }
+  .error-message-container {
+    background-size: 30%;
+    background-position: -92px 16px;
+  }
+
+  #campaign input {
+    padding-top:3px;
+    padding-bottom:8px;
+  }
+  #campaignDates label {
+    margin-left:3px;
+  }
+  #campaign-sidebar .accordion-section-title {
+    margin-top:2px;
+    margin-left:5px;
+  }
+  #productContent a.btn {
+    padding-top:1px;
+  }
+}

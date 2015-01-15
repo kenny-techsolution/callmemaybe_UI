@@ -1,0 +1,13 @@
+<ul class="chart-drop-down-ul">
+     <li style="cursor:default;color:#ccc">Expanded View<span class="dropdown-icon1 disabled"></span></li>
+     <li style="cursor:default;color:#ccc">Compare with...<span class="dropdown-icon2 disabled"></span></li>
+     <li style="cursor:default;color:#ccc">Combine with...<span class="dropdown-icon3 disabled"></span></li>
+     <div class="dropdown-line"></div>
+     <li class='deleteIcon' ng-click='deleteChartClick($event)' ng-mouseover="limouseover(4)" ng-mouseout="limouseout()">Delete Chart<span class="dropdown-icon4"></span></li>
+</ul>   
+<div ng-class="getDropDownHoverClass()"></div>
+<script type="text/javascript">
+	if (campaignResults === true) {
+	    $('.daterange .chart-drop-down .chart-drop-down-ul .deleteIcon').hide();
+	}
+</script>

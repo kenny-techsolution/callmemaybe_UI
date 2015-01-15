@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.2.3.v20131216-0430 Build &lt;4.2.3.v20131216-0430></property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">72</property>
+    <list-property name="libraries">
+        <structure>
+            <property name="fileName">/ThemesReportItems3.rptlibrary</property>
+            <property name="namespace">ThemesReportItems3</property>
+        </structure>
+    </list-property>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.excel" name="Data Source" id="11">
+            <property name="URI">data/testData.xlsx</property>
+            <property name="INCLCOLUMNNAME">yes</property>
+            <property name="INCLTYPELINE">no</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.excel.dataSet" name="Data Set" id="12">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">id</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">id</text-property>
+                    <text-property name="heading">id</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">gender</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">gender</text-property>
+                    <text-property name="heading">gender</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">maritalStatus</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">maritalStatus</text-property>
+                    <text-property name="heading">maritalStatus</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">age</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">age</text-property>
+                    <text-property name="heading">age</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">ethnicity</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">ethnicity</text-property>
+                    <text-property name="heading">ethnicity</text-property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">id</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">gender</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">maritalStatus</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">age</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">ethnicity</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">id</property>
+                    <property name="nativeName">id</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">gender</property>
+                    <property name="nativeName">gender</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">maritalStatus</property>
+                    <property name="nativeName">maritalStatus</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">age</property>
+                    <property name="nativeName">age</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">ethnicity</property>
+                    <property name="nativeName">ethnicity</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select "id", "gender", "maritalStatus", "age", "ethnicity" from "/Users/Ju/Downloads/data/testData.xlsx" : {"id","id",STRING;"gender","gender",STRING;"maritalStatus","maritalStatus",STRING;"age","age",STRING;"ethnicity","ethnicity",STRING}]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>id</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>id</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>id</design:label>
+            <design:formattingHints>
+              <design:displaySize>0</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>gender</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>gender</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>gender</design:label>
+            <design:formattingHints>
+              <design:displaySize>0</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>maritalStatus</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>maritalStatus</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>maritalStatus</design:label>
+            <design:formattingHints>
+              <design:displaySize>0</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>age</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>age</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>age</design:label>
+            <design:formattingHints>
+              <design:displaySize>0</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>ethnicity</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>ethnicity</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>ethnicity</design:label>
+            <design:formattingHints>
+              <design:displaySize>0</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+            <property name="WORKSHEETS">Sheet1</property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <themes>
+        <report-item-theme type="Chart" name="EthnicityTheme" id="10">
+            <xml-property name="customValues"><![CDATA[<type>2</type><jstheme>
+<property name="jschart.theme" value="plotOptions%3A+%7B%0A%09series%3A+%7B%0A%09%09color%3A+%7B%0A%09%09%09linearGradient%3A+%5B0%2C+0%2C+0%2C+%27100%25%27%5D%2C%0A%09%09%09stops%3A+%5B%0A%09%09%09%09%5B0%2C+%27%23f6a2d4%27%5D%2C%0A%09%09%09%09%5B1%2C+%27%23DA0081%27%5D%0A%09%09%09%5D%0A%09%09%7D%2C%0A%09%09pointWidth%3A+9%2C%0A%09%09states%3A+%7B%0A%09%09%09hover%3A+%7B%0A%09%09%09%09enabled%3A+false%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A+%7D%2C%0A+chart%3A+%7B%0A%09spacingRight%3A+0%2C%0A%09spacingBottom%3A+0%2C%0A%09spacingLeft%3A+-4%2C%0A%09marginRight%3A+0%2C%0A%09marginBottom%3A+-15%2C%0A%09marginTop%3A+40%0A+%7D%2C%0A+tooltip%3A+%7B%0A%09enabled%3A+false%0A%7D"/>
+<property name="jschart.client.script" value="onMouseoverUnknown+%3A+function%28chart%29+%7B%0A++++++++var+popup+%3D+%24%28%22.ethnicity-chart.chartContainer+.unknown_popup%22%29%3B%0A++++++++%2F%2F+stop+existing+fadeout+animation%0A++++++++clearTimeout%28chart.fadeTimeout%29%3B%0A++++++++popup.stop%28%29%3B%0A%0A++++++++popup.css%28%22opacity%22%2C+1%29%3B%0A++++++++popup.css%28%22display%22%2C+%22inline-block%22%29%3B%0A%7D%2C%0AfadeUnknownPopup+%3A+function%28chart%29+%7B%0A++++++++var+popup+%3D+%24%28%22.ethnicity-chart.chartContainer+.unknown_popup%22%29%3B%0A++++++++this.onMouseoverUnknown%28chart%29%3B%0A%0A++++++++chart.fadeTimeout+%3D+setTimeout%28function%28%29+%7B%0A++++++++++++popup.fadeOut%281000%29%3B%0A++++++++%7D%2C+1000%29%3B%0A%7D%2C%0AfadeInitialPopup+%3A+function%28chart%29+%7B%0A++++++++this.onMouseoverUnknown%28chart%29%3B%0A++++++++this.fadeUnknownPopup%28chart%29%3B%0A%7D%2C%0A%0AgetWarningColor+%3A+function%28pct%2C+isUnknownSelected%29+%7B%0A++++%2F%2F+determine+warning+level+based+on+percentage%0A++++if+%28pct+%3E%3D+50+%26%26+pct+%3C%3D+75%29+%7B%0A++++++++if+%28isUnknownSelected%29+%7B%0A++++++++++++return+%22%23FCB314%22%3B%0A++++++++%7D+else+%7B%0A++++++++++++return+%22%23FEE1A1%22%3B%0A++++++++%7D%0A++++%7D+else+if+%28pct+%3E+75%29+%7B%0A++++++++if+%28isUnknownSelected%29+%7B%0A++++++++++++return+%22%23B30A3C%22%3B%0A++++++++%7D+else+%7B%0A++++++++++++return+%22%23E19DB1%22%3B%0A++++++++%7D%0A++++%7D%0A++++return+%22white%22%3B%0A%7D%2C%0A%0AnonUnknownPct+%3A+0%2C%0AdataMap+%3A+%7B%0A++++0+%3A+%22Caucasian%22%2C%0A++++1+%3A+%22Hispanic%22%2C%0A++++2+%3A+%22East+Asian%22%2C%0A++++3+%3A+%22South+Asian%22%2C%0A++++4+%3A+%22African%22%2C%0A++++5+%3A+%22Other%22%2C%0A++++6+%3A+%22Unknown%22%0A%7D%2C%0A%0AbeforeDrawAxis%3A+function%28axis%2C+axisOptions%2C+chart%2C+axisIndex%29%0A%7B%0A++++var+_this+%3D+this%3B%0A++++var+data+%3D+chart._chart.series%5B0%5D.data%3B%0A++++var+dataSum+%3D+0%2C+dataMaxPct+%3D+0%3B%0A++++for+%28var+i+%3D+0%3B+i+%3C+data.length%3B+i+%2B%2B%29+%7B%0A++++++++var+currentPct+%3D+data%5Bi%5D.percentage%3B%0A++++++++dataSum+%2B%3D+data%5Bi%5D.y%3B%0A++++++++if+%28i+%21%3D%3D+data.length-1+%26%26+currentPct+%3E+dataMaxPct%29+%7B%0A++++++++++++dataMaxPct+%3D+currentPct%3B%0A++++++++%7D%0A++++%7D%0A%0A++++if+%28%21axis.categories%29+%7B%0A++++++++var+numLines+%3D+Math.round%28dataMaxPct%2F5%29%3B%0A++++++++var+plotLines+%3D+%5B%5D%3B%0A++++++++var+interval+%3D+0.05+*+dataSum%3B%0A++++++++for+%28var+i++%3D+0%3B+i+%3C+numLines%3B+i%2B%2B%29+%7B%0A++++++++++++plotLines%5Bi%5D+%3D+%7B%0A++++++++++++++++color%3A+%22rgba%28255%2C255%2C255%2C0.5%29%22%2C%0A++++++++++++++++width%3A+1%2C%0A++++++++++++++++value%3A+interval+*+i%2C%0A++++++++++++++++zIndex%3A+5%0A++++++++++++%7D%3B%0A++++++++%7D%0A++++++++axisOptions.plotLines+%3D+plotLines%3B%0A++++++++return%3B%0A++++%7D%0A%0A++++if+%28axisOptions.categories+%21%3D+null%29%0A++++%7B%0A++++++++axisOptions.labels.formatter+%3D+function%28%29+%7B%0A++++++++++++return+%22%3Cdiv+class%3D%27oval-background%27%3E%22+%2B+_this.dataMap%5Bthis.value%5D+%2B+%22%3C%2Fdiv%3E%22%3B%0A++++++++%7D%3B%0A%0A++++++++axisOptions.labels.useHTML+%3D+true%3B%0A++++%7D%0A++++axisOptions.labels.y+%3D+6.5%3B%0A%7D%2C%0A%0AbeforeDrawSeries%3A+function%28series%2C+seriesOptions%2C+chart%2C+seriesIndex%29%0A%7B%0A++++var+_this+%3D+this%3B%0A++++var+dataSum+%3D+0%3B%0A++++for+%28var+i+%3D+0%3B+i+%3C+seriesOptions.data.length%3B+i+%2B%2B%29+%7B%0A++++++++dataSum+%2B%3D+seriesOptions.data%5Bi%5D.y%3B%0A++++%7D%0A++++seriesOptions.dataLabels.y+%3D+1%3B%0A%0A++++%2F%2F+take+out+the+unknown+data+so+that+the+bars+aren%27t+scaled+with+it+included%0A++++var+unknownIndex+%3D+seriesOptions.data.length-1%3B%0A++++seriesOptions.data%5BunknownIndex%5D.y+%3D+0%3B%0A%0A++++seriesOptions.dataLabels.formatter+%3D+function%28%29+%7B%0A++++++++var+pcnt+%3D+%28this.y+%2F+dataSum%29+*+100%3B%0A++++++++_this.nonUnknownPct+%2B%3D+Number%28pcnt.toFixed%280%29%29%3B%0A++++++++return+pcnt.toFixed%280%29+%2B+%22%25%22%3B%0A++++%7D%3B%0A%0A++++%2F%2Ftodo%3A+find+a+way+to+fix+the+scaling+so+that+the+largest+bar+uses+the+width+of+the+container.%0A%7D%2C%0A%0A%0AbeforeGeneration%3A+function%28options%29%0A%7B%0A++++options.title.x+%3D+15%3B%0A%7D%2C%0A%0AbeforeRendering%3A+function%28options%2C+chart%29%0A%7B%0A++++options.plotOptions+%3D+%7B%0A++++++++series+%3A+%7B%0A++++++++++++allowPointSelect%3A+false%2C%0A++++++++++++states%3A+%7B%0A++++++++++++++++hover%3A+%7B%0A++++++++++++++++++++enabled%3A+false%0A++++++++++++++++%7D%0A++++++++++++%7D%2C%0A++++++++%7D%0A++++%7D%3B%0A%7D%2C%0A%0AafterRendering%3A+function%28chart%29%0A%7B%0A++++var+_this+%3D+this%3B%0A++++var+container+%3D+%24%28chart._chart.renderTo%29%3B%0A%0A++++%2F%2F+clear+the+mouseout+function%0A++++var+seriesPoints+%3D+chart._chart.series%5B0%5D.points%3B%0A%0A++++for+%28var+i+%3D+0%3B+i+%3C+seriesPoints.length%3B+i%2B%2B%29%7B%0A++++++++seriesPoints%5Bi%5D.onMouseOut+%3D+function%28%29%7B%7D%3B%0A++++%7D%0A%0A++++var+grey+%3D+%22%23CCC%22%3B%0A++++chart.origColor+%3D+%24%28container%29.find%28%22.highcharts-series+rect%22%29.eq%280%29.attr%28%22fill%22%29%3B%0A++++var+selection+%3D+%5B%5D%3B%0A++++var+unknownPct+%3D+100+-+this.nonUnknownPct%3B%0A%0A++++%24%28container%29.find%28%22.highcharts-series+rect%22%29.each%28function%28%29+%7B%0A++++++++selection.push%28true%29%3B%0A++++%7D%29%3B%0A%0A++++%2F%2F+fix+label+positioning+for+longer+labels%0A++++%24%28container%29.find%28%22.highcharts-axis-labels+span%22%29.each%28function%28%29+%7B%0A++++++++%24%28this%29.css%28%22left%22%2C+%22-4px%22%29%3B%0A++++%7D%29%3B%0A%0A++++%2F%2F+add+unknown+popup+and+fade+it+out+initially%0A++++%24%28%22.ethnicity-chart.chartContainer%22%29.append%28%22%3Cdiv+class%3D%27unknown_popup%27%3E%3Cdiv+class%3D%27unknown_label%27%3EUnknown+Ethnicity%3A%3C%2Fdiv%3E%22+%2B%0A++++++++%22%3Cdiv+class%3D%27unknown_status%27%3EOn%3C%2Fdiv%3E%3Cdiv+class%3D%27divot%27%2F%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%22%29%3B%0A++++_this.fadeUnknownPopup%28container%29%3B%0A%0A++++%2F%2F+hide+unknown+row%27s+label+and+bar+and+update+the+text%0A++++%24%28container%29.find%28%22.highcharts-series+rect%22%29.eq%28selection.length-1%29.css%28%22display%22%2C+%22none%22%29%3B%0A++++%24%28container%29.find%28%22.highcharts-axis-labels+.oval-background%22%29.eq%28selection.length-1%29.css%28%22display%22%2C+%22none%22%29%3B%0A++++var+%24unknownText+%3D+%24%28container%29.find%28%22.highcharts-data-labels+g+text%22%29.eq%28selection.length-1%29%3B%0A%0A++++%24%28container%29.find%28%22.highcharts-data-labels+g%22%29.eq%28selection.length-1%29.attr%28%22transform%22%2C+%22%22%29%3B%0A++++%24unknownText.find%28%22tspan%22%29.attr%28%22x%22%2C+164%29%3B%0A++++%24unknownText.attr%28%22y%22%2C+207%29%3B%0A++++%24unknownText.find%28%22tspan%22%29.text%28%22Unknown%3A+%22+%2B+unknownPct+%2B+%22%25%22%29%3B%0A%0A++++%2F%2F+add+the+data+warning+rectangle%0A++++chart._chart.renderer%0A++++.rect%28318%2C+250%2C+24%2C+5%2C+0%29%0A++++.attr%28%7B%0A++++++++class%3A+%27unknown_warning%27%2C%0A++++++++%27fill%27%3A+_this.getWarningColor%28unknownPct%2C+true%29%2C%0A++++++++zIndex%3A+10%0A++++%7D%29%0A++++.add%28%29%3B%0A%0A++++%2F%2F+add+the+chart+title%0A++++chart._chart.renderer%0A++++.text%28%22ETHNICITY%22%2C+12%2C+25%29%0A++++.attr%28%7B%0A++++++++class%3A+%27title%27%0A++++%7D%29%0A++++.add%28%29%3B%0A%0A++++var+onClick+%3D+function%28elements%29+%7B%0A++++++++return+function%28%29+%7B%0A++++++++++++var+index+%3D+%24%28elements%29.index%28%24%28this%29%29%3B%0A++++++++++++var+%24currRect+%3D+%24%28container%29.find%28%22.highcharts-series+rect%22%29.eq%28index%29%3B%0A++++++++++++var+%24unknownStatus+%3D+%24%28%22.ethnicity-chart.chartContainer+.unknown_status%22%29%3B%0A++++++++++++var+%24unknownWarning+%3D+%24%28container%29.find%28%22.unknown_warning%22%29%3B%0A++++++++++++var+oldUnknownStatus+%3D+%24unknownStatus.text%28%29%3B%0A%0A++++++++++++var+values+%3D+%24%28container%29.find%28%22.highcharts-data-labels+g+text+tspan%22%29%3B%0A++++++++++++var+labels+%3D+%24%28container%29.find%28%22.highcharts-axis-labels+.oval-background%22%29%3B%0A%0A++++++++++++if%28%21selection%5Bindex%5D%29%7B%0A++++++++++++++++%2F%2F+update+unknown+status+to+on%0A++++++++++++++++if+%28index+%3D%3D%3D+selection.length-1%29+%7B%0A++++++++++++++++++++%24unknownStatus.text%28%22On%22%29%3B%0A++++++++++++++++++++%24unknownWarning.attr%28%22fill%22%2C+_this.getWarningColor%28unknownPct%2C+true%29%29%3B%0A++++++++++++++++%7D%0A++++++++++++++++selection%5Bindex%5D+%3D+true%3B%0A++++++++++++++++%24currRect.attr%28%22fill%22%2C+chart.origColor%29%3B%0A++++++++++++++++values.eq%28index%29.css%28%7B%22color%22%3A%22%23666%22%2C%22fill%22%3A%22%23666%22%7D%29%3B%0A++++++++++++++++%24%28container%29.find%28%22.highcharts-axis-labels+.oval-background%22%29.eq%28index%29.css%28%7B%22background-color%22%3A%22%23666%22%7D%29%3B%0A++++++++++++%7D%0A++++++++++++else%7B%0A++++++++++++++++if%28otherBarsActive%28index%29+%3D%3D%3D+true%29%7B+%2F%2Fall+other+bars+active%0A++++++++++++++++++++%2F%2F+update+unknown+status+to+off%0A++++++++++++++++++++if+%28index+%21%3D%3D+selection.length-1%29+%7B%0A++++++++++++++++++++++++%24unknownStatus.text%28%22Off%22%29%3B%0A++++++++++++++++++++++++%24unknownWarning.attr%28%22fill%22%2C+_this.getWarningColor%28unknownPct%2C+false%29%29%3B%0A++++++++++++++++++++%7D%0A++++++++++++++++++++%24%28elements%29.each%28function%28i%29+%7Bselection%5Bi%5D+%3D+false%3B%7D%29%3B%0A++++++++++++++++++++%24%28container%29.find%28%22.highcharts-series+rect%22%29.attr%28%22fill%22%2C+grey%29%3B%0A++++++++++++++++++++%24currRect.attr%28%22fill%22%2C+chart.origColor%29%3B%0A++++++++++++++++++++selection%5Bindex%5D+%3D+true%3B%0A++++++++++++++++++++values.not%28values.eq%28index%29%29.css%28%7B%22color%22%3A%22%23BBB%22%2C%22fill%22%3A%22%23BBB%22%7D%29%3B%0A++++++++++++++++++++labels.not%28labels.eq%28index%29%29.css%28%7B%22background-color%22%3A%22%23BBB%22%7D%29%3B%0A++++++++++++++++%7D%0A++++++++++++++++else+if%28otherBarsInactive%28index%29+%3D%3D%3D+true%29%7B+%2F%2Fall+other+bars+inactive%0A++++++++++++++++++++%2F%2F+update+unknown+status+to+on%0A++++++++++++++++++++%24unknownStatus.text%28%22On%22%29%3B%0A++++++++++++++++++++%24unknownWarning.attr%28%22fill%22%2C+_this.getWarningColor%28unknownPct%2C+true%29%29%3B%0A%0A++++++++++++++++++++%24%28elements%29.each%28function%28i%29+%7Bselection%5Bi%5D+%3D+true%3B%7D%29%3B%0A++++++++++++++++++++%24%28container%29.find%28%22.highcharts-series+rect%22%29.attr%28%22fill%22%2C+chart.origColor%29%3B%0A++++++++++++++++++++values.not%28values.eq%28index%29%29.css%28%7B%22color%22%3A%22%23666%22%2C%22fill%22%3A%22%23666%22%7D%29%3B%0A++++++++++++++++++++labels.not%28labels.eq%28index%29%29.css%28%7B%22background-color%22%3A%22%23666%22%7D%29%3B%0A++++++++++++++++%7D%0A++++++++++++++++else%7B+%2F%2Fat+least+one+other+active%0A++++++++++++++++++++%2F%2F+update+unknown+status+to+off%0A++++++++++++++++++++if+%28index+%3D%3D%3D+selection.length-1%29+%7B%0A++++++++++++++++++++++++%24unknownStatus.text%28%22Off%22%29%3B%0A++++++++++++++++++++++++%24unknownWarning.attr%28%22fill%22%2C+_this.getWarningColor%28unknownPct%2C+false%29%29%3B%0A++++++++++++++++++++%7D%0A++++++++++++++++++++selection%5Bindex%5D+%3D+false%3B%0A++++++++++++++++++++values.eq%28index%29.css%28%7B%22color%22%3A%22%23BBB%22%2C%22fill%22%3A%22%23BBB%22%7D%29%3B%0A++++++++++++++++++++labels.eq%28index%29.css%28%7B%22background-color%22%3A%22%23BBB%22%7D%29%3B%0A++++++++++++++++%7D%0A++++++++++++%7D%0A%0A++++++++++++%2F%2F+show+the+unknown+popup+if+clicking+on+another%0A++++++++++++if+%28%24unknownStatus.text%28%29+%21%3D%3D+oldUnknownStatus%29+%7B%0A++++++++++++++++_this.fadeUnknownPopup%28container%29%3B%0A++++++++++++%7D%0A++++++++%7D%3B%0A++++%7D%3B%0A%0A++++var+onMouseover+%3D+function%28elements%29+%7B%0A++++++++return+function%28%29+%7B%0A++++++++++++var+index+%3D+%24%28elements%29.index%28%24%28this%29%29%3B%0A++++++++++++var+currRect+%3D+%24%28container%29.find%28%22.highcharts-series+rect%22%29.eq%28index%29%3B%0A++++++++++++%24%28currRect%29.attr%28%22fill-opacity%22%2C0.4%29%3B%0A++++++++++++%24%28currRect%29.attr%28%22fill%22%2C+chart.origColor%29%3B%0A++++++++++++if+%28index+%3D%3D%3D+selection.length-1%29+%7B%0A++++++++++++++++_this.onMouseoverUnknown%28container%29%3B%0A++++++++++++%7D%0A++++++++%7D%3B%0A++++%7D%3B%0A%0A++++var+onMouseout+%3D+function%28elements%29+%7B%0A++++++++return+function%28%29+%7B%0A++++++++++++var+index+%3D+%24%28elements%29.index%28%24%28this%29%29%3B%0A++++++++++++var+currRect+%3D+%24%28container%29.find%28%22.highcharts-series+rect%22%29.eq%28index%29%3B%0A++++++++++++%24%28currRect%29.attr%28%22fill-opacity%22%2C1.0%29%3B%0A++++++++++++if+%28%21selection%5Bindex%5D%29+%7B%0A++++++++++++++++%24%28currRect%29.attr%28%22fill%22%2C+grey%29%3B%0A++++++++++++%7D%0A%0A++++++++++++if+%28index+%3D%3D%3D+selection.length-1%29+%7B%0A++++++++++++++++_this.fadeUnknownPopup%28container%29%3B%0A++++++++++++%7D%0A++++++++%7D%3B%0A++++%7D%3B%0A%0A++++function+otherBarsActive%28currBarIndex%29%7B%0A++++++++var+ret+%3D+true%3B%0A++++++++%24%28container%29.find%28%22.highcharts-series+rect%22%29.each%28function%28i%29%7B%0A++++++++++++if%28%24%28container%29.find%28%22.highcharts-series+rect%22%29.index%28%24%28this%29%29+%21%3D%3D+currBarIndex+%26%26+%21selection%5Bi%5D%29%7B%0A++++++++++++++++ret+%3D+false%3B%0A++++++++++++++++return+false%3B%0A++++++++++++%7D%0A++++++++%7D%29%3B%0A++++++++return+ret%3B%0A++++%7D%3B%0A%0A++++function+otherBarsInactive%28currBarIndex%29%7B%0A++++++++var+ret+%3D+true%3B%0A++++++++%24%28container%29.find%28%22.highcharts-series+rect%22%29.each%28function%28i%29%7B%0A++++++++++++if%28%24%28container%29.find%28%22.highcharts-series+rect%22%29.index%28%24%28this%29%29+%21%3D%3D+currBarIndex+%26%26+selection%5Bi%5D%29%7B%0A++++++++++++++++ret+%3D+false%3B%0A++++++++++++++++return+false%3B%0A++++++++++++%7D%0A++++++++%7D%29%3B%0A++++++++return+ret%3B%0A++++%7D%3B%0A%0A++++var+bindEvents+%3D+function%28%29+%7B%0A++++++++var+elements+%3D+%5B%0A++++++++++++%24%28container%29.find%28%22.highcharts-series+rect%22%29%2C%0A++++++++++++%24%28container%29.find%28%22.highcharts-data-labels+g+text%22%29%2C%0A++++++++++++%24%28container%29.find%28%22.highcharts-axis-labels+.oval-background%22%29%0A++++++++%5D%3B%0A++++++++for+%28var+i+%3D+0%3B+i+%3C+elements.length%3B+i+%2B%2B%29+%7B%0A++++++++++++%24%28elements%5Bi%5D%29%0A++++++++++++.click%28onClick%28elements%5Bi%5D%29%29%0A++++++++++++.mouseover%28onMouseover%28elements%5Bi%5D%29%29%0A++++++++++++.mouseout%28onMouseout%28elements%5Bi%5D%29%29%3B%0A++++++++%7D%0A++++%7D%3B%0A%0A++++bindEvents%28%29%3B%0A%0A++++return%3B%0A%7D"/>
+</jstheme>]]></xml-property>
+        </report-item-theme>
+    </themes>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <extended-item extensionName="Chart" id="7">
+            <xml-property name="xmlRepresentation"><![CDATA[<ActuateChart version="2.6.1">
+ <ChartWithAxes version="2.6.1" type="Bar Chart" subType="Side-by-side" orientation="0" reverseCategory="true">
+  <block>
+   <children _type="TitleBlock" anchor="7" visible="false">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <label>
+     <caption value="AGE">
+      <font name="Arial"/>
+     </caption>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </label>
+   </children>
+   <children _type="Plot">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <clientArea>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </clientArea>
+   </children>
+   <children _type="Legend" visible="false">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <clientArea>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </clientArea>
+    <separator>
+     <color _nil="1"/>
+    </separator>
+    <title>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </title>
+   </children>
+   <bounds _body="0.0,0.0,571.0,285.5"/>
+   <outline>
+    <color _nil="1"/>
+   </outline>
+  </block>
+  <extendedProperties name="enable.area.alt" value="false"/>
+  <extendedProperties name="enable.drill.category" value="true"/>
+  <extendedProperties name="enable.drill.series" value="true"/>
+  <extendedProperties name="jschart.series.shadow" value="false"/>
+  <extendedProperties name="jschart.glass.style" value="false"/>
+  <sampleData>
+   <baseSampleData dataSetRepresentation="&#039;A&#039;,&#039;B&#039;,&#039;C&#039;,&#039;D&#039;,&#039;E&#039;"/>
+   <orthogonalSampleData dataSetRepresentation="6,4,12,8,10" seriesDefinitionIndex="0"/>
+  </sampleData>
+  <interactivity enable="false"/>
+  <emptyMessage>
+   <caption value="This chart contains no data."/>
+   <background _body=",64,127,127,127"/>
+   <outline>
+    <color _body=",128,127,127,127"/>
+   </outline>
+  </emptyMessage>
+  <axes type="2" labelPosition="1" interval="1">
+   <title visible="false">
+    <background _nil="1"/>
+    <outline>
+     <color _nil="1"/>
+    </outline>
+   </title>
+   <associatedAxes type="0" primaryAxis="true">
+    <title>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </title>
+    <seriesDefinitions>
+     <query definition=""/>
+     <series _type="BarSeries" seriesIdentifier="Series 1" stacked="false" riser="0">
+      <label visible="true">
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <dataDefinition definition="row[&quot;id&quot;]">
+       <grouping enabled="true" aggregateExpression="Count"/>
+      </dataDefinition>
+      <dataPoint>
+       <components type="3">
+        <formatSpecifier _type="JavaNumberFormatSpecifier" pattern="##%"/>
+       </components>
+      </dataPoint>
+      <triggers condition="6">
+       <action type="1">
+        <value _type="TooltipValue" text="" delay="200"/>
+       </action>
+      </triggers>
+      <curveFitting _nil="1"/>
+     </series>
+     <grouping _nil="1"/>
+    </seriesDefinitions>
+    <lineAttributes visible="false">
+     <color _nil="1"/>
+    </lineAttributes>
+    <label visible="false">
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </label>
+    <majorGrid>
+     <lineAttributes visible="false">
+      <color _nil="1"/>
+     </lineAttributes>
+     <tickAttributes visible="false">
+      <color _nil="1"/>
+     </tickAttributes>
+    </majorGrid>
+    <minorGrid>
+     <lineAttributes visible="false">
+      <color _nil="1"/>
+     </lineAttributes>
+     <tickAttributes visible="false">
+      <color _nil="1"/>
+     </tickAttributes>
+    </minorGrid>
+    <origin>
+     <value _nil="1"/>
+    </origin>
+   </associatedAxes>
+   <seriesDefinitions>
+    <query definition=""/>
+    <series seriesIdentifier="">
+     <label>
+      <background _nil="1"/>
+      <outline>
+       <color _nil="1"/>
+      </outline>
+     </label>
+     <dataDefinition definition="row[&quot;ethnicity&quot;]"/>
+     <curveFitting _nil="1"/>
+    </series>
+    <grouping enabled="true"/>
+   </seriesDefinitions>
+   <lineAttributes visible="false">
+    <color _nil="1"/>
+   </lineAttributes>
+   <label>
+    <caption>
+     <font name="Arial"/>
+    </caption>
+    <background _nil="1"/>
+    <outline>
+     <color _nil="1"/>
+    </outline>
+   </label>
+   <majorGrid>
+    <lineAttributes visible="false">
+     <color _nil="1"/>
+    </lineAttributes>
+    <tickAttributes visible="false">
+     <color _nil="1"/>
+    </tickAttributes>
+   </majorGrid>
+   <minorGrid>
+    <lineAttributes visible="false">
+     <color _nil="1"/>
+    </lineAttributes>
+    <tickAttributes visible="false">
+     <color _nil="1"/>
+    </tickAttributes>
+   </minorGrid>
+   <origin>
+    <value _nil="1"/>
+   </origin>
+  </axes>
+  <rotation>
+   <angles/>
+  </rotation>
+ </ChartWithAxes>
+</ActuateChart>
+]]></xml-property>
+            <property name="outputFormat">JS</property>
+            <property name="inheritColumns">false</property>
+            <property name="height">255px</property>
+            <property name="width">350px</property>
+            <expression name="bookmark" type="javascript">"ethnicity_chart"</expression>
+            <property name="dataSet">Data Set</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">id</property>
+                    <expression name="expression" type="javascript">dataSetRow["id"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">gender</property>
+                    <expression name="expression" type="javascript">dataSetRow["gender"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">maritalStatus</property>
+                    <expression name="expression" type="javascript">dataSetRow["maritalStatus"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">age</property>
+                    <expression name="expression" type="javascript">dataSetRow["age"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">ethnicity</property>
+                    <expression name="expression" type="javascript">dataSetRow["ethnicity"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <property name="theme">EthnicityTheme</property>
+        </extended-item>
+    </body>
+</report>

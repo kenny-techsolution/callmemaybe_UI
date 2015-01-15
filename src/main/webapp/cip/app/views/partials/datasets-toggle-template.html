@@ -1,0 +1,11 @@
+<div class="datasets-toggle" ng-if="showPopup">
+	<div class="modal-popup">
+		<h3>Welcome to Visitor Analysis</h3>
+		<p>To get started, please select a data source:</p>
+		<div class="btn-group">
+			<button type="button" class="btn btn-default" ng-class="{selected: dataset==='dataset1'}" ng-click="selectDataset('dataset1')">Data Set 1</button>
+			<button type="button" class="btn btn-default" ng-class="{selected: dataset==='dataset2'}" ng-click="selectDataset('dataset2')">Data Set 2</button>
+		</div>
+		<a ng-click="okayHandler()" class="okay pull-right btn btn-lg btn-primary" role="button">Okay</a>
+	</div>
+</div>

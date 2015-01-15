@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.2.3.v20131216-0430 Build &lt;4.2.3.v20131216-0430></property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <list-property name="libraries">
+        <structure>
+            <property name="fileName">/ThemesReportItems3.rptlibrary</property>
+            <property name="namespace">ThemesReportItems3</property>
+        </structure>
+    </list-property>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.excel" name="Data Source" id="7">
+            <property name="URI">Data/extendedData.xlsx</property>
+            <property name="INCLCOLUMNNAME">yes</property>
+            <property name="INCLTYPELINE">no</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.excel.dataSet" name="Data Set" id="8">
+            <list-property name="computedColumns">
+                <structure>
+                    <property name="name">numPeople</property>
+                    <expression name="expression" type="javascript">var numChars = row["children"].length;&#13;
+var numCommas = 0;&#13;
+&#13;
+for (var i = 0; i &lt; numChars; i++) {&#13;
+	if (row["children"].charAt(i) === ",") {&#13;
+		numCommas++;&#13;
+	}&#13;
+}&#13;
+&#13;
+if (numCommas > 0) {&#13;
+	if ((numCommas + 2) &lt; 6) {&#13;
+		numCommas = numCommas + 2;&#13;
+	}&#13;
+	else if ((numCommas + 2) >= 6) {&#13;
+		numCommas = 6;&#13;
+	}&#13;
+	numCommas;&#13;
+}&#13;
+else if (numCommas === 0 &amp;&amp; numChars > 0) {	&#13;
+	2;&#13;
+}&#13;
+else {&#13;
+	1;&#13;
+}</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">totalHouseCount</property>
+                    <property name="dataType">integer</property>
+                    <property name="aggregateFunction">COUNT</property>
+                </structure>
+            </list-property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">children</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">children</text-property>
+                    <text-property name="heading">children</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">numPeople</property>
+                    <property name="analysis">measure</property>
+                </structure>
+                <structure>
+                    <property name="columnName">totalHouseCount</property>
+                    <property name="analysis">measure</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">children</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">numPeople</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">totalHouseCount</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">children</property>
+                    <property name="nativeName">children</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select "children" from "/C:/Users/am9669/workspace/My Reports/Data/extendedData.xlsx" : {"children","children",STRING}]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>children</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>children</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>children</design:label>
+            <design:formattingHints>
+              <design:displaySize>0</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+            <property name="WORKSHEETS">convertcsv (1)</property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <themes>
+        <report-item-theme type="Chart" name="numPeopleTheme" id="12">
+            <xml-property name="customValues"><![CDATA[<type>2</type><jstheme>
+<property name="jschart.theme" value="plotOptions%3A+%7B%0D%0A%09series%3A+%7B%0D%0A%09%09enableMouseTracking%3Afalse%2C++++++++++++%09%0D%0A++++%09color%3A+%7B%0D%0A++++++++%09linearGradient%3A+%5B0%2C+0%2C+0%2C+%27100%25%27%5D%2C%0D%0A++++++++++++stops%3A+%5B%0D%0A++++++++++++%09%5B0%2C+%27%23A1E3FA%27%5D%2C%0D%0A++++++++++++++++%5B1%2C+%27%2344C8F5%27%5D%0D%0A++++++++++++%5D%0D%0A++++++++%7D%0D%0A++++%7D%0D%0A+%7D%2C%0D%0A+xAxis%3A+%7B%0D%0A+%09lineWidth%3A+3%2C%0D%0A+%7D"/>
+<property name="jschart.client.script" value="%2F**%0D%0A+*+Called+before+axis+instance+is+rendered.%0D%0A+*%0D%0A+*+%40param+axis%0D%0A+*++++++++++++axis+instance%0D%0A+*+%40param++axisOptions%0D%0A+*+++++++++++++axis+options%0D%0A+*+%40param++chart%0D%0A+*+++++++++++++chart+instance%0D%0A+*+%40param++axisIndex%0D%0A+*+++++++++++++axis+index%0D%0A+*%2F%0D%0AbeforeDrawAxis%3A+function%28axis%2C+axisOptions%2C+chart%2C+axisIndex%29%0D%0A%7B++%0D%0A++++if+%28%21axis.categories%29+%7B%0D%0A++++++++var+numLines+%3D+Math.round%28axis.max%2F5%29%3B%09%09%0D%0A++++++++var+plotLines+%3D+%5B%5D%3B%0D%0A++++++++for+%28var+i++%3D+0%3B+i+%3C+numLines%3B+i%2B%2B%29+%7B%0D%0A++++++++++++plotLines%5Bi%5D+%3D+%7B%0D%0A++++++++++++++++color%3A+%22rgba%28255%2C255%2C255%2C0.75%29%22%2C%0D%0A++++++++++++++++width%3A+1%2C%0D%0A++++++++++++++++value%3A+5+*+i%2C%0D%0A++++++++++++++++zIndex%3A+5%0D%0A++++++++++++%7D%3B%0D%0A++++++++%7D%0D%0A++++++++axisOptions.plotLines+%3D+plotLines%3B%0D%0A++++++++return%3B%0D%0A++++%7D%0D%0A++++%0D%0A++++axisOptions.labels.y+%3D+12%3B%0D%0A%7D%2C%0D%0A%2F**%0D%0A+*+Called+before+series+instance+is+rendered.%0D%0A+*%0D%0A+*+%40param+series%0D%0A+*++++++++++++series+instance%0D%0A+*+%40param++seriesOptions%0D%0A+*+++++++++++++series+options%0D%0A+*+%40param++chart%0D%0A+*+++++++++++++chart+instance%0D%0A+*+%40param++seriesIndex%0D%0A+*+++++++++++++series+index%0D%0A+*%2F%0D%0AbeforeDrawSeries%3A+function%28series%2C+seriesOptions%2C+chart%2C+seriesIndex%29%0D%0A%7B%0D%0A++++seriesOptions.pointRange+%3D+1.5%3B%0D%0A++++seriesOptions.dataLabels.y+%3D+8%3B%0D%0A%7D%2C%0D%0A%0D%0A%2F**%0D%0A+*+Called+before+chart+instance+is+rendered.%0D%0A+*%0D%0A+*+%40param+options%0D%0A+*++++++++++++chart+options%0D%0A+*+%40param++chart%0D%0A+*+++++++++++++chart+instance%0D%0A+*%2F%0D%0AbeforeRendering%3A+function%28options%2C+chart%29%0D%0A%7B%0D%0A++++options.chart.spacingLeft+%3D+10%3B%0D%0A++++options.title.x+%3D+8%3B%0D%0A++++options.title.y+%3D+9%3B%0D%0A++++options.chart.spacingRight+%3D+10%3B%0D%0A%7D%2C"/>
+</jstheme>]]></xml-property>
+        </report-item-theme>
+    </themes>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <extended-item extensionName="Chart" id="11">
+            <xml-property name="xmlRepresentation"><![CDATA[<ActuateChart version="2.6.1">
+ <ChartWithAxes version="2.6.1" type="Bar Chart" subType="Side-by-side" reverseCategory="true">
+  <block>
+   <children _type="TitleBlock" anchor="7">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <label>
+     <caption value="NUMBER OF PEOPLE IN HOUSEHOLD">
+      <font name="Omnes_ATT Regular" size="11.0"/>
+      <color _body=",255,102,102,102"/>
+     </caption>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </label>
+   </children>
+   <children _type="Plot">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <clientArea>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </clientArea>
+   </children>
+   <children _type="Legend" visible="false">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <clientArea>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </clientArea>
+    <separator>
+     <color _nil="1"/>
+    </separator>
+    <title>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </title>
+   </children>
+   <bounds _body="0.0,0.0,572.25,286.125"/>
+   <outline>
+    <color _nil="1"/>
+   </outline>
+   <background _body=",255,255,255,255"/>
+  </block>
+  <extendedProperties name="enable.area.alt" value="false"/>
+  <extendedProperties name="enable.drill.category" value="true"/>
+  <extendedProperties name="enable.drill.series" value="true"/>
+  <extendedProperties name="jschart.series.shadow" value="false"/>
+  <sampleData>
+   <baseSampleData dataSetRepresentation="6,4,12,8,10"/>
+   <orthogonalSampleData dataSetRepresentation="5,4,12" seriesDefinitionIndex="0"/>
+  </sampleData>
+  <emptyMessage>
+   <caption value="This chart contains no data."/>
+   <background _body=",64,127,127,127"/>
+   <outline>
+    <color _body=",128,127,127,127"/>
+   </outline>
+  </emptyMessage>
+  <axes type="0">
+   <title>
+    <background _nil="1"/>
+    <outline>
+     <color _nil="1"/>
+    </outline>
+   </title>
+   <associatedAxes primaryAxis="true">
+    <title visible="false">
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </title>
+    <seriesDefinitions>
+     <query definition=""/>
+     <series _type="BarSeries" seriesIdentifier="Series 1" riser="0">
+      <label visible="true">
+       <caption>
+        <font name="Omnes_ATT Medium" size="9.0"/>
+        <color _body=",255,102,102,102"/>
+       </caption>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <dataDefinition definition="row[&quot;numPeople&quot;]/row[&quot;numPeople&quot;]/row[&quot;totalHouseCount&quot;]*100">
+       <grouping enabled="true"/>
+      </dataDefinition>
+      <dataPoint>
+       <components type="3">
+        <formatSpecifier _type="JavaNumberFormatSpecifier" pattern="##%"/>
+       </components>
+      </dataPoint>
+      <triggers condition="6">
+       <action type="1">
+        <value _type="TooltipValue" text="" delay="200"/>
+       </action>
+      </triggers>
+      <curveFitting _nil="1"/>
+     </series>
+     <grouping _nil="1"/>
+    </seriesDefinitions>
+    <lineAttributes visible="false">
+     <color _nil="1"/>
+    </lineAttributes>
+    <label visible="false">
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </label>
+    <majorGrid>
+     <lineAttributes visible="false">
+      <color _nil="1"/>
+     </lineAttributes>
+     <tickAttributes visible="false">
+      <color _nil="1"/>
+     </tickAttributes>
+    </majorGrid>
+    <minorGrid>
+     <lineAttributes visible="false">
+      <color _nil="1"/>
+     </lineAttributes>
+     <tickAttributes visible="false">
+      <color _nil="1"/>
+     </tickAttributes>
+    </minorGrid>
+    <origin>
+     <value _nil="1"/>
+    </origin>
+   </associatedAxes>
+   <seriesDefinitions sorting="1">
+    <query definition=""/>
+    <series seriesIdentifier="">
+     <label>
+      <background _nil="1"/>
+      <outline>
+       <color _nil="1"/>
+      </outline>
+     </label>
+     <dataDefinition definition="row[&quot;numPeople&quot;]"/>
+     <curveFitting _nil="1"/>
+    </series>
+    <grouping enabled="true" groupType="0"/>
+    <sortKey definition="row[&quot;numPeople&quot;]"/>
+   </seriesDefinitions>
+   <lineAttributes>
+    <color _body=",255,102,102,102"/>
+   </lineAttributes>
+   <label>
+    <caption>
+     <font name="Omnes_ATT Medium" size="9.0"/>
+     <color _body=",255,102,102,102"/>
+    </caption>
+    <background _nil="1"/>
+    <outline>
+     <color _nil="1"/>
+    </outline>
+   </label>
+   <majorGrid>
+    <lineAttributes visible="false">
+     <color _nil="1"/>
+    </lineAttributes>
+    <tickAttributes visible="false">
+     <color _nil="1"/>
+    </tickAttributes>
+   </majorGrid>
+   <minorGrid>
+    <lineAttributes visible="false">
+     <color _nil="1"/>
+    </lineAttributes>
+    <tickAttributes visible="false">
+     <color _nil="1"/>
+    </tickAttributes>
+   </minorGrid>
+   <origin>
+    <value _nil="1"/>
+   </origin>
+  </axes>
+  <rotation>
+   <angles/>
+  </rotation>
+ </ChartWithAxes>
+</ActuateChart>
+]]></xml-property>
+            <property name="outputFormat">JS</property>
+            <property name="inheritColumns">true</property>
+            <property name="height">2.65625in</property>
+            <property name="width">3.6458333333333335in</property>
+            <property name="dataSet">Data Set</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">children</property>
+                    <expression name="expression" type="javascript">dataSetRow["children"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">numPeople</property>
+                    <expression name="expression" type="javascript">dataSetRow["numPeople"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">totalHouseCount</property>
+                    <expression name="expression" type="javascript">dataSetRow["totalHouseCount"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+            </list-property>
+            <property name="theme">numPeopleTheme</property>
+        </extended-item>
+    </body>
+</report>

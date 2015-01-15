@@ -1,0 +1,346 @@
+<div  drop="handleDrop(evt)"></div>
+<div class="cip-map-mini-map-controller" ng-class="{'cip-map-mini-map-controller-va':alignZoomControls}">
+
+    <img ng-hide="dayMapSelected" ng-click="showMapLayersPopup=true;" src="modules/cip-map/images/smallMap.png">
+    <img ng-show="dayMapSelected" ng-click="showMapLayersPopup=true;" src="modules/cip-map/images/smallMapSat.png">
+</div>
+<div class="cip-map-loading-rollovers" ng-show="loadingBounds && 0"><span>loading rollovers...</span></div>
+<div class="fade-header" ng-hide="searchHidden">
+    <script type="text/javascript">
+        if (campaignResults === true) {
+            $('.fade-header').prepend('<span class="map-title-text">CAMPAIGN: {{numBoards}} BOARDS</span>');
+            $('.fade-header').prepend("<div class='caption'><span class='tab-span'>Campaign Projection</span></div>");
+        }
+        else {
+            $('.fade-header').prepend('<span class="map-title-text">VISITOR LOCATION INSIGHTS</span>');
+        }
+    </script>
+    <div class="fade-header-search">
+        <input class="map-search-box"
+               typeahead="searchParam.display_name for searchParam in searchResource($viewValue) | filter:$viewValue"
+               typeahead-on-select="showSearchResults($item)"
+               typeahead-template-url="customTemplate.html"
+               ng-keyup="searchContentChanged($event)"
+               placeholder="Search for a location to recenter the map" onfocus="this.placeholder = ''"
+               onblur="this.placeholder = 'Search for a location to recenter the map'" ng-model="result"/>
+        <svg class="remove-text" width="20" ng-show="searchDirty" ng-click="cleanSearch()" height="20"
+             xmlns="http://www.w3.org/2000/svg">
+            <g>
+                <path d="m14.09998,13.89999l-0.70001,0.7c-0.39996,0.40001 -1,0.40001 -1.39996,0l-2.40002,-2.5l-2.40002,2.5c-0.39996,0.40001 -1,0.40001 -1.39996,0l-0.70001,-0.7c-0.40002,-0.39999 -0.40002,-1 0,-1.39999l2.40002,-2.5l-2.40002,-2.40001c-0.40002,-0.39999 -0.40002,-1 0,-1.39999l0.70001,-0.7c0.39996,-0.40001 1,-0.40001 1.39996,0l2.40002,2.5l2.40002,-2.5c0.39996,-0.40001 1,-0.40001 1.39996,0l0.70001,0.7c0.40002,0.39999 0.40002,1 0,1.39999l-2.40002,2.5l2.40002,2.5c0.40002,0.3 0.29999,0.90001 0,1.3m-4.5,-13.89999c-5.29999,0 -9.59998,4.5 -9.59998,10c0,5.5 4.29999,10 9.59998,10c5.29999,0 9.59998,-4.5 9.59998,-10c0.00006,-5.5 -4.29999,-10 -9.59998,-10"
+                      fill="#666666"/>
+            </g>
+        </svg>
+        <svg class="search map-search-icon" ng-hide="searchDirty" ng-click="cleanSearch()" width="23" height="24"
+             xmlns="http://www.w3.org/2000/svg">
+            <g>
+                <path d="m18.11676,11.27437c-1.79999,1.8 -4.70001,1.8 -6.59998,0c-1.80005,-1.8 -1.80005,-4.7 0,-6.59999c1.79999,-1.8 4.69995,-1.8 6.59998,0c1.80005,1.89998 1.80005,4.79999 0,6.59999m1.30005,-7.90001c-2.5,-2.5 -6.59998,-2.5 -9.20001,0c-2.20001,2.2 -2.5,5.5 -0.89996,8.10001l-2.20001,2.2c-0.79999,-0.2 -1.70001,0 -2.40002,0.7l-4.20001,4.2c-1,1 -1,2.60001 0,3.60001c1,1 2.60004,1 3.60004,0l4.20001,-4.2c0.59998,-0.60001 0.89996,-1.60001 0.69995,-2.40001l2.20001,-2.2c2.5,1.7 6,1.5 8.20001,-0.8c2.5,-2.5 2.5,-6.59999 0,-9.2"
+                      fill="#666666"/>
+            </g>
+        </svg>
+
+        <div style="clear:both"></div>
+        <script type="text/javascript">
+            if (campaignResults === true) {
+                $('.map-search-box').css('visibility', 'hidden');
+                $('.map-search-icon').css('visibility', 'hidden');
+            }
+        </script>
+    </div>
+    <div class="reset-div">
+        <svg class="reset" ng-click="resetPopup = !resetPopup;" width="24" height="20"
+             xmlns="http://www.w3.org/2000/svg">
+            <g>
+                <path class="reset-path"
+                      d="m10.5,0v5.10001c4.09998,0.2 12.5,2.09999 13.5,14.39999c-3.80005,-7.8 -10.19995,-8.5 -13.5,-8.3v5.5l-10.5,-8.3l10.5,-8.39999z"
+                      fill="#999999"/>
+            </g>
+        </svg>
+        <script type="text/javascript">
+            if (campaignResults === true) {
+                $('.reset').css('visibility', 'hidden');
+            }
+        </script>
+    </div>
+    <div class="settings-div">
+        <svg class="settings" width="25" height="26" xmlns="http://www.w3.org/2000/svg">
+            <g>
+                <path class="settings-path"
+                      d="m12.5,17.2c-2.40002,0 -4.40002,-2 -4.40002,-4.40001c0,-2.39999 2,-4.39999 4.40002,-4.39999c2.40002,0 4.40002,2 4.40002,4.39999c0,2.40001 -2,4.40001 -4.40002,4.40001m8.80005,-4.39999c1.19995,-0.5 2.30005,-1.3 3.40002,-2.10001c0.19995,-0.2 0.29993,-0.5 0.29993,-0.79999c-0.29993,-1.10001 -0.59998,-2.10001 -1.09998,-3c-0.09998,-0.20001 -0.40002,-0.40001 -0.59998,-0.40001c-1.40002,-0.09999 -2.80005,0.10001 -4.19995,0.40001c-0.30005,-0.3 -0.6001,-0.60001 -1,-1c-0.30005,-0.3 -0.70007,-0.5 -1.20007,-0.8c0.09998,-1.3 0.09998,-2.7 -0.19995,-4c0,-0.3 -0.20007,-0.5 -0.5,-0.60001c-0.90002,-0.3 -2,-0.5 -3.09998,-0.5c-0.30005,0 -0.5,0.10001 -0.70007,0.3c-0.79993,1.2 -1.40002,2.5 -1.69995,3.8c-0.5,0.09999 -1,0.2 -1.40002,0.39999c-0.5,0.2 -0.90002,0.40001 -1.30005,0.60001c-1.09998,-0.8 -2.19995,-1.40001 -3.5,-1.90001c-0.29993,-0.09999 -0.59998,0 -0.79993,0.10001c-0.70007,0.7 -1.40002,1.5 -2,2.39999c-0.09998,0.20001 -0.20007,0.5 0,0.8c0.69995,1.3 1.5,2.40001 2.40002,3.40001c-0.1001,0.39999 -0.20007,0.89999 -0.30005,1.39999c-0.09998,0.5 -0.09998,0.89999 -0.09998,1.39999c-1.20007,0.5 -2.30005,1.3 -3.40002,2.10001c-0.19995,0.2 -0.30005,0.5 -0.30005,0.8c0.30005,1.09999 0.6001,2.09999 1.1001,3c0.09998,0.2 0.3999,0.39999 0.59998,0.39999c1.40002,0.10001 2.79993,-0.09999 4.19995,-0.39999c0.30005,0.3 0.59998,0.59999 1,1c0.30005,0.3 0.70007,0.5 1.09998,0.8c-0.09998,1.29999 -0.09998,2.7 0.20007,4c0,0.29999 0.19995,0.5 0.5,0.59999c0.90002,0.3 2,0.5 3.09998,0.5c0,0 0,0 0,0c0.30005,0 0.5,-0.09999 0.59998,-0.3c0.80005,-1.2 1.40002,-2.5 1.70007,-3.79999c0.5,-0.10001 1,-0.20001 1.3999,-0.40001c0.5,-0.2 0.90002,-0.39999 1.30005,-0.59999c1.09998,0.79999 2.19995,1.39999 3.5,1.89999c0.30005,0.10001 0.59998,0 0.80005,-0.2c0.69995,-0.7 1.3999,-1.5 2,-2.40001c0.09998,-0.2 0.19995,-0.5 0,-0.79999c-0.70007,-1.3 -1.5,-2.40001 -2.40002,-3.40001c0.09998,-0.39999 0.19995,-0.89999 0.29993,-1.39999c0.30005,-0.40001 0.30005,-0.90001 0.30005,-1.3"
+                      fill="#999999"/>
+            </g>
+        </svg>
+    </div>
+    <div class="default-popup" ng-show="resetPopup">
+        <span class="default-popup-pointer">&#x25B2;</span>
+
+        <div class="default-popup-body">
+            Resetting this map will remove all geographic area selections and will display your default locations
+            <div class="default-popup-body-button" ng-click="reset = true; resetPopup = false;">
+                <div class="default-popup-body-button-content">
+                    <svg ng-click="resetPopup = !resetPopup;" width="24" height="20" xmlns="http://www.w3.org/2000/svg">
+                        <g>
+                            <path class="reset-path"
+                                  d="m10.5,0v5.10001c4.09998,0.2 12.5,2.09999 13.5,14.39999c-3.80005,-7.8 -10.19995,-8.5 -13.5,-8.3v5.5l-10.5,-8.3l10.5,-8.39999z"
+                                  fill="#000"/>
+                        </g>
+                    </svg>
+                    <span>Reset Map</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<div class="fade-header" ng-show="visitorAnalysis">
+
+    <div class="header-padding">
+        <span class="group-svg" ng-include="'svgs/cip_circle_orange.svg'" ng-show="pois.groupA.isGroupOnCharts || !pois.choroplethMode"></span>
+        <span class="group-svg" ng-include="'svgs/cip_circle_a_gray.svg'" ng-hide="pois.groupA.isGroupOnCharts || !pois.choroplethMode"></span>
+        <span class="group-text">{{pois.groupA.selected? pois.groupA.currentPagePoi.length + pois.groupA.remainPoi.length : pois.groupA.allPoi.length}} PLACES</span>
+
+        <div class="left-space">
+            <span class="group-svg" ng-include="'svgs/cip_circle_green.svg'" ng-show="pois.groupB.isGroupOnCharts || !pois.choroplethMode"></span>
+            <span class="group-svg" ng-include="'svgs/cip_circle_b_gray.svg'"  ng-hide="pois.groupB.isGroupOnCharts || !pois.choroplethMode"></span>
+            <span class="group-text">{{pois.groupB.selected? pois.groupB.currentPagePoi.length + pois.groupB.remainPoi.length : pois.groupB.allPoi.length}} PLACES</span>
+        </div>
+        <div class="least-most" ng-show="pois.choroplethMode">
+            <div>MOST</div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div>LEAST</div>
+        </div>
+
+    </div>
+
+
+
+</div>
+
+<script type="text/ng-template" id="customTemplate.html">
+    <a class="search-results">{{match | searchTextFilter | abbreviationFilter: 49}}</a>
+</script>
+<script type="text/ng-template" id="layerPopup.html">
+    <div>
+        <div class="cip-map-ooh-popup-header-text" ng-bind="currentLayer.properties.layerType.toLowerCase() | layerNameFormatter"></div>
+        <hr class="cip-map-popup-layer-hr">
+        <span class="cip-map-popup-content-text" ng-bind="currentLayer.properties | layerDescription "></span><div style="clear: both"></div>
+
+        <div style="clear: both"></div>
+        <span class="cip-map-popup-content-text-small">2013 Population: <span
+                ng-bind="currentLayer.properties.pop | toThousands"></span></span>
+
+        <div class="cip-map-layer-popup-body-button" ng-click="addLayerToAreas()" ng-hide="hideAddAreaTemplate">
+            <div class="cip-map-layer-popup-plus-button-wrapper">
+                <div class="cip-map-layer-popup-body-button-aligning">
+                    <svg class="cip-map-popup-layer-plus-button" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 22 22" enable-background="new 0 0 22 22" xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                         <path d="M17.673,10.457l-0.001,1.081c0.002,0.622-0.493,1.12-1.118,1.126l-3.934,0.001v3.837c0.001,0.617-0.498,1.129-1.118,1.128  h-1.088c-0.619-0.001-1.118-0.498-1.124-1.127l-0.001-3.838l-3.81-0.001c-0.621-0.005-1.117-0.503-1.118-1.124l0.001-1.086  C4.361,9.842,4.857,9.338,5.479,9.338h3.818L9.296,5.489c0.002-0.621,0.491-1.112,1.118-1.118h1.089  c0.628,0.006,1.118,0.505,1.117,1.117l0.001,3.851l3.934-0.001C17.178,9.339,17.673,9.843,17.673,10.457 M3.222,3.222  c-4.296,4.296-4.296,11.261,0,15.556c4.296,4.296,11.261,4.296,15.556,0c4.296-4.295,4.296-11.26,0-15.556  C14.483-1.074,7.518-1.074,3.222,3.222"/>
+                    </svg>
+                    <div class="cip-map-layer-popup-button-text">Add this area</div>
+                    <div style="clear:both"></div>
+                </div>
+            </div>
+        </div>
+        <div class="cip-map-layer-popup-body-button" ng-click="removeLayerFromAreas()" ng-show="hideAddAreaTemplate">
+            <div class="cip-map-layer-popup-remove-button-wrapper">
+                <div class="cip-map-layer-popup-body-button-aligning-remove">
+                    <svg class="cip-map-popup-layer-remove-button" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 22 22" enable-background="new 0 0 22 22" xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                         <path xmlns="http://www.w3.org/2000/svg" d="M16.103,15.334l-0.766,0.764c-0.438,0.441-1.14,0.443-1.586,0.006l-2.782-2.781l-2.713,2.713  c-0.436,0.436-1.151,0.446-1.589,0.006l-0.77-0.768c-0.436-0.438-0.438-1.144,0.002-1.592l2.714-2.715L5.92,8.273  C5.484,7.83,5.485,7.127,5.924,6.687L6.692,5.92c0.432-0.434,1.139-0.439,1.579,0.001l2.7,2.7l2.721-2.723  c0.44-0.438,1.133-0.439,1.581,0l0.77,0.77c0.44,0.448,0.433,1.147,0,1.58l-2.722,2.723l2.782,2.781  C16.543,14.193,16.537,14.9,16.103,15.334 M11,0C4.925,0,0,4.925,0,11c0,6.075,4.925,11,11,11c6.075,0,11-4.925,11-11  C22,4.925,17.075,0,11,0"/>
+                    </svg>
+                    <div class="cip-map-layer-popup-button-text-remove">Remove</div>
+                    <div style="clear:both"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+
+<script type="text/ng-template" id="poiPopup.html">
+    <div>
+        <div class="cip-map-popup-header-text"
+             ng-bind="poi.properties.group==='group A'?'A: '+poi.properties.title:'B: '+poi.properties.title | abbreviationFilter: 28"></div>
+        <hr class="cip-map-popup-layer-hr">
+        <span class="cip-map-popup-content-text" ng-bind="poi.properties.address"></span>
+
+        <div style="clear: both"></div>
+        <div class="cip-map-layer-popup-body-button" ng-click="selectedPoi(poi)" ng-hide="groupB">
+
+            <div class="cip-map-layer-popup-body-button-aligning">
+
+                <svg version="1.1" class="cip-map-popup-layer-star-button"  id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                     viewBox="0 0 13 13" enable-background="new 0 0 13 13" xml:space="preserve">
+                    <path fill="#EF7000" d="M6.1,0.4c0.2-0.5,0.6-0.5,0.9,0l1.3,2.7c0.2,0.5,0.9,1,1.4,1.1l2.9,0.4c0.5,0.1,0.7,0.5,0.3,0.9l-2.1,2.1
+                        c-0.4,0.4-0.6,1.2-0.5,1.7l0.5,3c0.1,0.6-0.2,0.8-0.7,0.5l-2.6-1.4c-0.5-0.3-1.3-0.3-1.7,0l-2.6,1.4c-0.5,0.3-0.8,0-0.7-0.5l0.5-3
+                        C2.9,8.8,2.7,8,2.3,7.6L0.2,5.5C-0.2,5.1,0,4.7,0.5,4.6l2.9-0.4c0.5-0.1,1.2-0.6,1.4-1.1L6.1,0.4z"/>
+                </svg>
+                <div>
+                    <label class="cip-map-poi-popup-button-text" ng-class="{'align-button-text':isInFilteredOut}">Select this Place </label>
+                    <label class="cip-map-layer-popup-button-clear-text" ng-show="isInFilteredOut">and clear my search</label>
+                </div>
+
+                <div style="clear:both"></div>
+            </div>
+        </div>
+        <div class="cip-map-layer-popup-body-button" ng-click="selectedPoi(poi)"
+             ng-show="groupB">
+
+            <div class="cip-map-layer-popup-body-button-aligning">
+
+                <svg version="1.1" class="cip-map-popup-layer-star-button poi-star-green" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                     viewBox="0 0 13 13" enable-background="new 0 0 13 13" xml:space="preserve">
+                    <path fill="#EF7000" d="M6.1,0.4c0.2-0.5,0.6-0.5,0.9,0l1.3,2.7c0.2,0.5,0.9,1,1.4,1.1l2.9,0.4c0.5,0.1,0.7,0.5,0.3,0.9l-2.1,2.1
+                        c-0.4,0.4-0.6,1.2-0.5,1.7l0.5,3c0.1,0.6-0.2,0.8-0.7,0.5l-2.6-1.4c-0.5-0.3-1.3-0.3-1.7,0l-2.6,1.4c-0.5,0.3-0.8,0-0.7-0.5l0.5-3
+                        C2.9,8.8,2.7,8,2.3,7.6L0.2,5.5C-0.2,5.1,0,4.7,0.5,4.6l2.9-0.4c0.5-0.1,1.2-0.6,1.4-1.1L6.1,0.4z"/>
+                </svg>
+
+                <div>
+                    <label class="cip-map-poi-popup-button-text" ng-class="{'align-button-text':isInFilteredOut}">Select this Place </label>
+                    <label class="cip-map-layer-popup-button-clear-text" ng-show="isInFilteredOut">and clear my search</label>
+                </div>
+
+                <div style="clear:both"></div>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script type="text/ng-template" id="droppedPoiPopup.html">
+    <div class="droped-poi-pop">
+        <div class="cip-map-ooh-popup-header-text">POI</div>
+        <hr class="cip-map-popup-layer-hr">
+        <span class="cip-map-popup-content-text" ng-bind="poi.title"></span>
+        <br>
+        <span class="cip-map-popup-content-text cip-map-popup-content-text-span" ng-bind="poi.address"> </span>
+        <div style="clear: both"></div>
+        <hr class="cip-map-popup-layer-hr">
+        <div class="cip-map-popup-content-text-center">
+            <span>Show me billboards within a</span>
+            <br>
+            <div class="cip-dropped-poi-dropdown-wrapper">
+                <div class="dropdown select-box">
+                    <button class="btn cip-map-drop-down-button" type="button" data-toggle="dropdown">
+                        {{poi.radius}}
+                        <span class="caret caretExtender"></span>
+                    </button>
+                    <ul class="dropdown-menu cip-map-drop-down-ul text-right">
+                        <li ng-click="poi.radius=1"><a>1</a></li>
+                        <li ng-click="poi.radius=3"><a>3</a></li>
+                        <li ng-click="poi.radius=5"><a>5</a></li>
+                        <li ng-click="poi.radius=10"><a>10</a></li>
+                    </ul>
+                </div>
+                <span >&nbsp;&nbsp;&nbsp;mile radius</span>
+            </div>
+        </div>
+        <div style="clear: both"></div>
+        <div class="cip-map-poi-popup-body-button" ng-click="removePoiOOH(poi)">
+
+            <div class="cip-map-layer-popup-remove-button-wrapper">
+                <div class="cip-map-layer-popup-body-button-aligning-remove">
+                    <svg class="cip-map-popup-drag-poi-remove-button" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 22 22" enable-background="new 0 0 22 22" xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                         <path xmlns="http://www.w3.org/2000/svg" d="M16.103,15.334l-0.766,0.764c-0.438,0.441-1.14,0.443-1.586,0.006l-2.782-2.781l-2.713,2.713  c-0.436,0.436-1.151,0.446-1.589,0.006l-0.77-0.768c-0.436-0.438-0.438-1.144,0.002-1.592l2.714-2.715L5.92,8.273  C5.484,7.83,5.485,7.127,5.924,6.687L6.692,5.92c0.432-0.434,1.139-0.439,1.579,0.001l2.7,2.7l2.721-2.723  c0.44-0.438,1.133-0.439,1.581,0l0.77,0.77c0.44,0.448,0.433,1.147,0,1.58l-2.722,2.723l2.782,2.781  C16.543,14.193,16.537,14.9,16.103,15.334 M11,0C4.925,0,0,4.925,0,11c0,6.075,4.925,11,11,11c6.075,0,11-4.925,11-11  C22,4.925,17.075,0,11,0"/>
+                    </svg>
+                    <div class="cip-map-layer-popup-button-text-remove">Remove this POI</div>
+                    <div style="clear:both"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+<script type="text/ng-template" id="selectedPoiPopup.html">
+    <div>
+        <div class="cip-map-popup-header-text"
+             ng-bind="selectedPoiP.properties.group==='group A'?'A: '+selectedPoiP.properties.title:'B: '+selectedPoiP.properties.title | abbreviationFilter: 28"></div>
+        <hr class="cip-map-popup-layer-hr">
+        <span class="cip-map-popup-content-text" ng-bind="selectedPoiP.properties.address"></span>
+
+        <div style="clear: both"></div>
+
+        <div class="cip-map-layer-popup-body-button" ng-click="removeSelectedPoi(selectedPoiP)">
+
+            <div class="cip-map-layer-popup-body-button-aligning-remove">
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                     viewBox="0 0 45 35.4" class="poi-view-all" enable-background="new 0 0 45 35.4" xml:space="preserve">
+                    <g>
+                        <path id="SVGID_1_" d="M19.7,0v9.3c7.6,0.3,23.5,3.7,25.3,26c-7.2-14.1-19.1-15.4-25.3-15v9.9L0,15.1L19.7,0z"/>
+                    </g>
+                </svg>
+
+                <div class="cip-map-layer-popup-button-text-remove">View All</div>
+                <div style="clear:both"></div>
+            </div>
+        </div>
+    </div>
+</script>
+
+
+
+
+
+
+
+<script type="text/ng-template" id="billboardPopup.html">
+    <div>
+        <div class="cip-map-popup-header-text"
+             ng-bind="selectedBillboard.billboardType + ' Board:' + selectedBillboard.billboardNumber"></div>
+        <hr class="cip-map-popup-layer-hr">
+        <span class="cip-map-billboard-popup-content-text" ng-bind="selectedBillboard.address"></span>
+        <div style="clear: both"></div>
+    </div>
+</script>
+
+<script type="text/ng-template" id="mapLayersTemplate.html">
+    <div ng-class="{'map_layers_popup-va':!searchHidden}"  class="map_layers_popup" ng-show="showMapLayersPopup">
+        <a class="list-group-item" ng-click="selectRegularMap()">
+            <table>
+                <tr>
+                    <td>
+                        <img ng-class="{'map-selection-list-image-selected':regularMapSelected, 'map-selection-list-image-default':!regularMapSelected}"
+                             src="modules/cip-map/images/smallMap.png">
+                    </td>
+                    <td>
+                        <label class="map-selection-list-label">Map</label>
+                    </td>
+                </tr>
+            </table>
+        </a>
+        <a class="list-group-item" ng-click="selectSatMap()">
+            <table>
+                <tr>
+                    <td>
+                        <img ng-class="{'map-selection-list-image-selected':satMapSelected, 'map-selection-list-image-default':!satMapSelected}"
+                             src="modules/cip-map/images/smallMapSat.png">
+                    </td>
+                    <td>
+                        <label class="map-selection-list-label">Satellite</label>
+                    </td>
+                </tr>
+            </table>
+        </a>
+    </div>
+</script>
+
+
+<script type="text/ng-template" id="billboard.html">
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="612px" height="792px" viewBox="0 0 612 792" enable-background="new 0 0 612 792" xml:space="preserve">
+        <path fill="#010101" d="M60.806,42.025V23.843c0-1.221-0.737-3.53-3.528-3.53H23.971c-1.22,0-3.527,0.737-3.527,3.53v18.182
+            c0,1.221,0.737,3.53,3.527,3.53h13.124v9.225c0,1.948,1.584,3.533,3.531,3.533c1.945,0,3.528-1.585,3.528-3.533v-9.225h13.124
+            C58.498,45.555,60.806,44.817,60.806,42.025"/>
+        <path fill="none" stroke="#FFFFFF" stroke-miterlimit="10" d="M60.806,42.025V23.843c0-1.221-0.737-3.53-3.528-3.53H23.971
+            c-1.22,0-3.527,0.737-3.527,3.53v18.182c0,1.221,0.737,3.53,3.527,3.53h13.124v9.225c0,1.948,1.584,3.533,3.531,3.533
+            c1.945,0,3.528-1.585,3.528-3.533v-9.225h13.124C58.498,45.555,60.806,44.817,60.806,42.025z"/>
+        <path fill="#676767" d="M28.171,27.04c0,0-1,0-1,1V38c0,0,0,1,1,1h24.908c0,0,1,0,1-1v-9.96c0,0,0-1-1-1H28.171z"/>
+    </svg>
+</script>
+
+<script type="text/ng-template" id="zoom-to-see.html">
+
+    <div class="cip-map-zoom-to-see"><span>Zoom to see {{ selectedSecondaryTab.toLowerCase() | layerNamePluralFormatter }}</span><span> on the map</span></div>
+
+</script>

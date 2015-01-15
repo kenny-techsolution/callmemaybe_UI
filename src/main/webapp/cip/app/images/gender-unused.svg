@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+	<!ENTITY ns_flows "http://ns.adobe.com/Flows/1.0/">
+]>
+<svg version="1.1"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 x="0px" y="0px" width="85px" height="86px" viewBox="11 872.5 85 86" enable-background="new 11 872.5 85 86"
+	 xml:space="preserve">
+<defs>
+</defs>
+<g>
+	<defs>
+		<rect id="SVGID_1_" width="390.667" height="984.5"/>
+	</defs>
+	<clipPath id="SVGID_2_">
+		<use xlink:href="#SVGID_1_"  overflow="visible"/>
+	</clipPath>
+	<path clip-path="url(#SVGID_2_)" fill="#333333" d="M96,951.841c0,3.401-2.757,6.159-6.159,6.159H17.159
+		c-3.401,0-6.159-2.758-6.159-6.159v-72.682c0-3.401,2.758-6.159,6.159-6.159h72.682c3.402,0,6.159,2.758,6.159,6.159V951.841z"/>
+	<path clip-path="url(#SVGID_2_)" fill="#CFD0D0" d="M67.037,893.7c2.31,0,4.184-1.873,4.184-4.184c0-2.31-1.874-4.183-4.184-4.183
+		s-4.184,1.873-4.184,4.183C62.853,891.827,64.727,893.7,67.037,893.7"/>
+	<path clip-path="url(#SVGID_2_)" fill="#CFD0D0" d="M71,895h-8c-2.761,0-5,2.238-5,5v0.5v1.5v10.5c0,0.828,0.671,1.5,1.5,1.5
+		s1.5-0.672,1.5-1.5V902h1v11v2v19c0,1.104,0.896,2,2,2s2-0.896,2-2v-19h2v19c0,1.104,0.896,2,2,2s2-0.896,2-2v-19v-2v-11h1v10.5
+		c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5V902v-1.5V900C76,897.238,73.761,895,71,895"/>
+	<path clip-path="url(#SVGID_2_)" fill="#CFD0D0" d="M42.037,893.7c2.31,0,4.184-1.873,4.184-4.184c0-2.31-1.874-4.183-4.184-4.183
+		s-4.184,1.873-4.184,4.183C37.853,891.827,39.727,893.7,42.037,893.7"/>
+	<path clip-path="url(#SVGID_2_)" fill="#CFD0D0" d="M49,898.456C48.331,896.42,47.451,895,45.542,895h-7.084
+		c-1.909,0-2.957,1.417-3.458,3.456l-4.216,12.21c-0.263,0.762,0.141,1.592,0.902,1.854l0.079,0.027
+		c0.761,0.264,1.591-0.141,1.854-0.901l3.436-9.949c0.115,0.004,0.527,0.006,1.118,0.009L32.662,918H37v16c0,1.104,0.896,2,2,2
+		s2-0.896,2-2v-16h1h1v16c0,1.104,0.896,2,2,2s2-0.896,2-2v-16h4l-5.249-16.294c0.786-0.002,1.083-0.005,1.194-0.009l3.436,9.949
+		c0.263,0.761,1.093,1.165,1.854,0.901l0.079-0.027c0.761-0.263,1.165-1.093,0.902-1.854L49,898.456z"/>
+</g>
+<g>
+	<text transform="matrix(1 0 0 1 34.5889 948.332)" fill="#CFD0D0" font-family="'Omnes_ATT-Regular'" font-size="11">Gender</text>
+</g>
+</svg>

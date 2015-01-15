@@ -1,0 +1,56 @@
+.pagination{
+	> li{
+		display: inline-block;
+		margin-left:8px;	
+
+		&.dots{
+			> a{
+				color:@blue;
+				background-color: transparent;
+				border:none;
+				border-radius:none;	
+				padding:0px;
+			}
+		}
+
+		&:last-child,
+		&:first-child{
+
+			> a{
+				color:@blue;
+				background-color: transparent;
+				border:none;
+				border-radius:none;
+				padding:0px;
+
+				&:before{
+					content: '';
+					.rotate(90deg);
+					.caret;
+					border-width:7px;
+					border-bottom-width:0;
+					margin:0px 0px 8px 0px;
+				}
+			}
+		}
+
+		&:last-child{
+
+			> a{
+				&:before{
+					.rotate(-90deg);
+				}
+			}
+		}
+
+		&.disabled{
+			> a{
+				color:#EEE;
+			}
+		}
+
+		> a{
+			border-radius: 4px;
+		}
+	}
+}

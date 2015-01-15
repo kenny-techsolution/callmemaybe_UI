@@ -1,0 +1,30 @@
+<header id="header" header show-filterbar="false"></header>
+
+
+<section id="content" class="container-fluid">
+	<div class="row">
+		<div class="col-md-9 columns text-center">
+			<h1>Welcome to <br /> <strong>Consumer Insights Platform</strong></h1>
+			<img src="images/layout/chart-room.png" width="100%" />
+			<p>Please select a product. <span class="arrow"></span></p>
+		</div>
+
+		<div class="col-md-7 columns">
+			<div class="list-group">
+				<a ng-repeat="product in products" class="ng-class:product.active ? 'active' : ''; list-group-item" href="{{product.url}}" title="{{product.name}}">
+					<span class="border"></span>
+
+					<div class="row">
+						<div class="col-sm-4 columns">
+							<img ng-src="{{product.image}}" title="{{product.name}}" />
+						</div>
+						<div class="col-sm-12 text-right columns">
+							<h3 class="list-group-item-heading">{{product.name}}</h3>
+							<p class="list-group-item-text">{{product.description}}</p>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,113 @@
+<div ng-class="'poi-group group-' + color + '-list' ">
+    <div ng-hide="poisModel.selected" ng-class="'bg-' + color">
+                                <span class="plus-minus-button cip-plus-btn" ng-hide="isGroupToggled" ng-click="isGroupToggled = true"/>
+                                <span class="plus-minus-button cip-minus-btn" ng-show="isGroupToggled" ng-click="isGroupToggled = false"/>
+
+
+        <span class="places">{{poisModel.allPoi.length + " Places"}}</span>
+
+        <div class="edit" ng-click="isGroupToggled = true">
+            <span ng-include="'svgs/cip_edit_white.svg'"></span>
+            <span>Edit</span>
+        </div>
+    </div>
+    <div ng-hide="poisModel.selected" class="group-name">
+        <div ng-class="'icon group-icon group-' + groupName"></div>
+        <div class="title" ng-bind="poisModel.name"></div>
+    </div>
+
+    <div class="poi-carousel" ng-show="poisModel.selected">
+        <div ng-class="'bar ' + 'bg-' + color">
+
+
+            <div class="big-btn left-btn" ng-click="selectPrev()"></div>
+            <div class="title">
+                <span class="showing"
+                      ng-bind="groupName  + ': Place #' + ((poisModel.selected | index: (poisModel.allPoi | filter:searchCiteria) )+ 1   | withCommas) + ' - ' + ((poisModel.allPoi | filter:searchCiteria).length | withCommas)"></span>
+            </div>
+            <div class="big-btn right-btn" ng-click="selectNext()"></div>
+            <div class="viewAll" ng-click="poisModel.selected = null; searchFilter=searchCiteria; isGroupToggled = true">ViewAll</div>
+        </div>
+        <div class="place-container" ng-show="poisModel.selected">
+
+
+            <div class="place-container">
+
+                <div class="place-icon place-pin"></div>
+                <div class="place-details">
+                    <div class="place-title"
+                         ng-bind="('#' +  ((poisModel.selected | index: (poisModel.allPoi | filter:searchCiteria) )+ 1   | withCommas) + '.' + poisModel.selected.properties.name) | abbreviationFilter: 35"></div>
+                    <div class="place-address" ng-bind="poisModel.selected.properties.address | abbreviationFilter: 35"></div>
+                    <div class="place-address"
+                         ng-bind="poisModel.selected.properties.city + ' '  + poisModel.selected.properties.state + ',' + poisModel.selected.properties.zip"></div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div class="search-group">
+        <div class="clear"></div>
+        <div ng-hide="poisModel.isGroupOnCharts" ng-click="poisModel.isGroupOnCharts = true;"
+             class="show-on-charts">Show on charts
+        </div>
+
+        <div ng-show="poisModel.isGroupOnCharts" class="charts-svg"
+             ng-include="'svgs/cip_on_charts_label_' + color + '.svg'"></div>
+        <div class="search-input-container">
+            <input type="text" class="search-input" ng-enter="newSearch()" ng-model="searchFilter" placeholder="- Search Places -" ng-keyup="isGroupToggled = searchFilter.length > 0 || isGroupToggled "/>
+
+            <div ng-show="searchFilter.length>0" class="clear-icon" ng-click="searchFilter=''"></div>
+        </div>
+    </div>
+
+
+    <div ng-show="isGroupToggled && poisModel.selected==null">
+        <div class="poi-list">
+            <div class="bar">
+                <div class="small-btn left-btn" ng-click="start()"
+                     ng-class="{true: 'inactive-end', false: 'end' }[currentPage == 0]  "></div>
+                <div class="big-btn left-btn" ng-click="prev()"
+                     ng-class="{true: 'inactive-prev', false: 'prev' }[currentPage == 0]"></div>
+                <div class="small-btn right-btn" ng-click="end()"
+                     ng-class="{true: 'inactive-end', false: 'end' }[currentPage >= numberOfPages()-1]"></div>
+                <div class="big-btn right-btn" ng-click="next()"
+                     ng-class="{true: 'inactive-next', false: 'next' }[currentPage >= numberOfPages()-1]"></div>
+                <div class="title" ng-show="(poisModel.allPoi | filter:searchCiteria).length >0">
+                            <span class="showing"
+                                  ng-bind="(currentPage * pageSize + 1 | withCommas) + ' - ' + (Math.min((currentPage + 1) * pageSize, (poisModel.allPoi | filter:searchCiteria).length) | withCommas)"></span>
+                    <span class="total">&nbsp;of&nbsp;</span>
+                    <span class="total" ng-bind="((poisModel.allPoi | filter:searchCiteria).length | withCommas)"></span>
+                </div>
+            </div>
+            <div class="list-container">
+                <ul>
+                    <!--Angular class logic to select the locations record on hover of on the fence-->
+                    <li data-ng-repeat="poi in poisModel.allPoi | filter:searchCiteria | startFrom:currentPage*pageSize | limitTo:pageSize"
+                        ng-click="poisModel.selected = poi"
+                        ng-mouseleave="poisModel.hovered = null"
+                        ng-mouseenter="poisModel.hovered = poi"
+                        ng-include="'place.html'">
+
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/ng-template" id="place.html">
+    <div class="place-container">
+        <div class="place-icon place-pin" ng-class="{'place-pin-inactive': choroplethMode && !active }"></div>
+        <div class="place-details">
+            <div class="place-title"
+                 ng-bind="(poi.properties.title = '#' + (($index + 1 +  currentPage  * pageSize)  | withCommas) + '.' + poi.properties.name) | abbreviationFilter: 32"></div>
+            <div class="place-address" ng-bind="poi.properties.address | abbreviationFilter: 32"></div>
+            <div class="place-address"
+                 ng-bind="poi.properties.city + ' '  + poi.properties.state + ',' + poi.properties.zip"></div>
+        </div>
+    </div>
+    </div>
+</script>

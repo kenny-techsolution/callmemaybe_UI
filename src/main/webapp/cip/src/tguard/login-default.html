@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<!-- Copyright (C) 2014 at&t, Inc. -->
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<TITLE>Access Manager for Web Login</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<img src="/pics/amlogo.png" 
+     height="75"
+     border="0"
+     alt= "at&t (c)">
+
+<BR>
+<p><B>Access Manager for Web Login</B></p>
+
+%ERROR%
+<BR><BR>
+
+<!-- DO NOT TRANSLATE OR MODIFY any part of the hidden parameter(s) -->
+
+<!--
+  The following block of code provides users with a warning message
+  if they do not have cookies configured on their browsers.  
+  If this environment does not use cookies to maintain login sessions, 
+  simply remove or comment out the block below.
+-->
+
+
+<!-- BEGIN Cookie check block -->
+<!--
+DO NOT TRANSLATE anything inside the SCRIPT tag except the quoted 
+string warningString and the first line of the JavaScript redirection 
+instruction beginning with "// Uncomment the following ..." 
+
+i.e.	var warningString = "Translate this string";
+-->
+<SCRIPT LANGUAGE=JavaScript>
+var warningString = "<B>WARNING:</B> To maintain your login session, make sure that your browser is configured to accept Cookies.";
+document.cookie = 'acceptsCookies=yes';
+if(document.cookie == ''){
+document.write(warningString);
+}
+else{
+document.cookie = 'acceptsCookies=yes; expires=Fri, 13-Apr-1970 00:00:00 GMT';
+// Uncomment the following line for JavaScript redirection
+// document.cookie = 'ISAMOriginalURL=' + encodeURIComponent(window.location) + "; Path=/;";
+}
+</SCRIPT>
+<NOSCRIPT>
+<B>WARNING:</B> To maintain your login session, make sure that<BR>
+your browser is configured to accept Cookies.
+</NOSCRIPT>
+<!-- END Cookie check block -->
+
+
+
+<BR>
+<FORM METHOD=POST ACTION="/pkmslogin.form?token=%CREDATTR{tagvalue_session_index}%">
+<FONT SIZE="+2">
+<TABLE BORDER="0" WIDTH="400">
+<TR>
+<TD ALIGN="LEFT"><UL><LI>Username</LI></UL></TD>
+<TD><INPUT NAME="username" SIZE="15"></TD>
+</TR>
+<TR>
+<TD ALIGN="LEFT"><UL><LI>Password</LI></UL></TD>
+<TD><INPUT TYPE="PASSWORD" NAME="password" SIZE="15" AUTOCOMPLETE="off"></TD>
+</TR>
+</TABLE>
+</FONT>
+
+<INPUT TYPE="HIDDEN" NAME="login-form-type" VALUE="pwd">
+
+<BR><INPUT TYPE="SUBMIT" VALUE="Login">
+</FORM>
+
+</BODY>
+</HTML>

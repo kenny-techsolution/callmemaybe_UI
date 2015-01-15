@@ -1,0 +1,814 @@
+#campaign {
+  background-color: #d3d3d3;
+  bottom: 0px;
+  box-shadow: 5px 2px 10px 0px rgba(0, 0, 0, 0.5);
+  display: block;
+  position: absolute;
+  top: 50px;
+  left: -105%;
+  width: 100%;
+  z-index: 300;
+
+  .header{
+    overflow: hidden;
+  }
+
+  .container-fluid{
+    background-color: #d3d3d3;
+    .fill{
+      overflow:hidden;
+    }
+  }
+
+  .disabled {
+    .title,
+    .description,
+    span,
+    label {
+      color:#999999;
+    }
+
+    .overlay {
+      background-color:#ffffff;
+      height:100%;
+      width:100%;
+      position:absolute;
+      top:0;
+      left:0;
+      z-index:5;
+      opacity:0;
+    }
+
+    .dropdown .btn {
+      color:#999999;
+      background-color:#dddddd;
+      .caret {
+        background-image: url('../images/dropdown-arrow-disabled.svg');
+      }
+    }
+
+    .copy {
+      background-color:#cccccc;
+      color:#efefef;
+    }
+  }
+
+  .fields.disabled {
+    border-color:#dddddd;
+  }
+
+}
+
+#campaign-body {
+  .sidebar-fit(@max-height: inherit);
+
+  .nav-tabs{
+
+    &.nav-tabs-default{
+      height: 65px;
+    }
+    .nav-center;
+  }
+
+  .tab-content {
+    padding: 0px 10px;
+    overflow-y: auto;
+    height: 540px;
+  }
+
+  .fields {
+    background-color: #DDD;
+    border: 3px solid #FFF;
+    padding: 15px 20px;
+    margin: 0px auto 10px;
+    width: 700px;
+
+    .title {
+      font-size: 18px;
+      font-weight: bold;
+      font-family: "omnes_attmedium_italic";
+      margin-bottom: 10px;
+    }
+  }
+
+  #campaign-detail-container{
+    height: 100%;
+    overflow-y:auto;
+    padding-top:10px;
+    padding-bottom: 50px;
+  }
+  #location-container{
+    height: 100%;
+    position: relative;
+  }
+  #audience-container {
+    padding-bottom: 50px;
+    height:100%;
+    overflow-y:auto;
+  }
+}
+
+#campaignBudget{
+  input {
+    width: 115px;
+  }
+  label {
+    margin-right: 4px;
+  }
+}
+
+input[name="campaignBegins"] {
+  width: 100px;
+}
+
+input[name="flexibleWeeks"] {
+  width: 40px;
+}
+
+
+.expand-collapse-icons {
+  display: block;
+  float: left;
+  width: 15px;
+  height: 15px;
+  margin-top: 1px;
+}
+
+.collapse {
+  background-image: url('../images/collapse.svg');
+}
+.expand {
+  background-image: url('../images/expand.svg');
+}
+
+#campaign-sidebar {
+  background: #ffffff;
+  border-left: 1px solid #666;
+  height: 100%;
+  position: relative;
+  overflow-y:auto;
+  .color-bar {
+    position: absolute;
+    width: 100%;
+    top: 0px;
+  }
+  .header {
+    position: absolute;
+    width: 100%;
+    top: 8px;
+  }
+  .multi-vendors-dropdown {
+    position: absolute;
+    top: 52px;
+    width: 100%;
+    padding: 0 10px;
+    background-image: linear-gradient(to bottom, #555555 0%, #888888 100%);
+    cursor: pointer;
+
+    .board-data-title {
+      color: white;
+      line-height: 26px;
+    }
+    .triangle-icon {
+      width: 0;
+      height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 7px solid white;
+      top: 9px;
+      right: 18px;
+      position: absolute;
+
+      &.open {
+        border-top: none;
+        border-bottom: 7px solid white;
+      }
+    }
+  }
+  .multi-vendors-menu {
+    position: absolute;
+    width: 263px;
+    height: 134px;
+    background-color: white;
+    z-index: 1;
+    top: 76px;
+    left: 8px;
+    border-radius: 4px;
+    box-shadow: 0 0 10px #666666;
+    padding: 14px 12px;
+
+    * {
+      -webkit-user-select: none; /* Chrome/Safari */
+      -moz-user-select: none; /* Firefox */
+      -ms-user-select: none; /* IE10+ */
+    }
+
+    > * {
+      margin-bottom: 14px;
+    }
+
+    :last-child {
+      margin-bottom: 0;
+    }
+
+    .option-row {
+      > * {
+        display: inline-block;
+      }
+    }
+
+    .title {
+      font-family: "omnes_attmedium_italic";
+      color: #077ab5;
+    }
+  }
+  .accordion-container {
+    position: absolute;
+    width: 100%;
+    top: 78px;
+    bottom: 71px;
+    overflow-y: auto;
+  }
+  .button-container {
+    position: absolute;
+    width: 100%;
+    border-top: 2px solid #666;
+    bottom: 0px;
+    padding:15px 0px;
+  }
+  h1 {
+    color: white;
+    font-size: 18px;
+  }
+
+  h2 {
+    margin-left: 10px;
+  }
+  h4 {
+    font-size: 15px;
+  }
+  .panel-title .ng-scope {
+    cursor: pointer;
+  }
+
+  .accordion-section-title {
+    float: left;
+    margin-left: 5px;
+  }
+
+  div > label {
+    color:#333;
+  }
+
+  .panel-heading {
+    background: #666666;
+    border-radius: 0;
+    margin-top: 0px;
+    overflow: hidden;
+    padding: 5px 15px 5px 8px;
+
+    a {
+      color: white;
+      font-family: 'Omnes_ATT Medium';
+    }
+  }
+
+  .panel {
+    border-radius: 0 !important;
+    border: none !important;
+    margin-top: 0px;
+    margin-bottom: 2px;
+    box-shadow: none;
+  }
+
+  .panel-body {
+    padding: 0px;
+
+    .section {
+      padding: 10px 10px 7px 10px;
+      border-top: 2px solid #666;
+      h4 {
+        font-size: 15px;
+        font-style: italic;
+        margin-top: 0px;
+        margin-bottom: 8px;
+      }
+      &:hover {
+        background-color: #CCC;
+      }
+      &>div {
+        margin-bottom: 8px;
+        height: 16px;
+        line-height: 16px;
+        color: #666;
+      }
+    }
+    .sub-section {
+      border-top: 1px solid #ccc;
+      padding: 10px;
+      h4 {
+        font-style: italic;
+      }
+      &>label, &>div{
+        display: block;
+      }
+
+      &.parameters {
+        .box {
+          margin-bottom: 6px;
+          color: #666;
+        }
+        label {
+          font-family: "Omnes_ATT Medium";
+          margin-bottom: 0;
+        }
+      }
+    }
+    .sub-section {
+      &:hover {
+        background-color: #ccc;
+      }
+      &:first-child{
+        border-top: none;
+      }
+    }
+
+    .section.parameters {
+      height: 0px;
+      padding: 0px;
+    }
+    .section.disabledSubPane:hover {
+      background-color: #FFF;
+    }
+    .section.audience {
+      &>div{
+        height: 32px;
+        margin-bottom: 0px;
+        vertical-align: middle;
+        .campaign-icon {
+          display: inline-block;
+          width: 28px;
+          height: 22px;
+          margin: 4px 5px 10px 3px;
+          vertical-align: top;
+
+          &.male,
+          &.female {
+            margin-left:5px;
+            margin-right:0px;
+          }
+          &.income {
+            margin-left:5px;
+            margin-right:3px;
+          }
+        }
+        &>div {
+          display: inline-block;
+          position: relative;
+          width: 200px;
+          height: 22px;
+          line-height: 22px;
+          margin:4px 0px 10px 0px;
+          vertical-align: middle;
+        }
+
+        &>div>div {
+          position: relative;
+          top: -2px;
+          width: 220px;
+          line-height: 12px;
+          height: 12px;
+          vertical-align: middle;
+          display: inline-block;
+          &.align-top {
+            vertical-align: top;
+            top: -4px;
+            line-height: 15px;
+          }
+        }
+      }
+    }
+    accordion-heading + .section {
+      border: none;
+    }
+    .panel-body .section h4 {
+      font-family: 'omnes_attmedium_italic';
+      margin-top:0px;
+    }
+  }
+
+  .sectionTitle {
+    font-size: 1.6 rem;
+    background-color: #666;
+    color: #FFF;
+  }
+
+  .button-container {
+    border-top: 2px solid #666;
+    bottom: 0px;
+    padding:15px 0px;
+    position: absolute;
+    width: 100%;
+  }
+}
+
+#campaignBegin,
+#standaloneCampaignBegin {
+  tr.ng-scope button, thead tr th button {
+    border:1px solid #666666;
+    height:26px;
+    padding:4px 10px;
+    opacity:1;
+    color:#666666;
+    border-radius:3px;
+    font-family:"Omnes_ATT Regular";
+    font-size:12px;
+  }
+  input {
+    width:115px;
+    margin-left:10px;
+    margin-right:10px;
+  }
+  tr.ng-scope:hover button:not([disabled]) {
+    padding: 2px 8px;
+    border:3px solid #067ab4;
+    background-color:white;
+    color:#666666;
+  }
+  .dropdown-menu {
+    padding:6px 8px;
+    border-radius:8px;
+    background-color:#efefef;
+    width:300px;
+    thead button {
+      height:28px;
+    }
+    span {
+      line-height:1.5;
+    }
+    li:nth-child(2) {
+      display:none;
+    }
+  }
+  table {
+    border-collapse:separate;
+    border-spacing:2px;
+    th, td {
+      width:44px;
+    }
+    thead tr:first-child {
+      .pull-left, .pull-right {
+        color:white;
+        background-color:#666666;
+        width:100%;
+      }
+      th:nth-child(2) button {
+        color:white;
+        background-color:#333333;
+        text-transform:uppercase;
+      }
+    }
+    thead tr:nth-child(2) {
+      height:18px;
+      vertical-align:bottom;
+      font-size:11px;
+    }
+  }
+  .glyphicon {
+    font-size:12px;
+  }
+  thead button i {
+    vertical-align:top;
+    line-height:16px;
+  }
+  th.text-center {
+    font-weight:normal;
+  }
+  tr.ng-scope button.selected-week {
+    background-color:#067ab4;
+    color:white;
+  }
+  tr.ng-scope button.unselected-week {
+    background-color:#efefef;
+    border:1px solid #bbbbbb;
+  }
+}
+#campaignDates {
+  input.week-length {
+    width: 54px;
+    height: 30px;
+  }
+  .week-length {
+    margin-right:5px;
+    margin-left:5px;
+  }
+  .form-group {
+    padding-top: 10px;
+    padding-bottom: 20px;
+    margin-bottom: 0px;
+  }
+}
+
+.error-message-container {
+  border: 1px solid #B30A3C;
+  color: #B30A3C;
+  font-family: 'Omnes_ATT Medium';
+  font-size: 14px;
+  background-color: white;
+  padding: 12px 23px 12px 23px;
+  background-image: url("../images/red-arrow.svg");
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: -1px 14px;
+  p {
+    padding:0;
+    margin:0;
+  }
+}
+
+
+#target-audience {
+  width:700px;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top: 10px;
+
+  > *,
+  .audience-row > * {
+    display:inline-block;
+  }
+
+  .fields:not(.disabled) .secondary.overlay, .householdAge:not(.disabled) .overlay {
+    display:none;
+  }
+
+  .fields {
+    position:relative;
+    min-height:430px;
+    width:345px;
+    vertical-align: top;
+
+    &:first-child  {
+      margin-right:10px;
+  	}
+  }
+
+  .reset {
+    cursor:pointer;
+    margin-top:5px;
+  }
+
+  .audience-row {
+    margin:0px 0px 20px;
+    position:relative;
+    text-align:left;
+
+    .title {
+      padding-top:6px;
+    }
+
+    .choice {
+      display:inline-block;
+      text-align:left;
+    }
+
+    .description {
+      width:10px;
+      margin-left:15px;
+      padding:3px 0px;
+    }
+
+    .dropdown {
+      .choice {
+        width:230px;
+      }
+    }
+
+    .dropdown-menu {
+      width:252px;
+    }
+
+    .range {
+      & .choice {
+        width:160px;
+      }
+
+      & .dropdown-menu {
+        width:182px;
+      }
+    }
+
+    &.household-age  {
+			margin-top:-10px;
+	    .description {
+	      margin-left:44px;
+			}
+  	}
+  }
+
+  .form-group {
+  	margin-top: 10px;
+  	line-height: 30px;
+
+  	& > * {
+  	  vertical-align: middle;
+  	  line-height: 30px;
+  	}
+  }
+  .audience-title {
+       margin-bottom:0px;
+  }
+}
+
+  label[for=includeSecondary] {
+    margin-left:40px;
+  }
+
+.campaign-template {
+  height: calc(~"100% - 116px");
+}
+
+#audience-parameters {
+  &.fields {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+	div > label {
+      font-family:"Omnes_ATT Regular";
+      display: block;
+      margin-bottom:5px;
+	}
+
+  span {
+	  &.spend {
+	    margin-right:3px;
+      }
+
+	  &.uom {
+		  margin-left:3px;
+		  color: #666666;
+		  line-height: 28px;
+	  }
+  }
+
+  .header {
+    margin-top:10px;
+    margin-left: 20px;
+    background: none;
+
+    div {
+      display: inline-block;
+    }
+    .title {
+      width: 25%;
+    }
+    .param-note {
+      font-style: italic;
+      width: 73%;
+      text-align: right;
+    }
+  }
+
+	.form-control {
+	  display:inline;
+	}
+
+	input {
+	  width:115px;
+	  text-align:right;
+
+	  &.currency {
+	    text-align:left;
+	  }
+	}
+
+  .list-grid {
+    li {
+      &:first-child {
+        border-top: 1px solid #bbb;
+      }
+      list-style: none;
+      border-bottom: 1px solid #bbb;
+      height: 40px;
+    }
+  }
+
+  #sortable {
+    margin-top: -128px;
+    margin-left: 2px;
+    margin-right: 2px;
+
+    > li {
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+      cursor: move;
+
+      div {
+        display: inline-block;
+      }
+      .rank-box {
+        vertical-align: top;
+        width: 12%;
+        height: 100%;
+
+        .rank {
+          width: 38px;
+          height: 24px;
+          line-height: 22px;
+          margin-top: 6px;
+          margin-left: 22px;
+          border-radius: 3px;
+          border: 1px solid #bbb;
+          color: #888;
+          text-align: center;
+        }
+
+        .active {
+          background-color: #067AB4;
+          color: white;
+          border-color: #067AB4;
+        }
+      }
+      .parameter-body {
+        input {
+          height: 30px;
+          border-radius: 3px;
+        }
+        .param-name {
+          font-family: "Omnes_ATT Medium";
+          width: 175px;
+          text-align: right;
+          margin-right: 14px;
+        }
+
+        input {
+          font-family: "Omnes_ATT Regular";
+        }
+
+        .dropdown {
+          top: -2px;
+
+          .caret {
+            top: 3px;
+          }
+
+          .selected {
+            font-family: "Omnes_ATT Regular", "Helvetica Neue", sans-serif;
+          }
+        }
+
+        .suffix {
+          margin-left: 5px;
+        }
+        vertical-align: top;
+        width: 78%;
+      }
+      .draggable-icon {
+        width: 6%;
+        height: 100%;
+        background: url('../images/icons/drag-icon.svg') no-repeat 0;
+        background-size: 30px;
+        background-position: right;
+      }
+
+      .dropdown-menu {
+        width: 54px;
+      }
+
+      list-style: none;
+      background: none;
+      height: 36px;
+      line-height:36px;
+      color: #333333;
+      background-color: #ddd;
+      margin-bottom: 4px;
+    }
+    .drag-placeholder {
+      border: 1px dashed #666666;
+      height: 36px;
+      background-color: white;
+      opacity: 0.4;
+    }
+  }
+}
+
+.export-section {
+  max-height: ~"calc(100% - 40px)";
+  max-width: ~"calc(100% - 280px)";
+  text-align: right;
+  padding: 6px 6px 0;
+
+  .export-csv {
+    background-color: #999999;
+    border: none;
+    padding: 3px 10px;
+    font-size: 12px;
+    border-radius: 4px;
+
+    &:hover {
+      background-color: #888888;
+    }
+  }
+}

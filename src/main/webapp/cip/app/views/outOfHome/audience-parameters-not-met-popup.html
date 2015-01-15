@@ -1,0 +1,23 @@
+<div class="modal-popup parameters-not-met" ng-show="modal.show">
+	<div class="message-body">
+		<div class="header">
+			<div class="modal-icon"/>
+			<div class="text">{{modal.headerText}}</div>
+		</div>
+		<div class="modal-text">{{modal.message}}</div>
+		<div class="param-container">
+			<div class="params-not-met" ng-repeat="param in modal.parameters">
+				<div class="label">{{param.label}}</div>
+				<div ng-switch="param.type">
+					<div class="value" ng-switch-when="number">{{param.value|number}}</div>
+					<div class="value" ng-switch-default>{{param.value}}</div>
+				</div>
+			</div>
+		</div>
+		<div class="suffix-text">{{modal.suffix}}</div>
+		<div class="buttons-container">
+			<div class="button go-back"><a ng-click="goBack()" class="btn cancel" role="button">Go Back</a></div></div>
+			<div class="button continue"><a ng-click="continue()" class="btn btn-lg btn-primary" role="button">Continue</a></div>
+		</div>
+	</div>
+</div>

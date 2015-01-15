@@ -1,0 +1,136 @@
+<div id="campaign-sidebar" class="sidebar">
+	<div class="color-bar orange"></div>
+	<div class="header">
+		<h3>THE PLAN</h3>
+	</div>
+	<div class="multi-vendors-dropdown" ng-click="boardDataSelections.toggleOpenState()">
+		<span class="board-data-title">Board Data</span>
+		<span class="triangle-icon" ng-class="{open: boardDataSelections.isOpened}"/>
+	</div>
+	<div class="multi-vendors-menu" ng-show="boardDataSelections.isOpened">
+		<div class="vendors">
+			<div class="title">Vendors/Operators</div>
+			<div class="option-row">
+				<input id="clearChannel" type="checkbox" name="clearChannel" class="regular-checkbox ng-pristine ng-valid" ng-model="boardDataSelections.vendors.clearChannel">
+				<label for="clearChannel" class="custom-checkbox">Clear Channel</label>
+			</div>
+		</div>
+		<div class="groups">
+			<div class="title">Groups</div>
+			<div class="option-row">
+				<input id="attBillboards" type="checkbox" name="attBillboards" class="regular-checkbox ng-pristine ng-valid" ng-model="boardDataSelections.groups.attBillboards">
+				<label for="attBillboards" class="custom-checkbox">AT&T Billboards</label>
+			</div>
+		</div>
+	</div>
+	<div class='accordion-container'>
+		<accordion close-others="oneAtATime">
+			<accordion-group heading="Campaign Details" is-open="strip.isDetailOpen">
+				<accordion-heading ng-click="strip.isDetailOpen=!strip.isDetailOpen">
+					<div>
+						<div class='expand-collapse-icons' ng-class="{'collapse': strip.isDetailOpen, 'expand': !strip.isDetailOpen}"></div>
+						<span class='accordion-section-title'> Campaign Details </span>
+					</div>
+				</accordion-heading>
+				<div class="dates-section section" ng-click='switchTabNfocusField(0, "Campaign Dates")'>
+					<h4>Campaign Dates</h4>
+					<div>
+						{{form.numWeeks}} week campaign
+					</div>
+					<div ng-show='campaignDetailErrorsService.errors.emptyStartDate.show||campaignDetailErrorsService.errors.incorrectStartDateRange.show'>
+						<span style="color:#B30A3c;">*</span>Campaign Start date is required.
+					</div>
+					<div ng-show='!campaignDetailErrorsService.errors.emptyStartDate.show&&!campaignDetailErrorsService.errors.incorrectStartDateRange.show'>
+						<span>{{form.startDate | date:dateFormat}} - {{form.endDate | date:dateFormat}} </span>
+						<span class='pull-right' ng-show="form.flexibleBy">flex by {{form.flexByWeeks}} week</span>
+					</div>
+				</div>
+				<div class="boards-section section" ng-click='switchTabNfocusField(0, "Campaign Boards")'>
+					<h4>Board Type</h4>
+					<div ng-show='campaignDetailErrorsService.errors.noBoardsSelected.show'>
+						<span style="color:#B30A3c;">*</span>Board Types are required.
+					</div>
+					<div ng-show="form.staticBulletins">
+						Static Bulletins
+					</div>
+					<div ng-show="form.digitalBulletins">
+						Digital Bulletins
+					</div>
+				</div>
+				<div class="budget-section section" ng-show="!!form.budgetValue" ng-click='switchTabNfocusField(0, "Campaign Budget")'>
+					<h4>Campaign Budget</h4>
+					Budget:  {{form.budgetValue|currency}}
+				</div>
+			</accordion-group>
+			<accordion-group heading="Locations" is-open="strip.isLocationsOpen">
+				<accordion-heading ng-click="strip.isLocationsOpen=!strip.isLocationsOpen">
+					<div>
+						<div class='expand-collapse-icons'
+						ng-class="{'collapse': strip.isLocationsOpen, 'expand': !strip.isLocationsOpen}"></div>
+						<span class='accordion-section-title'> Location </span>
+					</div>
+				</accordion-heading>
+				<div class="location-list">
+					<div class="nav">
+						<ul>
+							<!--Angular class logic to select the locations record on hover of on the fence-->
+							<li data-ng-repeat="area in cipMap.areas | sortSidebarListFilter"
+							class="{{'loc-'+ area.properties.layerType.toLowerCase() +'-hover'}} {{area.hovered ?
+							'loc-' + area.properties.layerType.toLowerCase()  : ''}}"
+							ng-class="{'loc-hover': area.hovered}"
+							ng-mouseover="area.hovered = true;cipMap.areas.index=$index;cipMap.areas.fromStrip = true; cipMap.hoveredLayer={isHovered:true,layer:area}"
+							ng-mouseout="area.hovered = false; cipMap.hoveredLayer={isHovered:false,layer:area}">
+								<a ng-hide="area.properties.layerType.toLowerCase()==='zip'" ng-click="cipMap.clickedSeletedArea(area);"><b>{{area.properties.layerType.toLowerCase() | layerNameFormatter }}:</b> {{area.properties.name + (area.properties.areaTypeName? ', ' + area.properties.areaTypeName : '' )}}</a>
+								<a ng-show="area.properties.layerType.toLowerCase()==='zip'" ng-click="cipMap.clickedSeletedArea(area);"><b>{{area.properties.layerType.toLowerCase() | layerNameFormatter }}:</b> {{area.properties.layerCode}}</a>
+							</li>
+							<li data-ng-hide="cipMap.areas.length">
+								<span>*</span> At least one location is required.
+							</li>
+						</ul>
+					</div>
+				</div>
+			</accordion-group>
+			<accordion-group heading="POI" is-open="cipMap.isPOIOpen">
+				<accordion-heading ng-click="cipMap.isPOIOpen=!cipMap.isPOIOpen">
+					<div>
+						<div class='expand-collapse-icons'
+						ng-class="{'collapse': cipMap.isPOIOpen, 'expand': !cipMap.isPOIOpen}"></div>
+						<span class='accordion-section-title'> POI </span>
+					</div>
+				</accordion-heading>
+				<div class="poi-selected-list">
+					<div class="nav">
+						<ul>
+							<!--Angular class logic to select the locations record on hover of on the fence-->
+							<li data-ng-repeat="poi in poiModel.selectedPois"
+							ng-mouseover="poiModel.hovered = poi"
+							ng-click="cipMap.clickedSelectedPOI(poi);"
+							ng-mouseout="poiModel.hovered = null">
+								<div class="place-container">
+									<div class="place-icon place-pin"></div>
+									<div class="place-details">
+										<div class="place-title"
+										ng-bind="poi.title"></div>
+										<div class="place-address" ng-bind="poi.address | abbreviationFilter: 35"></div>
+										<div ng-show="poi.city" class="place-address"
+										ng-bind="poi.city + ' '  + poi.state + ',' + poi.zip"></div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</accordion-group>
+			<accordion-group heading="Audience" is-open="strip.isAudienceOpen">
+				<div ng-include="'views/outOfHome/audience-sidebar.html'" ng-controller="audienceCtrl"></div>
+			</accordion-group>
+		</accordion>
+	</div>
+	<div class="button-container">
+		<a ng-click='openConfirmation($event)' ng-class="{rollover: cancelTooltip.isOpen}" class="cancel left btn">Cancel</a>
+		<div cip-tooltip show="cancelTooltip.isOpen" classes="'cancel-confirmation'" hide-On-Outside-Click="true"><div>Leaving the Campaign Planning Tool without saving changes?</div><div class='button' ng-click="cancelCampaign()">OK</div></div>
+		<button ng-class="{'btn btn-primary  right': true, disabled : submitButtonDisabled() }" ng-click="submitCampaign()"  role="button">
+			Build Campaign
+		</button>
+	</div>
+</div>

@@ -1,0 +1,81 @@
+.hard-width{
+	#header{
+		max-width:~"calc(100% - 280px)";
+	}	
+}
+
+#header{
+	.header-gradient;
+	
+	.branding{
+		height:50px;
+
+		.logo{
+			margin-top:4px;
+		}
+	}
+
+	&.login{
+		background:#fff;
+		max-width: 100%;
+
+		.logo-globe{
+			float:right;
+			margin-top:20px;
+		}
+	}
+}
+
+
+
+
+/*********************************************************************************************************************
+* Neal's Additions
+*********************************************************************************************************************/
+
+
+
+
+
+
+// NOT SURE WHERE THIS IS USED ??
+#firstVerticalLine {
+	position:absolute;
+	left:57px;
+	top:5px;
+}
+
+#exportToExcel,
+#exportToPDF{
+	position:absolute;
+	left:0px;
+	top:15px;
+	width:49%;
+	bottom:0px;
+}
+
+#collapsedRightContainer{
+	position:absolute;
+	right:0px;
+	width:280px;
+	bottom:0px;
+	height:30px;
+	background-color:#333333;
+}
+
+.collapsedBarStyle{
+	position:absolute;
+	top:0px;
+	left:-55px;
+	width:auto;
+	bottom:0px;
+    font-size:1.6rem;
+}
+
+#saveIconDownArrow,
+#shareIconDownArrow{
+	position:absolute;
+	left:45px;
+	top:22px;
+	z-index:21;
+}

@@ -1,0 +1,155 @@
+<div class="layered-nav">
+    <ul class="nav nav-tabs nav-tabs-default">
+        <li data-ng-repeat="tab in wizardTabs.tabs"
+            ng-class="{'active':wizardTabs.selected === $index , 'disabled':wizardTabs.tabs[$index].disabled}"
+            ng-click="changeTab($index)">
+            <a ng-bind="tab.name"></a>
+        </li>
+        <li class="text">Only enter the information that matters most.</li>
+    </ul>
+
+    <div class="secondary-nav">
+        <ul class="nav nav-tabs nav-tabs-secondary">
+            <li data-ng-repeat="secondaryTab in wizardTabs.tabs[wizardTabs.selected].secondaryTabs.tabs"
+                ng-click="selectSecondaryTab($index)"
+                ng-class="wizardTabs.tabs[wizardTabs.selected].secondaryTabs.selected == $index? 'active': ' '">
+                <a ng-bind="secondaryTab.name"></a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="tertiary-nav strip-container" ng-show="wizardTabs.tabs[wizardTabs.selected].secondaryTabs.tabs.length > 0">
+
+        <div class="search-box">
+            <form class="form-search" name="searchForm">
+                <div class="checkboxes"
+                     ng-show="wizardTabs.tabs[wizardTabs.selected].secondaryTabs.selected == 1">
+                    <div>
+                        <input id="withMetro" type="checkbox" ng-model="withMetro">
+                        <label for="withMetro">
+                            Metro Areas
+                            <span>50K+ people</span>
+                        </label>
+                    </div>
+                    <div>
+                        <input id="withMicro" type="checkbox" ng-model="withMicro">
+                        <label for="withMicro">
+                            Micro Areas
+                            <span>10K - 50K people</span>
+                        </label>
+                    </div>
+                </div>
+
+
+                <input
+                        focus-when="$parent.focusStates['Map Search']"
+                        type="text"
+                        placeholder="{{' - Type to search ' + ((wizardTabs.tabs[wizardTabs.selected].secondaryTabs.tabs[wizardTabs.tabs[wizardTabs.selected].secondaryTabs.selected].name.toLowerCase()) | layerNamePluralFormatter)  + ' -'}}"
+                        cip-focus-async="searchPlaceHolder(false, $event);"
+                        cip-blur-async="searchPlaceHolder(true, $event);"
+                        typeahead="result.name as result for result in queryAreas($viewValue)| filter:result "
+                        name="search"
+                        required=""
+
+                        class="search_box_input"
+                        id="ooh-strip-search"
+
+                        typeahead-min-length="0"
+                        typeahead-template-url="search-box-template.html"
+                        typeahead-loading="loadingLocations"
+                        typeahead-wait-ms="1000"
+                        typeahead-on-select="searchResultSelected($item)"
+                        ng-model="search"
+                        ng-class="{'error-input':invalidCounty!==''}"
+                        letter-Only-Input=""
+                        ng-hide="wizardTabs.tabs[wizardTabs.selected].secondaryTabs.selected == 3"/>
+                <input
+                        type="text"
+                        name="zipSearch"
+                        placeholder="Type to enter ZIP Codes"
+                        cip-focus-async="zipSearchPlaceHolder(false, $event);"
+                        cip-blur-async="zipSearchPlaceHolder(true, $event);"
+                        zip-search=""
+                        ng-model="zipSearch"
+                        id="ooh-strip-zip-search"
+                        required
+                        ng-class="{'error-input':checkWrongZips()}"
+                        areas ="areas"
+                        on-select="getZipAreas(zips)"
+                        ng-show="wizardTabs.tabs[wizardTabs.selected].secondaryTabs.selected == 3"/>
+
+                <div ng-include class="search-box-icon" src="'clearSearch'"
+                     ng-show="searchDirty && wizardTabs.tabs[wizardTabs.selected].secondaryTabs.selected != 3"
+                     ng-click="clearSearch(true)">
+                </div>
+                <div ng-include class="search-box-icon hover-index" src="'grayDropDown'"
+                     ng-hide="searchDirty || wizardTabs.tabs[wizardTabs.selected].secondaryTabs.selected == 3 "
+                     ng-click="dropdown()">
+                </div>
+                <div ng-include class="search-box-icon" src="'clearSearch'"
+                     ng-show="searchDirty  && wizardTabs.tabs[wizardTabs.selected].secondaryTabs.selected == 3"
+                     ng-click="clearZipSearch(true)">
+                </div>
+                <div style="clear:both;height:12px"></div>
+                <div >
+                    <div class="poi-drag-box">
+                        <div class="poi-icon drag"   cip-draggable ng-hide="areas.length===0"></div>
+                        <div class="arrow-left" ng-hide="areas.length===0"></div>
+                        <span ng-hide="areas.length===0">Drag to place POI on map</span>
+                    </div>
+                    <input  ng-hide="areas.length===0"
+                            focus-when="$parent.focusStates['Map Search']"
+                            type="text"
+                            name="poi-search"
+                            required
+                            ng-model="poiSearch"
+
+                            placeholder="- Type to search POIs -"
+                            cip-focus-async="poiSearchPlaceHolder(false, $event);"
+                            cip-blur-async="poiSearchPlaceHolder(true, $event);"
+
+                            />
+                </div>
+                <div style="position: relative" >
+                    <div class="poi-drag-box" ng-show="areas.length===0">
+                        <div class="poi-icon poi-icon-disabled" ng-show="areas.length===0" ></div>
+                    </div>
+                    <input  type="text" ng-show="areas.length===0" placeholder="- Type to search POIs -" disabled />
+                    <div ng-include class="search-box-icon strip-dropdown-triangle-container" src="'grayDropDown'">
+                    </div>
+                </div>
+                <search-error-popup duplicates="duplicatedZips" exists="prevExistZips" not-founds="notFoundZips" incorrect-lengths="incorrectLengthZips" check-wrong-zips="checkWrongZips" invalid-county="invalidCounty"></search-error-popup>
+            </form>
+
+        </div>
+
+    </div>
+</div>
+<script type="text/ng-template" id="search-box-template.html">
+
+    <a>
+        <span class="ooh_strip_search_result">{{match.model.name}}</span> <span class="ooh_strip_search_result_type">{{match.model.areaType}}</span>
+    </a>
+
+
+</script>
+
+<script type="text/ng-template" id="template/zip-search/search-error-popup.html">
+    <div class="search-error-popup" ng-show="invalidCounty!=='' || checkWrongZips()">
+        <div class="zip-error" ng-show="checkWrongZips()">
+            <h5>Please check your ZIP Codes.</h5>
+            <ul>
+                <li ng-if="duplicates.length>0">Duplicates:{{duplicates.toString()}}</li>
+                <li ng-if="exists.length>0">Previously added to the map: {{exists.toString()}}</li>
+                <li ng-if="notFounds.length>0">Not found: {{notFounds.toString()}}</li>
+                <li ng-if="incorrectLengths.length>0">One of the zip codes entered seems to be incomplete.  Please verify and reenter the full zip code: {{incorrectLengths.toString()}}</li>
+            </ul>
+        </div>
+        <div class="county-error" ng-show="invalidCounty!==''">
+            <h5>Please check your county</h5>
+            <ul>
+                 <li>Not a valid county:{{invalidCounty}}</li>
+            </ul>
+        </div>
+    </div>
+</script>

@@ -1,0 +1,6 @@
+<ol class="breadcrumb">
+	<li ng-repeat="key in order" ng-class="{active : $last}">
+		<a ng-if="!$last" ng-href="{{breadcrumb[key].route}}" title="{{breadcrumb[key].displayName}}">{{breadcrumb[key].displayName}}</a>
+		<span ng-if="$last">{{breadcrumb[key].displayName}}</a>
+	</li>
+</ol>

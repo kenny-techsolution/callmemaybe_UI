@@ -1,0 +1,7 @@
+<div id="campaign-body" class="fill">
+	<!--TEAM SONIC-->
+    <strip class="campaign-strip" current-template="strip.currentTemplate" tab-selected="strip.selectedTabIndex"
+		   area-selected="cipMap.areaSelected(area)" cbsa-sub-types="cipMap.cbsaSubTypes" areas="cipMap.areas"
+		   selected-secondary-tab="cipMap.selectedSecondaryTab" clear-search-box-request="strip.clearSearchBoxRequest"></strip>
+	<div class="form-horizontal campaign-template" ng-include="strip.currentTemplate" ng-class="{'cip-map-position-fix':selectedTabIndex==1}"></div>
+</div>

@@ -1,0 +1,152 @@
+body[data-page-id='login-page']{
+	background-color: #fafafa;
+	overflow-y: auto;
+
+	#header{
+		border-bottom:1px solid #ccc;
+	}
+
+	.container{
+		h1{
+			font-size: 48px;
+		}
+
+		.content-box{
+
+			&.blue,
+			&.blue-9,
+			&.grey{
+				padding-top:30px;
+			}
+
+			input{
+				border-radius: 6px !important;
+
+				&[type='checkbox'] + label{
+					height:24px;
+					padding-top:3px;
+					padding-left:33px;
+				}
+			}
+
+			.error-container{
+				margin-bottom:15px;
+				text-align: center;
+			}
+		}
+
+		hr{
+			border-top-color:#666;
+		}
+
+	}
+
+	.details{
+		font-size:20px;
+	}
+
+	.content-box{
+		background:#FFF repeat 0px 0px;
+		border-radius: 6px;
+
+
+		&.blue,
+		&.blue-9{
+			background-image:url(../images/layout/bg-blue-repeat.png);
+			color:#fff;
+
+			a{
+				color:#fff;
+			}
+		}
+
+		&.blue-9{
+			background-image:url(../images/layout/bg-blue-repeat-90.png);
+		}
+
+		&.grey{
+			background-image:url(../images/layout/bg-grey-repeat.png);
+			color:#666;
+		}
+	}
+}
+
+#login{
+	background: url(../images/login/bg_login_hero.jpg) no-repeat top center;
+	margin-top:28px;
+	padding-top:280px;
+	
+	h1{
+		margin-bottom:24px;
+		margin-top:0px;
+	}
+
+	.form-login{
+		.form-group{
+			overflow: hidden; // not exactly sure why i needed to add this
+
+			.forgot-password{
+				padding-top:3px;
+			}
+		}
+
+		.input-group{
+			input{
+				border:none !important;
+				box-shadow: none !important;
+				color: @blue;
+
+				border-bottom-left-radius: 0px !important;
+     		border-top-left-radius: 0px !important; 
+			}
+
+			.input-group-addon{
+				background: #fff;
+				border: 0;
+			}
+		}
+
+		a{
+			display: block;
+		}
+	}
+
+	.login-uid{
+		background-color: @blue;
+		font-size:16px;
+		margin-top:54px;
+		padding-top:14px;
+
+		span{
+			background-color: @blue;
+			border-radius: 48px;
+			display: block;
+			height:48px;
+			padding-top:5px;
+			position:absolute;
+			text-align: center;
+			top:-38px;
+			left:50%;
+			right:50%;
+			margin:0px -24px 0px -24px;
+			width:48px;
+			z-index: 10;
+		}
+
+		p{
+			position: relative;
+			z-index: 20;
+		}
+		a{
+			color:#fff;
+			display: block;
+			font-size:25px;
+		}
+
+		.border-bottom-radius(6px);
+	}
+
+	.footer{
+		margin-top:14px;
+	}
+}

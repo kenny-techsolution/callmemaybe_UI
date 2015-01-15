@@ -1,0 +1,6 @@
+{
+    "directory": "app/bower_components",
+    "proxy": "http://${grunt.proxy.user}${grunt.proxy.password}${grunt.proxy.credentialSeparator}one.proxy.att.com:8080",
+    "https-proxy": "http://${grunt.proxy.user}${grunt.proxy.password}${grunt.proxy.credentialSeparator}one.proxy.att.com:8080" 
+}
+

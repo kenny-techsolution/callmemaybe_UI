@@ -1,0 +1,1952 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.2.3.v20131216-0430 Build &lt;4.2.3.v20131216-0430></property>
+    <xml-property name="externalMetadata">
+        <external-datamarts>
+            <datamart-node location="file:/Users/pierretessier/Documents/workspace/CIP/Data%20Objects/CIP-VA-DataObject.data">
+                <reference-elements>Data Source;</reference-elements>
+                <datamart xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+                    <property name="createdBy">Eclipse BIRT Designer Version 4.2.3.v20131216-0430 Build &lt;4.2.3.v20131216-0430></property>
+                    <list-property name="userProperties">
+                        <structure>
+                            <property name="name">134.dsVA.x</property>
+                            <property name="type">integer</property>
+                            <property name="isVisible">false</property>
+                        </structure>
+                        <structure>
+                            <property name="name">134.dsVA.y</property>
+                            <property name="type">integer</property>
+                            <property name="isVisible">false</property>
+                        </structure>
+                        <structure>
+                            <property name="name">134.dsVA.width</property>
+                            <property name="type">integer</property>
+                            <property name="isVisible">false</property>
+                        </structure>
+                        <structure>
+                            <property name="name">134.dsVA.height</property>
+                            <property name="type">integer</property>
+                            <property name="isVisible">false</property>
+                        </structure>
+                    </list-property>
+                    <property name="134.dsVA.x">10</property>
+                    <property name="134.dsVA.y">10</property>
+                    <property name="134.dsVA.width">150</property>
+                    <property name="134.dsVA.height">291</property>
+                    <list-property name="includeScripts">
+                        <property>json.min.js</property>
+                    </list-property>
+                    <data-sources>
+                        <script-data-source name="Data Source" id="2"/>
+                    </data-sources>
+                    <data-sets>
+                        <script-data-set name="dsVA" id="35">
+                            <list-property name="resultSetHints">
+                                <structure>
+                                    <property name="position">1</property>
+                                    <property name="name">age</property>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="position">2</property>
+                                    <property name="name">gender</property>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="position">3</property>
+                                    <property name="name">income</property>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="position">4</property>
+                                    <property name="name">ethnicity</property>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="position">5</property>
+                                    <property name="name">maritalStatus</property>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="position">6</property>
+                                    <property name="name">aoc-UU-Unknown</property>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="position">7</property>
+                                    <property name="name">aoc-UU-None</property>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="position">8</property>
+                                    <property name="name">aoc-UU-0-2</property>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="position">9</property>
+                                    <property name="name">aoc-UU-3-5</property>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="position">10</property>
+                                    <property name="name">aoc-UU-6-10</property>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="position">11</property>
+                                    <property name="name">aoc-UU-11-15</property>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="position">12</property>
+                                    <property name="name">aoc-UU-16-17</property>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="position">13</property>
+                                    <property name="name">aoc-Impr-Unknown</property>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="position">14</property>
+                                    <property name="name">aoc-Impr-None</property>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="position">15</property>
+                                    <property name="name">aoc-Impr-0-2</property>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="position">16</property>
+                                    <property name="name">aoc-Impr-3-5</property>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="position">17</property>
+                                    <property name="name">aoc-Impr-6-10</property>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="position">18</property>
+                                    <property name="name">aoc-Impr-11-15</property>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="position">19</property>
+                                    <property name="name">aoc-Impr-16-17</property>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="position">20</property>
+                                    <property name="name">uu</property>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="position">21</property>
+                                    <property name="name">impr</property>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="position">22</property>
+                                    <property name="name">fenceId</property>
+                                    <property name="dataType">string</property>
+                                </structure>
+                                <structure>
+                                    <property name="position">23</property>
+                                    <property name="name">day-of-week-UU-1</property>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="position">24</property>
+                                    <property name="name">day-of-week-UU-2</property>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="position">25</property>
+                                    <property name="name">day-of-week-UU-3</property>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="position">26</property>
+                                    <property name="name">day-of-week-UU-4</property>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="position">27</property>
+                                    <property name="name">day-of-week-UU-5</property>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="position">28</property>
+                                    <property name="name">day-of-week-UU-6</property>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="position">29</property>
+                                    <property name="name">day-of-week-UU-7</property>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="position">30</property>
+                                    <property name="name">day-of-week-Impr-1</property>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="position">31</property>
+                                    <property name="name">day-of-week-Impr-2</property>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="position">32</property>
+                                    <property name="name">day-of-week-Impr-3</property>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="position">33</property>
+                                    <property name="name">day-of-week-Impr-4</property>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="position">34</property>
+                                    <property name="name">day-of-week-Impr-5</property>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="position">35</property>
+                                    <property name="name">day-of-week-Impr-6</property>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="position">36</property>
+                                    <property name="name">day-of-week-Impr-7</property>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="position">37</property>
+                                    <property name="name">tod-daypart-UU-1</property>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="position">38</property>
+                                    <property name="name">tod-daypart-UU-2</property>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="position">39</property>
+                                    <property name="name">tod-daypart-UU-3</property>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="position">40</property>
+                                    <property name="name">tod-daypart-UU-4</property>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="position">41</property>
+                                    <property name="name">tod-daypart-UU-5</property>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="position">42</property>
+                                    <property name="name">tod-daypart-Impr-1</property>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="position">43</property>
+                                    <property name="name">tod-daypart-Impr-2</property>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="position">44</property>
+                                    <property name="name">tod-daypart-Impr-3</property>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="position">45</property>
+                                    <property name="name">tod-daypart-Impr-4</property>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="position">46</property>
+                                    <property name="name">tod-daypart-Impr-5</property>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="position">47</property>
+                                    <property name="name">variable-date-UU-1</property>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="position">48</property>
+                                    <property name="name">variable-date-UU-2</property>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="position">49</property>
+                                    <property name="name">variable-date-UU-3</property>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="position">50</property>
+                                    <property name="name">variable-date-UU-4</property>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="position">51</property>
+                                    <property name="name">variable-date-UU-5</property>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="position">52</property>
+                                    <property name="name">variable-date-UU-6</property>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="position">53</property>
+                                    <property name="name">variable-date-UU-7</property>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="position">54</property>
+                                    <property name="name">variable-date-UU-8</property>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="position">55</property>
+                                    <property name="name">variable-date-UU-9</property>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="position">56</property>
+                                    <property name="name">variable-date-UU-10</property>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="position">57</property>
+                                    <property name="name">variable-date-UU-11</property>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="position">58</property>
+                                    <property name="name">variable-date-UU-12</property>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="position">59</property>
+                                    <property name="name">variable-date-Impr-1</property>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="position">60</property>
+                                    <property name="name">variable-date-Impr-2</property>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="position">61</property>
+                                    <property name="name">variable-date-Impr-3</property>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="position">62</property>
+                                    <property name="name">variable-date-Impr-4</property>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="position">63</property>
+                                    <property name="name">variable-date-Impr-5</property>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="position">64</property>
+                                    <property name="name">variable-date-Impr-6</property>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="position">65</property>
+                                    <property name="name">variable-date-Impr-7</property>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="position">66</property>
+                                    <property name="name">variable-date-Impr-8</property>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="position">67</property>
+                                    <property name="name">variable-date-Impr-9</property>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="position">68</property>
+                                    <property name="name">variable-date-Impr-10</property>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="position">69</property>
+                                    <property name="name">variable-date-Impr-11</property>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="position">70</property>
+                                    <property name="name">variable-date-Impr-12</property>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="position">71</property>
+                                    <property name="name">zip-choropleth-uu</property>
+                                    <property name="dataType">string</property>
+                                </structure>
+                                <structure>
+                                    <property name="position">72</property>
+                                    <property name="name">zip-choropleth-impr</property>
+                                    <property name="dataType">string</property>
+                                </structure>
+                            </list-property>
+                            <list-property name="columnHints">
+                                <structure>
+                                    <property name="columnName">age</property>
+                                    <property name="analysis">measure</property>
+                                    <property name="indexColumn">false</property>
+                                    <property name="compressed">false</property>
+                                </structure>
+                                <structure>
+                                    <property name="columnName">gender</property>
+                                    <property name="analysis">measure</property>
+                                    <property name="indexColumn">false</property>
+                                    <property name="compressed">false</property>
+                                </structure>
+                                <structure>
+                                    <property name="columnName">income</property>
+                                    <property name="analysis">measure</property>
+                                    <property name="indexColumn">false</property>
+                                    <property name="compressed">false</property>
+                                </structure>
+                                <structure>
+                                    <property name="columnName">ethnicity</property>
+                                    <property name="analysis">measure</property>
+                                    <property name="indexColumn">false</property>
+                                    <property name="compressed">false</property>
+                                </structure>
+                                <structure>
+                                    <property name="columnName">maritalStatus</property>
+                                    <property name="analysis">measure</property>
+                                    <property name="indexColumn">false</property>
+                                    <property name="compressed">false</property>
+                                </structure>
+                                <structure>
+                                    <property name="columnName">aoc-UU-Unknown</property>
+                                    <property name="analysis">measure</property>
+                                    <property name="indexColumn">false</property>
+                                    <property name="compressed">false</property>
+                                </structure>
+                                <structure>
+                                    <property name="columnName">aoc-UU-None</property>
+                                    <property name="analysis">measure</property>
+                                    <property name="indexColumn">false</property>
+                                    <property name="compressed">false</property>
+                                </structure>
+                                <structure>
+                                    <property name="columnName">aoc-UU-0-2</property>
+                                    <property name="analysis">measure</property>
+                                    <property name="indexColumn">false</property>
+                                    <property name="compressed">false</property>
+                                </structure>
+                                <structure>
+                                    <property name="columnName">aoc-UU-3-5</property>
+                                    <property name="analysis">measure</property>
+                                    <property name="indexColumn">false</property>
+                                    <property name="compressed">false</property>
+                                </structure>
+                                <structure>
+                                    <property name="columnName">aoc-UU-6-10</property>
+                                    <property name="analysis">measure</property>
+                                    <property name="indexColumn">false</property>
+                                    <property name="compressed">false</property>
+                                </structure>
+                                <structure>
+                                    <property name="columnName">aoc-UU-11-15</property>
+                                    <property name="analysis">measure</property>
+                                    <property name="indexColumn">false</property>
+                                    <property name="compressed">false</property>
+                                </structure>
+                                <structure>
+                                    <property name="columnName">aoc-UU-16-17</property>
+                                    <property name="analysis">measure</property>
+                                    <property name="indexColumn">false</property>
+                                    <property name="compressed">false</property>
+                                </structure>
+                                <structure>
+                                    <property name="columnName">aoc-Impr-Unknown</property>
+                                    <property name="analysis">measure</property>
+                                    <property name="indexColumn">false</property>
+                                    <property name="compressed">false</property>
+                                </structure>
+                                <structure>
+                                    <property name="columnName">aoc-Impr-None</property>
+                                    <property name="analysis">measure</property>
+                                    <property name="indexColumn">false</property>
+                                    <property name="compressed">false</property>
+                                </structure>
+                                <structure>
+                                    <property name="columnName">aoc-Impr-0-2</property>
+                                    <property name="analysis">measure</property>
+                                    <property name="indexColumn">false</property>
+                                    <property name="compressed">false</property>
+                                </structure>
+                                <structure>
+                                    <property name="columnName">aoc-Impr-3-5</property>
+                                    <property name="analysis">measure</property>
+                                    <property name="indexColumn">false</property>
+                                    <property name="compressed">false</property>
+                                </structure>
+                                <structure>
+                                    <property name="columnName">aoc-Impr-6-10</property>
+                                    <property name="analysis">measure</property>
+                                    <property name="indexColumn">false</property>
+                                    <property name="compressed">false</property>
+                                </structure>
+                                <structure>
+                                    <property name="columnName">aoc-Impr-11-15</property>
+                                    <property name="analysis">measure</property>
+                                    <property name="indexColumn">false</property>
+                                    <property name="compressed">false</property>
+                                </structure>
+                                <structure>
+                                    <property name="columnName">aoc-Impr-16-17</property>
+                                    <property name="analysis">measure</property>
+                                    <property name="indexColumn">false</property>
+                                    <property name="compressed">false</property>
+                                </structure>
+                                <structure>
+                                    <property name="columnName">uu</property>
+                                    <property name="analysis">measure</property>
+                                    <property name="indexColumn">false</property>
+                                    <property name="compressed">false</property>
+                                </structure>
+                                <structure>
+                                    <property name="columnName">impr</property>
+                                    <property name="analysis">measure</property>
+                                    <property name="indexColumn">false</property>
+                                    <property name="compressed">false</property>
+                                </structure>
+                                <structure>
+                                    <property name="columnName">fenceId</property>
+                                    <property name="analysis">dimension</property>
+                                </structure>
+                                <structure>
+                                    <property name="columnName">day-of-week-UU-1</property>
+                                    <property name="analysis">measure</property>
+                                </structure>
+                                <structure>
+                                    <property name="columnName">day-of-week-UU-2</property>
+                                    <property name="analysis">measure</property>
+                                </structure>
+                                <structure>
+                                    <property name="columnName">day-of-week-UU-3</property>
+                                    <property name="analysis">measure</property>
+                                </structure>
+                                <structure>
+                                    <property name="columnName">day-of-week-UU-4</property>
+                                    <property name="analysis">measure</property>
+                                </structure>
+                                <structure>
+                                    <property name="columnName">day-of-week-UU-5</property>
+                                    <property name="analysis">measure</property>
+                                </structure>
+                                <structure>
+                                    <property name="columnName">day-of-week-UU-6</property>
+                                    <property name="analysis">measure</property>
+                                </structure>
+                                <structure>
+                                    <property name="columnName">day-of-week-UU-7</property>
+                                    <property name="analysis">measure</property>
+                                </structure>
+                                <structure>
+                                    <property name="columnName">day-of-week-Impr-1</property>
+                                    <property name="analysis">measure</property>
+                                </structure>
+                                <structure>
+                                    <property name="columnName">day-of-week-Impr-2</property>
+                                    <property name="analysis">measure</property>
+                                </structure>
+                                <structure>
+                                    <property name="columnName">day-of-week-Impr-3</property>
+                                    <property name="analysis">measure</property>
+                                </structure>
+                                <structure>
+                                    <property name="columnName">day-of-week-Impr-4</property>
+                                    <property name="analysis">measure</property>
+                                </structure>
+                                <structure>
+                                    <property name="columnName">day-of-week-Impr-5</property>
+                                    <property name="analysis">measure</property>
+                                </structure>
+                                <structure>
+                                    <property name="columnName">day-of-week-Impr-6</property>
+                                    <property name="analysis">measure</property>
+                                </structure>
+                                <structure>
+                                    <property name="columnName">day-of-week-Impr-7</property>
+                                    <property name="analysis">measure</property>
+                                </structure>
+                                <structure>
+                                    <property name="columnName">tod-daypart-UU-1</property>
+                                    <property name="analysis">measure</property>
+                                </structure>
+                                <structure>
+                                    <property name="columnName">tod-daypart-UU-2</property>
+                                    <property name="analysis">measure</property>
+                                </structure>
+                                <structure>
+                                    <property name="columnName">tod-daypart-UU-3</property>
+                                    <property name="analysis">measure</property>
+                                </structure>
+                                <structure>
+                                    <property name="columnName">tod-daypart-UU-4</property>
+                                    <property name="analysis">measure</property>
+                                </structure>
+                                <structure>
+                                    <property name="columnName">tod-daypart-UU-5</property>
+                                    <property name="analysis">measure</property>
+                                </structure>
+                                <structure>
+                                    <property name="columnName">tod-daypart-Impr-1</property>
+                                    <property name="analysis">measure</property>
+                                </structure>
+                                <structure>
+                                    <property name="columnName">tod-daypart-Impr-2</property>
+                                    <property name="analysis">measure</property>
+                                </structure>
+                                <structure>
+                                    <property name="columnName">tod-daypart-Impr-3</property>
+                                    <property name="analysis">measure</property>
+                                </structure>
+                                <structure>
+                                    <property name="columnName">tod-daypart-Impr-4</property>
+                                    <property name="analysis">measure</property>
+                                </structure>
+                                <structure>
+                                    <property name="columnName">tod-daypart-Impr-5</property>
+                                    <property name="analysis">measure</property>
+                                </structure>
+                                <structure>
+                                    <property name="columnName">variable-date-UU-1</property>
+                                    <property name="analysis">measure</property>
+                                </structure>
+                                <structure>
+                                    <property name="columnName">variable-date-UU-2</property>
+                                    <property name="analysis">measure</property>
+                                </structure>
+                                <structure>
+                                    <property name="columnName">variable-date-UU-3</property>
+                                    <property name="analysis">measure</property>
+                                </structure>
+                                <structure>
+                                    <property name="columnName">variable-date-UU-4</property>
+                                    <property name="analysis">measure</property>
+                                </structure>
+                                <structure>
+                                    <property name="columnName">variable-date-UU-5</property>
+                                    <property name="analysis">measure</property>
+                                </structure>
+                                <structure>
+                                    <property name="columnName">variable-date-UU-6</property>
+                                    <property name="analysis">measure</property>
+                                </structure>
+                                <structure>
+                                    <property name="columnName">variable-date-UU-7</property>
+                                    <property name="analysis">measure</property>
+                                </structure>
+                                <structure>
+                                    <property name="columnName">variable-date-UU-8</property>
+                                    <property name="analysis">measure</property>
+                                </structure>
+                                <structure>
+                                    <property name="columnName">variable-date-UU-9</property>
+                                    <property name="analysis">measure</property>
+                                </structure>
+                                <structure>
+                                    <property name="columnName">variable-date-UU-10</property>
+                                    <property name="analysis">measure</property>
+                                </structure>
+                                <structure>
+                                    <property name="columnName">variable-date-UU-11</property>
+                                    <property name="analysis">measure</property>
+                                </structure>
+                                <structure>
+                                    <property name="columnName">variable-date-UU-12</property>
+                                    <property name="analysis">measure</property>
+                                </structure>
+                                <structure>
+                                    <property name="columnName">variable-date-Impr-1</property>
+                                    <property name="analysis">measure</property>
+                                </structure>
+                                <structure>
+                                    <property name="columnName">variable-date-Impr-2</property>
+                                    <property name="analysis">measure</property>
+                                </structure>
+                                <structure>
+                                    <property name="columnName">variable-date-Impr-3</property>
+                                    <property name="analysis">measure</property>
+                                </structure>
+                                <structure>
+                                    <property name="columnName">variable-date-Impr-4</property>
+                                    <property name="analysis">measure</property>
+                                </structure>
+                                <structure>
+                                    <property name="columnName">variable-date-Impr-5</property>
+                                    <property name="analysis">measure</property>
+                                </structure>
+                                <structure>
+                                    <property name="columnName">variable-date-Impr-6</property>
+                                    <property name="analysis">measure</property>
+                                </structure>
+                                <structure>
+                                    <property name="columnName">variable-date-Impr-7</property>
+                                    <property name="analysis">measure</property>
+                                </structure>
+                                <structure>
+                                    <property name="columnName">variable-date-Impr-8</property>
+                                    <property name="analysis">measure</property>
+                                </structure>
+                                <structure>
+                                    <property name="columnName">variable-date-Impr-9</property>
+                                    <property name="analysis">measure</property>
+                                </structure>
+                                <structure>
+                                    <property name="columnName">variable-date-Impr-10</property>
+                                    <property name="analysis">measure</property>
+                                </structure>
+                                <structure>
+                                    <property name="columnName">variable-date-Impr-11</property>
+                                    <property name="analysis">measure</property>
+                                </structure>
+                                <structure>
+                                    <property name="columnName">variable-date-Impr-12</property>
+                                    <property name="analysis">measure</property>
+                                </structure>
+                                <structure>
+                                    <property name="columnName">zip-choropleth-uu</property>
+                                    <property name="analysis">dimension</property>
+                                </structure>
+                                <structure>
+                                    <property name="columnName">zip-choropleth-impr</property>
+                                    <property name="analysis">dimension</property>
+                                </structure>
+                            </list-property>
+                            <list-property name="parameters"/>
+                            <structure name="cachedMetaData">
+                                <list-property name="resultSet">
+                                    <structure>
+                                        <property name="position">1</property>
+                                        <property name="name">age</property>
+                                        <property name="dataType">integer</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="position">2</property>
+                                        <property name="name">gender</property>
+                                        <property name="dataType">integer</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="position">3</property>
+                                        <property name="name">income</property>
+                                        <property name="dataType">integer</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="position">4</property>
+                                        <property name="name">ethnicity</property>
+                                        <property name="dataType">integer</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="position">5</property>
+                                        <property name="name">maritalStatus</property>
+                                        <property name="dataType">integer</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="position">6</property>
+                                        <property name="name">aoc-UU-Unknown</property>
+                                        <property name="dataType">integer</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="position">7</property>
+                                        <property name="name">aoc-UU-None</property>
+                                        <property name="dataType">integer</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="position">8</property>
+                                        <property name="name">aoc-UU-0-2</property>
+                                        <property name="dataType">integer</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="position">9</property>
+                                        <property name="name">aoc-UU-3-5</property>
+                                        <property name="dataType">integer</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="position">10</property>
+                                        <property name="name">aoc-UU-6-10</property>
+                                        <property name="dataType">integer</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="position">11</property>
+                                        <property name="name">aoc-UU-11-15</property>
+                                        <property name="dataType">integer</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="position">12</property>
+                                        <property name="name">aoc-UU-16-17</property>
+                                        <property name="dataType">integer</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="position">13</property>
+                                        <property name="name">aoc-Impr-Unknown</property>
+                                        <property name="dataType">integer</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="position">14</property>
+                                        <property name="name">aoc-Impr-None</property>
+                                        <property name="dataType">integer</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="position">15</property>
+                                        <property name="name">aoc-Impr-0-2</property>
+                                        <property name="dataType">integer</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="position">16</property>
+                                        <property name="name">aoc-Impr-3-5</property>
+                                        <property name="dataType">integer</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="position">17</property>
+                                        <property name="name">aoc-Impr-6-10</property>
+                                        <property name="dataType">integer</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="position">18</property>
+                                        <property name="name">aoc-Impr-11-15</property>
+                                        <property name="dataType">integer</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="position">19</property>
+                                        <property name="name">aoc-Impr-16-17</property>
+                                        <property name="dataType">integer</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="position">20</property>
+                                        <property name="name">uu</property>
+                                        <property name="dataType">integer</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="position">21</property>
+                                        <property name="name">impr</property>
+                                        <property name="dataType">integer</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="position">22</property>
+                                        <property name="name">fenceId</property>
+                                        <property name="dataType">string</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="position">23</property>
+                                        <property name="name">day-of-week-UU-1</property>
+                                        <property name="dataType">integer</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="position">24</property>
+                                        <property name="name">day-of-week-UU-2</property>
+                                        <property name="dataType">integer</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="position">25</property>
+                                        <property name="name">day-of-week-UU-3</property>
+                                        <property name="dataType">integer</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="position">26</property>
+                                        <property name="name">day-of-week-UU-4</property>
+                                        <property name="dataType">integer</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="position">27</property>
+                                        <property name="name">day-of-week-UU-5</property>
+                                        <property name="dataType">integer</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="position">28</property>
+                                        <property name="name">day-of-week-UU-6</property>
+                                        <property name="dataType">integer</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="position">29</property>
+                                        <property name="name">day-of-week-UU-7</property>
+                                        <property name="dataType">integer</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="position">30</property>
+                                        <property name="name">day-of-week-Impr-1</property>
+                                        <property name="dataType">integer</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="position">31</property>
+                                        <property name="name">day-of-week-Impr-2</property>
+                                        <property name="dataType">integer</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="position">32</property>
+                                        <property name="name">day-of-week-Impr-3</property>
+                                        <property name="dataType">integer</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="position">33</property>
+                                        <property name="name">day-of-week-Impr-4</property>
+                                        <property name="dataType">integer</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="position">34</property>
+                                        <property name="name">day-of-week-Impr-5</property>
+                                        <property name="dataType">integer</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="position">35</property>
+                                        <property name="name">day-of-week-Impr-6</property>
+                                        <property name="dataType">integer</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="position">36</property>
+                                        <property name="name">day-of-week-Impr-7</property>
+                                        <property name="dataType">integer</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="position">37</property>
+                                        <property name="name">tod-daypart-UU-1</property>
+                                        <property name="dataType">integer</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="position">38</property>
+                                        <property name="name">tod-daypart-UU-2</property>
+                                        <property name="dataType">integer</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="position">39</property>
+                                        <property name="name">tod-daypart-UU-3</property>
+                                        <property name="dataType">integer</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="position">40</property>
+                                        <property name="name">tod-daypart-UU-4</property>
+                                        <property name="dataType">integer</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="position">41</property>
+                                        <property name="name">tod-daypart-UU-5</property>
+                                        <property name="dataType">integer</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="position">42</property>
+                                        <property name="name">tod-daypart-Impr-1</property>
+                                        <property name="dataType">integer</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="position">43</property>
+                                        <property name="name">tod-daypart-Impr-2</property>
+                                        <property name="dataType">integer</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="position">44</property>
+                                        <property name="name">tod-daypart-Impr-3</property>
+                                        <property name="dataType">integer</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="position">45</property>
+                                        <property name="name">tod-daypart-Impr-4</property>
+                                        <property name="dataType">integer</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="position">46</property>
+                                        <property name="name">tod-daypart-Impr-5</property>
+                                        <property name="dataType">integer</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="position">47</property>
+                                        <property name="name">variable-date-UU-1</property>
+                                        <property name="dataType">integer</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="position">48</property>
+                                        <property name="name">variable-date-UU-2</property>
+                                        <property name="dataType">integer</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="position">49</property>
+                                        <property name="name">variable-date-UU-3</property>
+                                        <property name="dataType">integer</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="position">50</property>
+                                        <property name="name">variable-date-UU-4</property>
+                                        <property name="dataType">integer</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="position">51</property>
+                                        <property name="name">variable-date-UU-5</property>
+                                        <property name="dataType">integer</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="position">52</property>
+                                        <property name="name">variable-date-UU-6</property>
+                                        <property name="dataType">integer</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="position">53</property>
+                                        <property name="name">variable-date-UU-7</property>
+                                        <property name="dataType">integer</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="position">54</property>
+                                        <property name="name">variable-date-UU-8</property>
+                                        <property name="dataType">integer</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="position">55</property>
+                                        <property name="name">variable-date-UU-9</property>
+                                        <property name="dataType">integer</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="position">56</property>
+                                        <property name="name">variable-date-UU-10</property>
+                                        <property name="dataType">integer</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="position">57</property>
+                                        <property name="name">variable-date-UU-11</property>
+                                        <property name="dataType">integer</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="position">58</property>
+                                        <property name="name">variable-date-UU-12</property>
+                                        <property name="dataType">integer</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="position">59</property>
+                                        <property name="name">variable-date-Impr-1</property>
+                                        <property name="dataType">integer</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="position">60</property>
+                                        <property name="name">variable-date-Impr-2</property>
+                                        <property name="dataType">integer</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="position">61</property>
+                                        <property name="name">variable-date-Impr-3</property>
+                                        <property name="dataType">integer</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="position">62</property>
+                                        <property name="name">variable-date-Impr-4</property>
+                                        <property name="dataType">integer</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="position">63</property>
+                                        <property name="name">variable-date-Impr-5</property>
+                                        <property name="dataType">integer</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="position">64</property>
+                                        <property name="name">variable-date-Impr-6</property>
+                                        <property name="dataType">integer</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="position">65</property>
+                                        <property name="name">variable-date-Impr-7</property>
+                                        <property name="dataType">integer</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="position">66</property>
+                                        <property name="name">variable-date-Impr-8</property>
+                                        <property name="dataType">integer</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="position">67</property>
+                                        <property name="name">variable-date-Impr-9</property>
+                                        <property name="dataType">integer</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="position">68</property>
+                                        <property name="name">variable-date-Impr-10</property>
+                                        <property name="dataType">integer</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="position">69</property>
+                                        <property name="name">variable-date-Impr-11</property>
+                                        <property name="dataType">integer</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="position">70</property>
+                                        <property name="name">variable-date-Impr-12</property>
+                                        <property name="dataType">integer</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="position">71</property>
+                                        <property name="name">zip-choropleth-uu</property>
+                                        <property name="dataType">string</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="position">72</property>
+                                        <property name="name">zip-choropleth-impr</property>
+                                        <property name="dataType">string</property>
+                                    </structure>
+                                </list-property>
+                            </structure>
+                            <property name="dataSource">Data Source</property>
+                            <method name="open"><![CDATA[if (params["paramDataSource"].value == 0) {
+//	var uri = new Packages.java.net.URI("http://69.220.28.195/va/dashboard/location/1/time/201405m");
+	var uri = new Packages.java.net.URI(params["paramURL"].value);
+
+	//Separate the host name or ip address from the URL
+	var orgURL = params["paramURL"].value;
+	if (orgURL.indexOf("//") > 1) {
+		hostName = orgURL.substring(orgURL.indexOf("//")+2);
+	} else {
+		hostName = orgURL;
+	}
+	if (hostName.indexOf("/") > 1) {
+		hostName = hostName.substring(0, hostName.indexOf("/"));
+	}
+
+	childAgeArray = new Array();
+
+	var con = uri.toURL().openConnection();
+	con.setRequestProperty("Accept", "*/*");
+	con.setRequestProperty("Accept-Encoding", "gzip,deflate,sdch");
+	con.setRequestProperty("Content-Type", "application/json");
+	//con.setRequestProperty("Host", "172.16.4.230:8079");
+	con.setRequestProperty("Host", hostName);	
+	con.setRequestProperty("User-Agent", "curl/7.30.0");
+	con.setRequestProperty("Content-Language", "en-US");
+	con.setDoInput(true);
+	con.setDoOutput(true);
+
+	con.setRequestMethod("POST");
+	var query = params["queryString"].value;
+	var writer = new Packages.java.io.OutputStreamWriter(con.getOutputStream(), "UTF-8");
+	writer.write(query);
+	writer.flush();
+	writer.close();
+	
+	if (con.getResponseCode() != 200) {
+		throw "Error from Data Service: " + con.getResponseCode();
+	}
+
+	var inStr = con.getInputStream();
+	var scr = new Packages.java.util.Scanner(inStr).useDelimiter("\\A");
+	var jsonStr = scr.next();
+	inStr.close();
+	scr.close();
+	con.disconnect();
+
+	jsonObject = JSON.parse(jsonStr);
+
+
+} else {
+
+	importPackage(Packages.java.io);
+	importPackage(Packages.javax.activation);
+	//var con = new FileDataSource("C:\\ATTData\\ATTData.txt");
+	var con = new FileDataSource(params["paramDataFile"].value);
+	var inStr = con.getInputStream();
+	var scr = new Packages.java.util.Scanner(inStr).useDelimiter("\\A");
+	var jsonStr = scr.next();
+
+	jsonObject = JSON.parse(jsonStr);
+}
+	
+childAgeArray = new Array();
+dowUU = new Array();
+dowImpr = new Array();
+todUU = new Array();
+todImpr = new Array();
+wddDistrUU = new Array();
+wddDistrImpr = new Array();
+
+outerCount = 0;
+innerCount = 0;]]></method>
+                            <method name="fetch"><![CDATA[if (outerCount < jsonObject.length) {
+	if (innerCount >= jsonObject[outerCount].aggr.length) {
+		innerCount = 0;
+		outerCount++;
+		if (outerCount >= jsonObject.length)
+			return false;
+	}
+} else {
+	return false;
+}
+
+var ljsonObject = jsonObject[outerCount];
+
+//Assign the values from array elements to the Data set columns.	
+row["age"] = ljsonObject.aggr[innerCount][0];
+row["gender"] = ljsonObject.aggr[innerCount][1];
+row["income"] = ljsonObject.aggr[innerCount][2];
+row["ethnicity"] = ljsonObject.aggr[innerCount][3];
+row["maritalStatus"] = ljsonObject.aggr[innerCount][4];
+
+childAgeArray = ljsonObject.aggr[innerCount][5];
+if (childAgeArray[0] != 0) {
+	row["aoc-UU-UnKnown"] = ljsonObject.aggr[innerCount][6];
+	row["aoc-Impr-UnKnown"] = ljsonObject.aggr[innerCount][7];
+}
+if (childAgeArray[2] != 0) {
+	row["aoc-UU-0-2"] = ljsonObject.aggr[innerCount][6];
+	row["aoc-Impr-0-2"] = ljsonObject.aggr[innerCount][7];
+}
+if (childAgeArray[3] != 0) {
+	row["aoc-UU-3-5"] = ljsonObject.aggr[innerCount][6];
+	row["aoc-Impr-3-5"] = ljsonObject.aggr[innerCount][7];
+}
+if (childAgeArray[4] != 0) {
+	row["aoc-UU-6-10"] = ljsonObject.aggr[innerCount][6];
+	row["aoc-Impr-6-10"] = ljsonObject.aggr[innerCount][7];
+}
+if (childAgeArray[5] != 0) {
+	row["aoc-UU-11-15"] = ljsonObject.aggr[innerCount][6];
+	row["aoc-Impr-11-15"] = ljsonObject.aggr[innerCount][7];
+}
+if (childAgeArray[6] != 0) {
+	row["aoc-UU-16-17"] = ljsonObject.aggr[innerCount][6];
+	row["aoc-Impr-16-17"] = ljsonObject.aggr[innerCount][7];
+}
+	
+row["uu"] = ljsonObject.aggr[innerCount][6];
+row["impr"] = ljsonObject.aggr[innerCount][7];
+	
+row["fenceId"] = ljsonObject.key[5];
+
+dowUU = ljsonObject.aggr[innerCount][8];
+row["day-of-week-UU-1"] = dowUU[0];
+row["day-of-week-UU-2"] = dowUU[1];
+row["day-of-week-UU-3"] = dowUU[2];
+row["day-of-week-UU-4"] = dowUU[3];
+row["day-of-week-UU-5"] = dowUU[4];
+row["day-of-week-UU-6"] = dowUU[5];
+row["day-of-week-UU-7"] = dowUU[6];
+
+dowImpr = ljsonObject.aggr[innerCount][9];
+row["day-of-week-Impr-1"] = dowImpr[0];
+row["day-of-week-Impr-2"] = dowImpr[1];
+row["day-of-week-Impr-3"] = dowImpr[2];
+row["day-of-week-Impr-4"] = dowImpr[3];
+row["day-of-week-Impr-5"] = dowImpr[4];
+row["day-of-week-Impr-6"] = dowImpr[5];
+row["day-of-week-Impr-7"] = dowImpr[6];
+
+todUU = ljsonObject.aggr[innerCount][10];
+row["tod-daypart-UU-1"] = todUU[0];
+row["tod-daypart-UU-2"] = todUU[1];
+row["tod-daypart-UU-3"] = todUU[2];
+row["tod-daypart-UU-4"] = todUU[3];
+row["tod-daypart-UU-5"] = todUU[4];
+
+todImpr = ljsonObject.aggr[innerCount][11];
+
+row["tod-daypart-Impr-1"] = todImpr[0];
+row["tod-daypart-Impr-2"] = todImpr[1];
+row["tod-daypart-Impr-3"] = todImpr[2];
+row["tod-daypart-Impr-4"] = todImpr[3];
+row["tod-daypart-Impr-5"] = todImpr[4];
+
+wddDistrUU = ljsonObject.aggr[innerCount][12];
+row["variable-date-UU-1"] = wddDistrUU[0];
+row["variable-date-UU-2"] = wddDistrUU[1];
+row["variable-date-UU-3"] = wddDistrUU[2];
+row["variable-date-UU-4"] = wddDistrUU[3];
+row["variable-date-UU-5"] = wddDistrUU[4];
+row["variable-date-UU-6"] = wddDistrUU[5];
+row["variable-date-UU-7"] = wddDistrUU[6];
+row["variable-date-UU-8"] = wddDistrUU[7];
+row["variable-date-UU-9"] = wddDistrUU[8];
+row["variable-date-UU-10"] = wddDistrUU[9];
+row["variable-date-UU-11"] = wddDistrUU[10];
+row["variable-date-UU-12"] = wddDistrUU[11];
+	
+wddDistrImpr = ljsonObject.aggr[innerCount][13];
+row["variable-date-Impr-1"] = wddDistrImpr[0];
+row["variable-date-Impr-2"] = wddDistrImpr[1];
+row["variable-date-Impr-3"] = wddDistrImpr[2];
+row["variable-date-Impr-4"] = wddDistrImpr[3];
+row["variable-date-Impr-5"] = wddDistrImpr[4];
+row["variable-date-Impr-6"] = wddDistrImpr[5];
+row["variable-date-Impr-7"] = wddDistrImpr[6];
+row["variable-date-Impr-8"] = wddDistrImpr[7];
+row["variable-date-Impr-9"] = wddDistrImpr[8];
+row["variable-date-Impr-10"] = wddDistrImpr[9];
+row["variable-date-Impr-11"] = wddDistrImpr[10];
+row["variable-date-Impr-12"] = wddDistrImpr[11];
+
+row["zip-choropleth-uu"] = JSON.stringify(ljsonObject.aggr[innerCount][14]);
+row["zip-choropleth-impr"] = JSON.stringify(ljsonObject.aggr[innerCount][15])
+	
+innerCount++;
+
+return true;]]></method>
+                        </script-data-set>
+                    </data-sets>
+                    <parameters>
+                        <scalar-parameter name="queryString" id="4">
+                            <property name="valueType">static</property>
+                            <property name="dataType">string</property>
+                            <property name="distinct">true</property>
+                            <simple-property-list name="defaultValue">
+                                <value type="constant">[{"fenceId":"atlanta001","timeCellId":"201405m"}]</value>
+                            </simple-property-list>
+                            <list-property name="selectionList"/>
+                            <property name="paramType">simple</property>
+                            <property name="controlType">text-box</property>
+                            <structure name="format">
+                                <property name="category">Unformatted</property>
+                            </structure>
+                        </scalar-parameter>
+                        <scalar-parameter name="paramDataSource" id="257">
+                            <text-property name="promptText">Get the Data from :</text-property>
+                            <property name="valueType">static</property>
+                            <property name="sortBy">value</property>
+                            <property name="sortDirection">asc</property>
+                            <property name="dataType">string</property>
+                            <property name="distinct">true</property>
+                            <simple-property-list name="defaultValue">
+                                <value type="constant">0</value>
+                            </simple-property-list>
+                            <list-property name="selectionList">
+                                <structure>
+                                    <property name="value">0</property>
+                                    <property name="label">Web Service</property>
+                                </structure>
+                                <structure>
+                                    <property name="value">1</property>
+                                    <property name="label">Text File</property>
+                                </structure>
+                            </list-property>
+                            <property name="paramType">simple</property>
+                            <property name="controlType">list-box</property>
+                            <property name="mustMatch">false</property>
+                            <property name="fixedOrder">false</property>
+                            <structure name="format">
+                                <property name="category">Unformatted</property>
+                            </structure>
+                        </scalar-parameter>
+                        <scalar-parameter name="paramDataFile" id="258">
+                            <text-property name="promptText">Provide the fully qualified path to the data file</text-property>
+                            <property name="valueType">static</property>
+                            <property name="dataType">string</property>
+                            <property name="distinct">true</property>
+                            <simple-property-list name="defaultValue">
+                                <value type="constant">/Users/pierretessier/Documents/workspace/CIP/data/ATTData-va.txt</value>
+                            </simple-property-list>
+                            <list-property name="selectionList"/>
+                            <property name="paramType">simple</property>
+                            <property name="controlType">text-box</property>
+                            <structure name="format">
+                                <property name="category">Unformatted</property>
+                            </structure>
+                        </scalar-parameter>
+                        <scalar-parameter name="paramURL" id="259">
+                            <text-property name="promptText">Enter the Web Service URL</text-property>
+                            <property name="valueType">static</property>
+                            <property name="dataType">string</property>
+                            <property name="distinct">true</property>
+                            <simple-property-list name="defaultValue">
+                                <value type="constant">http://172.16.4.230:8079/cip-services/va/dashboard</value>
+                            </simple-property-list>
+                            <list-property name="selectionList"/>
+                            <property name="paramType">simple</property>
+                            <property name="controlType">text-box</property>
+                            <structure name="format">
+                                <property name="category">Unformatted</property>
+                            </structure>
+                        </scalar-parameter>
+                    </parameters>
+                    <property name="linkedDataModels">
+                        <linked-data-model name="Visitor Analysis" id="134">
+                            <property name="aliasDataSets">
+                                <alias-data-set name="dsVA" id="256">
+                                    <property name="originDataSet">dsVA</property>
+                                </alias-data-set>
+                            </property>
+                            <property name="categories">
+                                <category name="VA" id="181">
+                                    <property name="categoryColumns">
+                                        <category-column name="age" id="182">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">age</property>
+                                        </category-column>
+                                        <category-column name="gender" id="183">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">gender</property>
+                                        </category-column>
+                                        <category-column name="income" id="184">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">income</property>
+                                        </category-column>
+                                        <category-column name="ethnicity" id="185">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">ethnicity</property>
+                                        </category-column>
+                                        <category-column name="maritalStatus" id="186">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">maritalStatus</property>
+                                        </category-column>
+                                        <category-column name="aoc-UU-Unknown" id="187">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">aoc-UU-Unknown</property>
+                                        </category-column>
+                                        <category-column name="aoc-UU-None" id="188">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">aoc-UU-None</property>
+                                        </category-column>
+                                        <category-column name="aoc-UU-0-2" id="189">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">aoc-UU-0-2</property>
+                                        </category-column>
+                                        <category-column name="aoc-UU-3-5" id="190">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">aoc-UU-3-5</property>
+                                        </category-column>
+                                        <category-column name="aoc-UU-6-10" id="191">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">aoc-UU-6-10</property>
+                                        </category-column>
+                                        <category-column name="aoc-UU-11-15" id="192">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">aoc-UU-11-15</property>
+                                        </category-column>
+                                        <category-column name="aoc-UU-16-17" id="193">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">aoc-UU-16-17</property>
+                                        </category-column>
+                                        <category-column name="aoc-Impr-Unknown" id="194">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">aoc-Impr-Unknown</property>
+                                        </category-column>
+                                        <category-column name="aoc-Impr-None" id="195">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">aoc-Impr-None</property>
+                                        </category-column>
+                                        <category-column name="aoc-Impr-0-2" id="196">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">aoc-Impr-0-2</property>
+                                        </category-column>
+                                        <category-column name="aoc-Impr-3-5" id="197">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">aoc-Impr-3-5</property>
+                                        </category-column>
+                                        <category-column name="aoc-Impr-6-10" id="198">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">aoc-Impr-6-10</property>
+                                        </category-column>
+                                        <category-column name="aoc-Impr-11-15" id="199">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">aoc-Impr-11-15</property>
+                                        </category-column>
+                                        <category-column name="aoc-Impr-16-17" id="200">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">aoc-Impr-16-17</property>
+                                        </category-column>
+                                        <category-column name="uu" id="201">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">uu</property>
+                                        </category-column>
+                                        <category-column name="impr" id="202">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">impr</property>
+                                        </category-column>
+                                        <category-column name="fenceId" id="203">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">fenceId</property>
+                                        </category-column>
+                                        <category-column name="day-of-week-UU-1" id="204">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">day-of-week-UU-1</property>
+                                        </category-column>
+                                        <category-column name="day-of-week-UU-2" id="205">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">day-of-week-UU-2</property>
+                                        </category-column>
+                                        <category-column name="day-of-week-UU-3" id="206">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">day-of-week-UU-3</property>
+                                        </category-column>
+                                        <category-column name="day-of-week-UU-4" id="207">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">day-of-week-UU-4</property>
+                                        </category-column>
+                                        <category-column name="day-of-week-UU-5" id="208">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">day-of-week-UU-5</property>
+                                        </category-column>
+                                        <category-column name="day-of-week-UU-6" id="209">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">day-of-week-UU-6</property>
+                                        </category-column>
+                                        <category-column name="day-of-week-UU-7" id="210">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">day-of-week-UU-7</property>
+                                        </category-column>
+                                        <category-column name="day-of-week-Impr-1" id="211">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">day-of-week-Impr-1</property>
+                                        </category-column>
+                                        <category-column name="day-of-week-Impr-2" id="212">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">day-of-week-Impr-2</property>
+                                        </category-column>
+                                        <category-column name="day-of-week-Impr-3" id="213">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">day-of-week-Impr-3</property>
+                                        </category-column>
+                                        <category-column name="day-of-week-Impr-4" id="214">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">day-of-week-Impr-4</property>
+                                        </category-column>
+                                        <category-column name="day-of-week-Impr-5" id="215">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">day-of-week-Impr-5</property>
+                                        </category-column>
+                                        <category-column name="day-of-week-Impr-6" id="216">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">day-of-week-Impr-6</property>
+                                        </category-column>
+                                        <category-column name="day-of-week-Impr-7" id="217">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">day-of-week-Impr-7</property>
+                                        </category-column>
+                                        <category-column name="tod-daypart-UU-1" id="218">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">tod-daypart-UU-1</property>
+                                        </category-column>
+                                        <category-column name="tod-daypart-UU-2" id="219">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">tod-daypart-UU-2</property>
+                                        </category-column>
+                                        <category-column name="tod-daypart-UU-3" id="220">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">tod-daypart-UU-3</property>
+                                        </category-column>
+                                        <category-column name="tod-daypart-UU-4" id="221">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">tod-daypart-UU-4</property>
+                                        </category-column>
+                                        <category-column name="tod-daypart-UU-5" id="222">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">tod-daypart-UU-5</property>
+                                        </category-column>
+                                        <category-column name="tod-daypart-Impr-1" id="223">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">tod-daypart-Impr-1</property>
+                                        </category-column>
+                                        <category-column name="tod-daypart-Impr-2" id="224">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">tod-daypart-Impr-2</property>
+                                        </category-column>
+                                        <category-column name="tod-daypart-Impr-3" id="225">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">tod-daypart-Impr-3</property>
+                                        </category-column>
+                                        <category-column name="tod-daypart-Impr-4" id="226">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">tod-daypart-Impr-4</property>
+                                        </category-column>
+                                        <category-column name="tod-daypart-Impr-5" id="227">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">tod-daypart-Impr-5</property>
+                                        </category-column>
+                                        <category-column name="variable-date-UU-1" id="228">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">variable-date-UU-1</property>
+                                        </category-column>
+                                        <category-column name="variable-date-UU-2" id="229">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">variable-date-UU-2</property>
+                                        </category-column>
+                                        <category-column name="variable-date-UU-3" id="230">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">variable-date-UU-3</property>
+                                        </category-column>
+                                        <category-column name="variable-date-UU-4" id="231">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">variable-date-UU-4</property>
+                                        </category-column>
+                                        <category-column name="variable-date-UU-5" id="232">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">variable-date-UU-5</property>
+                                        </category-column>
+                                        <category-column name="variable-date-UU-6" id="233">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">variable-date-UU-6</property>
+                                        </category-column>
+                                        <category-column name="variable-date-UU-7" id="234">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">variable-date-UU-7</property>
+                                        </category-column>
+                                        <category-column name="variable-date-UU-8" id="235">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">variable-date-UU-8</property>
+                                        </category-column>
+                                        <category-column name="variable-date-UU-9" id="236">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">variable-date-UU-9</property>
+                                        </category-column>
+                                        <category-column name="variable-date-UU-10" id="237">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">variable-date-UU-10</property>
+                                        </category-column>
+                                        <category-column name="variable-date-UU-11" id="238">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">variable-date-UU-11</property>
+                                        </category-column>
+                                        <category-column name="variable-date-UU-12" id="239">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">variable-date-UU-12</property>
+                                        </category-column>
+                                        <category-column name="variable-date-Impr-1" id="240">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">variable-date-Impr-1</property>
+                                        </category-column>
+                                        <category-column name="variable-date-Impr-2" id="241">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">variable-date-Impr-2</property>
+                                        </category-column>
+                                        <category-column name="variable-date-Impr-3" id="242">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">variable-date-Impr-3</property>
+                                        </category-column>
+                                        <category-column name="variable-date-Impr-4" id="243">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">variable-date-Impr-4</property>
+                                        </category-column>
+                                        <category-column name="variable-date-Impr-5" id="244">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">variable-date-Impr-5</property>
+                                        </category-column>
+                                        <category-column name="variable-date-Impr-6" id="245">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">variable-date-Impr-6</property>
+                                        </category-column>
+                                        <category-column name="variable-date-Impr-7" id="246">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">variable-date-Impr-7</property>
+                                        </category-column>
+                                        <category-column name="variable-date-Impr-8" id="247">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">variable-date-Impr-8</property>
+                                        </category-column>
+                                        <category-column name="variable-date-Impr-9" id="248">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">variable-date-Impr-9</property>
+                                        </category-column>
+                                        <category-column name="variable-date-Impr-10" id="249">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">variable-date-Impr-10</property>
+                                        </category-column>
+                                        <category-column name="variable-date-Impr-11" id="250">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">variable-date-Impr-11</property>
+                                        </category-column>
+                                        <category-column name="variable-date-Impr-12" id="251">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">variable-date-Impr-12</property>
+                                        </category-column>
+                                        <category-column name="zip-choropleth-uu" id="252">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">zip-choropleth-uu</property>
+                                        </category-column>
+                                        <category-column name="zip-choropleth-impr" id="253">
+                                            <property name="aliasDataSet">Visitor Analysis/dsVA</property>
+                                            <property name="resultSetColumnName">zip-choropleth-impr</property>
+                                        </category-column>
+                                        <category-column name="age-text" id="265">
+                                            <expression name="expression" type="javascript">if(dataSetRow["age"]==1) {'18-23'}&#13;
+else if (dataSetRow["age"]==2) {'24-29'}&#13;
+else if (dataSetRow["age"]==3) {'30-39'}&#13;
+else if (dataSetRow["age"]==4) {'40-49'}&#13;
+else if (dataSetRow["age"]==5) {'50-59'}&#13;
+else if (dataSetRow["age"]==6) {'60-69'}&#13;
+else if (dataSetRow["age"]==7) {'70+'}&#13;
+else if (dataSetRow["age"]==8) {'All'}&#13;
+else {'Unknown'}</expression>
+                                            <property name="dataType">string</property>
+                                            <property name="horizontalAlign">left</property>
+                                        </category-column>
+                                        <category-column name="gender-text" id="266">
+                                            <expression name="expression" type="javascript">if(dataSetRow["gender"]==1) {'Male'}&#13;
+else if (dataSetRow["gender"]==2) {'Female'}&#13;
+else if (dataSetRow["gender"]==3) {'All'}&#13;
+else {'Unknown'}</expression>
+                                            <property name="dataType">string</property>
+                                            <property name="horizontalAlign">left</property>
+                                        </category-column>
+                                        <category-column name="income-text" id="267">
+                                            <expression name="expression" type="javascript">if(dataSetRow["income"]==1) {'$0-20K'}&#13;
+else if (dataSetRow["income"]==2) {'$20-40K'}&#13;
+else if (dataSetRow["income"]==3) {'$40-75K'}&#13;
+else if (dataSetRow["income"]==4) {'$75-125K'}&#13;
+else if (dataSetRow["income"]==5) {'$125K+'}&#13;
+else {'Unknown'}</expression>
+                                            <property name="dataType">string</property>
+                                            <property name="horizontalAlign">left</property>
+                                        </category-column>
+                                        <category-column name="ethnicity-text" id="268">
+                                            <expression name="expression" type="javascript">if(dataSetRow["ethnicity"]==1) {'Caucasian'}&#13;
+else if (dataSetRow["ethnicity"]==2) {'Hispanic'}&#13;
+else if (dataSetRow["ethnicity"]==3) {'East Asian'}&#13;
+else if (dataSetRow["ethnicity"]==4) {'South Asian'}&#13;
+else if (dataSetRow["ethnicity"]==5) {'African'}&#13;
+else if (dataSetRow["ethnicity"]==6) {'Other'}&#13;
+else {'Unknown'}</expression>
+                                            <property name="dataType">string</property>
+                                            <property name="horizontalAlign">left</property>
+                                        </category-column>
+                                        <category-column name="maritalStatus-text" id="269">
+                                            <expression name="expression" type="javascript">if(dataSetRow["maritalStatus"]==1) {'Single'}&#13;
+else if (dataSetRow["maritalStatus"]==2) {'Married'}&#13;
+else if (dataSetRow["maritalStatus"]==3) {'All'}&#13;
+else {'Unknown'}</expression>
+                                            <property name="dataType">string</property>
+                                            <property name="horizontalAlign">left</property>
+                                        </category-column>
+                                    </property>
+                                </category>
+                            </property>
+                            <property name="pushDown">true</property>
+                        </linked-data-model>
+                    </property>
+                </datamart>
+            </datamart-node>
+        </external-datamarts>
+    </xml-property>
+    <property name="units">in</property>
+    <method name="initialize"><![CDATA[//reportContext.setPersistentGlobalVariable("testglobal", "test global string");]]></method>
+    <method name="beforeFactory"><![CDATA[var dataSource = reportContext.getDesignHandle().findDataSource("Data Source");
+dataSource.setProperty("datamartURL", "Data Objects/" + params["dataFileName"].value);]]></method>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">auto layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <list-property name="libraries">
+        <structure>
+            <property name="fileName">/ThemesReportItems3.rptlibrary</property>
+            <property name="namespace">ThemesReportItems3</property>
+        </structure>
+    </list-property>
+    <parameters>
+        <scalar-parameter name="dataFileName" id="288">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">CIP-VA-DataObject</value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <data-mart-data-source name="Data Source" id="23">
+            <property name="datamartURL">Data Objects/CIP-VA-DataObject</property>
+            <property name="accessType">latest</property>
+            <list-property name="paramBindings">
+                <structure>
+                    <property name="paramName">queryString</property>
+                    <simple-property-list name="expression">
+                        <value type="constant">"[{\"fenceId\":\"cch-0001\",\"timeCellId\":\"201401m\"},{\"fenceId\":\"cch-0001\",\"timeCellId\":\"201402m\"},{\"fenceId\":\"cch-0002\",\"timeCellId\":\"201402m\"}]";</value>
+                    </simple-property-list>
+                </structure>
+                <structure>
+                    <property name="paramName">paramDataFile</property>
+                    <simple-property-list name="expression">
+                        <value type="constant">C:\\ATTData\\ATTData.txt</value>
+                    </simple-property-list>
+                </structure>
+                <structure>
+                    <property name="paramName">paramURL</property>
+                    <simple-property-list name="expression">
+                        <value type="constant">http://69.220.28.195/va/dashboard/location/1/time/201405m</value>
+                    </simple-property-list>
+                </structure>
+                <structure>
+                    <property name="paramName">paramDataSource</property>
+                    <simple-property-list name="expression">
+                        <value type="constant">1</value>
+                    </simple-property-list>
+                </structure>
+            </list-property>
+        </data-mart-data-source>
+    </data-sources>
+    <property name="linkedDataModels">
+        <data-mart-linked-data-model name="Visitor Analysis" id="24">
+            <property name="dataSource">Data Source</property>
+            <property name="dataObject">Visitor Analysis</property>
+        </data-mart-linked-data-model>
+    </property>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <table id="7">
+            <property name="display">none</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">zip-choropleth-uu</property>
+                    <text-property name="displayName">zip-choropleth-uu</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["zip-choropleth-uu"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">zip-choropleth-impr</property>
+                    <text-property name="displayName">zip-choropleth-impr</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["zip-choropleth-impr"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <property name="linkedDataModel">Visitor Analysis</property>
+            <property name="pageBreakInterval">0</property>
+            <column id="20"/>
+            <column id="21"/>
+            <column id="22"/>
+            <header>
+                <row id="8">
+                    <cell id="9">
+                        <property name="colSpan">3</property>
+                        <property name="rowSpan">1</property>
+                        <text name="InitializeScript" id="278">
+                            <property name="textAlign">left</property>
+                            <property name="contentType">html</property>
+                            <text-property name="content"><![CDATA[<script>
+    
+var zipUU = {};
+
+</script>]]></text-property>
+                        </text>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="282">
+                    <cell id="283">
+                        <property name="colSpan">3</property>
+                        <property name="rowSpan">1</property>
+                        <text id="286">
+                            <property name="contentType">html</property>
+                            <text-property name="content"><![CDATA[<script>
+
+(function (){
+	var zipUUObject = eval(<value-of>row["zip-choropleth-uu"]</value-of>);
+	
+	for (i = 0; i < zipUUObject.length; i++) {		
+		var zipCode = zipUUObject[i][0];
+		var value = zipUUObject[i][1];
+			
+		if (zipUU["" + zipCode] != undefined)
+			zipUU["" + zipCode].value += value;
+		else
+			zipUU["" + zipCode] = {"zipCode": zipCode, "value": value};
+	}
+
+})();
+	
+</script>]]></text-property>
+                        </text>
+                    </cell>
+                </row>
+            </detail>
+            <footer>
+                <row id="16">
+                    <cell id="17">
+                        <property name="colSpan">3</property>
+                        <property name="rowSpan">1</property>
+                        <text id="287">
+                            <property name="contentType">html</property>
+                            <text-property name="content"><![CDATA[<script>
+
+(function () {
+	var zipUUArray = new Array();
+	var totalUU = 0;
+
+	for (zip in zipUU) {
+		if (zipUU.hasOwnProperty(zip)) {
+			zipUUArray.push(zipUU[zip]);
+			totalUU += zipUU[zip].value;
+		}
+	}
+	
+	for (var i = 0; i < zipUUArray.length; i++) {
+		zipUUArray[i].pct = zipUUArray[i].value / totalUU;
+	}
+
+	zipUUArray.sort(function(a, b) {
+		return b.value - a.value;
+	});
+
+	zipUUArray.splice(Math.min(zipUUArray.length - 1, 20), Math.max(zipUUArray.length - 20, 0));
+
+	if (window["angularBridge"] &amp;&amp; angularBridge.zipUpdate)
+		angularBridge.zipUpdate(zipUUArray);
+	else
+		alert("angularBridge.zipUpdate not in scope\n" + JSON.stringify(zipUUArray, null, 4));
+})();
+
+</script>]]></text-property>
+                        </text>
+                    </cell>
+                </row>
+            </footer>
+        </table>
+    </body>
+</report>

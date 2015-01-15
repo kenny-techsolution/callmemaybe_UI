@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+	<!ENTITY ns_flows "http://ns.adobe.com/Flows/1.0/">
+]>
+<svg version="1.1"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 x="0px" y="0px" width="85px" height="86px" viewBox="11 36.5 85 86" enable-background="new 11 36.5 85 86" xml:space="preserve">
+<defs>
+</defs>
+<g>
+	<defs>
+		<rect id="SVGID_1_" width="390.7" height="984.5"/>
+	</defs>
+	<clipPath id="SVGID_2_">
+		<use xlink:href="#SVGID_1_"  overflow="visible"/>
+	</clipPath>
+	<path clip-path="url(#SVGID_2_)" fill="#0A7BB6" d="M96,115.8c0,3.4-2.8,6.2-6.2,6.2H17.2c-3.4,0-6.2-2.8-6.2-6.2V43.2
+		c0-3.4,2.8-6.2,6.2-6.2h72.7c3.4,0,6.2,2.8,6.2,6.2V115.8z"/>
+	<path clip-path="url(#SVGID_2_)" fill="#FFFFFF" d="M53.4,88.3L53.4,88.3c5.4-5.4,8.3-5.9,9.4-9.1c1.3-3.4-0.6-7.3-4.5-7.3
+		c-3,0-4.8,2.1-4.8,2.1h-0.1c0,0-1.9-2.1-4.8-2.1c-3.9,0-5.8,3.9-4.5,7.3C45.2,82.3,48.1,82.9,53.4,88.3"/>
+	<path clip-path="url(#SVGID_2_)" fill="#FFFFFF" d="M75,53h-6v3.5c0,1.9-1.6,3.5-3.5,3.5S62,58.4,62,56.5V53H44v3.5
+		c0,1.9-1.6,3.5-3.5,3.5S37,58.4,37,56.5V53h-5c-2.2,0-4,1.8-4,4v38c0,2.2,1.8,4,4,4h43c2.2,0,4-1.8,4-4V57C79,54.8,77.2,53,75,53
+		 M74,94H33V65h41V94z"/>
+	<path clip-path="url(#SVGID_2_)" fill="#FFFFFF" d="M40.5,58c0.8,0,1.5-0.7,1.5-1.5v-8c0-0.8-0.7-1.5-1.5-1.5S39,47.7,39,48.5v8
+		C39,57.3,39.7,58,40.5,58"/>
+	<path clip-path="url(#SVGID_2_)" fill="#FFFFFF" d="M65.5,58c0.8,0,1.5-0.7,1.5-1.5v-8c0-0.8-0.7-1.5-1.5-1.5S64,47.7,64,48.5v8
+		C64,57.3,64.7,58,65.5,58"/>
+</g>
+<text transform="matrix(1 0 0 1 23.167 112.332)"><tspan x="0" y="0" fill="#FFFFFF" font-family="'Omnes_ATT-Regular'" font-size="11">D</tspan><tspan x="7.7" y="0" fill="#FFFFFF" font-family="'Omnes_ATT-Regular'" font-size="11">a</tspan><tspan x="13.5" y="0" fill="#FFFFFF" font-family="'Omnes_ATT-Regular'" font-size="11">y of </tspan><tspan x="33.2" y="0" fill="#FFFFFF" font-family="'Omnes_ATT-Regular'" font-size="11">W</tspan><tspan x="43" y="0" fill="#FFFFFF" font-family="'Omnes_ATT-Regular'" font-size="11">eek</tspan></text>
+</svg>

@@ -1,0 +1,132 @@
+.sidebar {
+  float: right;
+  width: 280px;
+}
+
+#product-container {
+  font-family: "Omnes_ATT Regular";
+
+  h4 {
+    color: #EF6F00;
+    font-size: 1.7rem;
+  }
+
+  .tab {
+    background-color: #ffffff;
+    padding: 8px;
+  }
+
+  .buttons {
+    margin: 15px 0px 5px;
+    text-align: center;
+  }
+}
+
+#read-out-container {
+  .tabs-container {
+    top: 158px !important;
+
+    .tab-content {
+      padding-top: 8px !important;
+    }
+  }
+  input[type=text] {
+    border-radius: 4px;
+    border: 1px solid #888888;
+    background-color: #444444;
+    width: 96%;
+    margin: 0px 2% 12px;
+
+    padding: 3px 3px 5px 8px;
+    font-family: "Omnes_ATT Regular";
+    color: #888888;
+    outline: none;
+  }
+}
+
+#out-of-home #charts-container {
+  overflow: hidden;
+  .tab {
+    > div {
+      cursor: pointer;
+      float: left;
+      width: 85px;
+      height: 86px;
+      margin-right:7px;
+      margin-bottom:7px;
+    }
+  }
+}
+
+.poi-selected-list{
+  ul{
+    list-style: none;
+    margin-bottom: 0;
+    > li{
+      border-bottom: 1px solid #BBBBBB;
+    }
+
+    > li:nth-last-child(1){
+      border-bottom: medium none;
+    }
+  }
+
+  .place-container {
+
+    line-height: 1.1;
+    padding-top: 5px;
+    white-space: nowrap;
+    height: 50px;
+    width: 100%;
+    &:hover{
+      background-color: #cccccc;
+    }
+    .place-pin {
+      background: url("../svgs/cip_list_pin_dot_orange.svg") no-repeat;
+    }
+    .place-icon {
+      background-size: 22px 24px !important;
+      float: left;
+      height: 30px;
+      margin-left: 10px;
+      margin-top: 3px;
+      width: 30px;
+
+    }
+    .place-radius{
+      background-size: 40px 40px !important;
+      float: left;
+      height: 40px;
+      margin-left: 5px;
+
+      width: 40px;
+    }
+    .one-mile{
+      background: url("../svgs/svg_1mile.svg") no-repeat;
+    }
+    .three-mile{
+      background: url("../svgs/svg_3miles.svg") no-repeat;
+    }
+
+    .five-mile{
+      background: url("../svgs/svg_5miles.svg") no-repeat;
+    }
+
+    .ten-mile{
+      background: url("../svgs/svg_10miles.svg") no-repeat;
+    }
+    .place-details {
+      float: left;
+      width: 170px;
+      margin-bottom: 5px;
+
+    }
+    .place-address {
+      color: #989898;
+    }
+    &:after {
+      clear: both;
+    }
+  }
+}
+

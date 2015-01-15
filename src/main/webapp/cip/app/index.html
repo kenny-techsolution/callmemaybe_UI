@@ -1,0 +1,198 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if IE 9]>         <html class="no-js ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js">
+<!--<![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<meta name="description" content="">
+	<meta name="viewport" content="initial-scale=1,maximum-scale=1,width=device-width">
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<!-- build:css styles/vendor.css -->
+		<link rel="stylesheet" href="non_bower_components/JqueryUI/css/ui-lightness/jquery-ui-1.10.4.custom.min.css">
+		<link rel="stylesheet" href="non_bower_components/Leaflet-MiniMap-master/src/Control.MiniMap.css">
+	<!-- bower:css -->
+	<link rel="stylesheet" href="bower_components/leaflet-dist/leaflet.css" />
+	<!-- endbower -->
+	<!-- endbuild -->
+	<!-- build:css({.tmp,app}) styles/main.css -->
+	<link rel="stylesheet" href="styles/main.css">
+	<!-- endbuild -->
+<!--[if IE 9]>
+		<link rel="stylesheet" href="styles/campaign_ie9.css">
+		<![endif]-->
+
+	<!--[if lt IE 9]>
+		<script src="bower_components/html5shiv/dist/html5shiv.min.js"></script>
+		<![endif]-->
+</head>
+<body data-page-id="{{pageId}}" ng-app="cip" ng-class="{'pattern-fill': globalStatus.context == 'OOH'}">
+<!--[if lt IE 7]>
+		<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+		<![endif]-->
+<!-- Add your site or application content here -->
+
+	<div progress-overlay></div>
+	<div popup-modal></div>
+
+	<div class="fill" ng-view="">
+	</div>
+
+
+
+<!--[if lt IE 9]>
+<script src="bower_components/es5-shim/es5-shim.js"></script>
+<script src="bower_components/json3/lib/json3.min.js"></script>
+<![endif]-->
+<!-- build:js scripts/vendor.js -->
+<!-- bower:js -->
+<script src="bower_components/modernizr/modernizr.js"></script>
+<script src="bower_components/jquery/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<script src="bower_components/get-style-property/get-style-property.js"></script>
+<script src="bower_components/get-size/get-size.js"></script>
+<script src="bower_components/eventie/eventie.js"></script>
+<script src="bower_components/doc-ready/doc-ready.js"></script>
+<script src="bower_components/eventEmitter/EventEmitter.js"></script>
+<script src="bower_components/jquery-bridget/jquery.bridget.js"></script>
+<script src="bower_components/matches-selector/matches-selector.js"></script>
+<script src="bower_components/outlayer/item.js"></script>
+<script src="bower_components/outlayer/outlayer.js"></script>
+<script src="bower_components/masonry/masonry.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="bower_components/leaflet-dist/leaflet.js"></script>
+<script src="bower_components/underscore/underscore.js"></script>
+<script src="bower_components/esri-leaflet/dist/esri-leaflet.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
+<script src="bower_components/leaflet.markercluster/dist/leaflet.markercluster-src.js"></script>
+<script src="non_bower_components/Leaflet-MiniMap-master/src/Control.MiniMap.js"></script>
+<script src="non_bower_components/JqueryUI/js/jquery-ui.min.js"></script>
+<script src="non_bower_components/TouchPunch/jquery.ui.touch-punch.min.js"></script>
+<script src="scripts/configuration.js"></script>
+<script src="scripts/app.js"></script>
+<script src="scripts/factories/httpInterceptor.js"></script>
+<script src="scripts/factories/filterHandler.js"></script>
+<script src="scripts/factories/jsapiHandler.js"></script>
+<script src="scripts/factories/envDomainHandler.js"></script>
+<script src="scripts/section/globals.js"></script>
+<script src="scripts/cross-birt-filter.js"></script>
+<script src="scripts/services/itemStorage.js"></script>
+<script src="scripts/directives/directives.js"></script>
+
+<script src="scripts/directives/DateRange.js"></script>
+<script src="scripts/directives/passwordMatch.js"></script>
+
+<script src="scripts/directives/progress-overlay-directive.js"></script>
+<script src="scripts/services/popupModalService.js"></script>
+<script src="scripts/directives/popupModalDirective.js"></script>
+<script src="scripts/services/wizardTabsService.js"></script>
+<script src="scripts/directives/datasets-toggle-directive.js"></script>
+<script src="scripts/directives/sortableList.js"></script>
+
+<script src="scripts/controllers/visitorAnalysis/VADashboardCtrl.js"></script>
+<script src="scripts/directives/header.js"></script>
+<script src="scripts/directives/sidebar.js"></script>
+<script src="scripts/directives/sidebar-va-directive.js"></script>
+<script src="scripts/section/chartWindow.js"></script>
+<script src="modules/ui-att.js"></script>
+<script src="modules/dynamic-table/dynamic-table.js"></script>
+<script src="modules/breadcrumb/breadcrumb.js"></script>
+<script src="modules/pagination-mod/pagination-mod.js"></script>
+<script src="modules/user-timeout/UserTimeout.js"></script>
+<script src="modules/date-picker/date-picker.js"></script>
+
+<!--PAGES-->
+<script src="scripts/pages/pages.js"></script>
+<script src="scripts/pages/controllers/DashboardCtrl.js"></script>
+<script src="scripts/pages/controllers/LandingCtrl.js"></script>
+
+<!--ACCOUNT-->
+<script src="scripts/account/account.js"></script>
+<script src="scripts/account/services/UsersService.js"></script>
+<script src="scripts/account/services/AccountsService.js"></script>
+<script src="scripts/account/controllers/UserCtrl.js"></script>
+<script src="scripts/account/controllers/UsersCtrl.js"></script>
+<script src="scripts/account/controllers/AccountCtrl.js"></script>
+<script src="scripts/account/controllers/AccountsCtrl.js"></script>
+
+<!--AUTHENTICATION-->
+<script src="scripts/authentication/authentication.js"></script>
+<script src="scripts/authentication/services/SessionService.js"></script>
+<script src="scripts/authentication/services/ProductLicensedService.js"></script>
+<script src="scripts/authentication/services/AuthenticateUserService.js"></script>
+<script src="scripts/authentication/services/UserPermissionsService.js"></script>
+<script src="scripts/authentication/services/PasswordService.js"></script>
+<script src="scripts/authentication/controllers/LoginCtrl.js"></script>
+<script src="scripts/authentication/controllers/LogoutCtrl.js"></script>
+<script src="scripts/authentication/controllers/PasswordCtrl.js"></script>
+
+<!--OUT OF HOME-->
+<script src="scripts/out-of-home/out-of-home.js"></script>
+<script src="scripts/out-of-home/controllers/campaignCtrl.js"></script>
+<script src="scripts/out-of-home/controllers/campaignDetailCtrl.js"></script>
+<script src="scripts/out-of-home/controllers/locationCtrl.js"></script>
+<script src="scripts/out-of-home/controllers/campaignSidebarCtrl.js"></script>
+<script src="scripts/out-of-home/controllers/audienceCtrl.js"></script>
+<script src="scripts/out-of-home/controllers/OOHDashboardCtrl.js"></script>
+<script src="scripts/out-of-home/controllers/exportCSVCtrl.js"></script>
+<script src="scripts/out-of-home/controllers/pickYourOwnBoardsCtrl.js"></script>
+
+<script src="scripts/out-of-home/filters/genderNumToTextFilter.js"></script>
+<script src="scripts/out-of-home/filters/inZoomRangeFilter.js"></script>
+<script src="scripts/out-of-home/filters/layerNameFormatterFilter.js"></script>
+<script src="scripts/out-of-home/filters/layerNamePluralFormatterFilter.js"></script>
+<script src="scripts/out-of-home/filters/sortSidebarListFilter.js"></script>
+<script src="scripts/out-of-home/filters/reverseFilter.js"></script>
+<script src="scripts/out-of-home/filters/orderByObjectFilter.js"></script>
+
+<script src="scripts/out-of-home/directives/defineCampaignDirective.js"></script>
+<script src="scripts/out-of-home/directives/numberOnlyInputDirective.js"></script>
+<script src="scripts/out-of-home/directives/campaignResultsPanelDirective.js"></script>
+<script src="scripts/out-of-home/directives/cipTooltipDirective.js"></script>
+<script src="scripts/out-of-home/directives/standaloneEditDatesDirective.js"></script>
+<script src="scripts/out-of-home/directives/parametersNotMetPopupDirective.js"></script>
+
+<script src="scripts/out-of-home/services/campaignDateService.js"></script>
+<script src="scripts/out-of-home/services/campaignSelectionService.js"></script>
+<script src="scripts/out-of-home/services/CustomErrorService.js"></script>
+<script src="scripts/out-of-home/services/campaignDetailErrorService.js"></script>
+<script src="scripts/out-of-home/services/exportCSVService.js"></script>
+<script src="scripts/out-of-home/services/pickYourOwnBoardsService.js"></script>
+<script src="scripts/out-of-home/services/boardDataSelectionService.js"></script>
+<script src="scripts/out-of-home/services/parametersNotMetPopupService.js"></script>
+
+<!--TEAM SONIC-->
+<script src="scripts/prototypes.js"></script>
+<script src="modules/cip-map/cip-map-module.js"></script>
+<script src="modules/cip-map/cip-map-services.js"></script>
+<script src="modules/strip/strip-module.js"></script>
+<script src="modules/strip/strip-services.js"></script>
+<script src="scripts/directives/placeholder-directive.js"></script>
+<script src="modules/cip-map/leaflet-ext.js"></script>
+<script src="scripts/directives/poi-list-directive.js"></script>
+<script src="scripts/services/poi-service.js"></script>
+<script src="scripts/directives/fixed-height-with-diff-directive.js"></script>
+<script src="scripts/angular-bridge.js"></script>
+<script src="scripts/services/angular-bridge-service.js"></script>
+<!-- endbuild -->
+
+<div parameters-not-met-popup ng-controller="campaignSidebarCtrl" on-continue="doContinue()" on-go-back="doGoBack()"></div>
+
+</body>
+</html>

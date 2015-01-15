@@ -1,0 +1,681 @@
+.full-width {
+    width: 100%;
+}
+
+.main-header {
+  height: 30px;
+  background-color: #666;
+  padding: 3px 10px;
+  width:100%;
+  top:87px;
+  z-index:1001;
+  clear:both;
+
+  &.campaign-results-header {
+    position:absolute;
+  }
+
+  span {
+    color: white;
+
+    &:nth-child(1) {
+      font-family: 'Omnes_ATT Medium';
+      font-size: 16px;
+    }
+
+    &:nth-child(2) {
+      margin-top: 2px;
+      font-size: 13px;
+    }
+
+    .pencil {
+      background: transparent url('../images/edit-icon.svg') no-repeat left top;
+      background-size: 10px 10px;
+      margin-top: 5px;
+      margin-right: 5px;
+      height: 10px;
+      width: 10px;
+      float: left;
+    }
+
+    .text {
+      float: left;
+    }
+  }
+}
+
+#div-campaign-results {
+  background: #ffffff;
+
+  .sub-header{
+    background-color: white;
+    padding: 0px 10px;
+    float: left;
+    font-size:14px;
+
+    span {
+      margin-top: 3px;
+      margin-bottom: 3px;
+      font-family: 'Omnes_ATT Regular';
+      color: black;
+
+      &.bb {
+        font-family: 'omnes_attmedium_italic';
+        color: #067AB4;
+        font-size: 16px;
+      }
+
+      &.sub-header-details {
+        margin-left: 20px;
+        clear: left;
+        margin-bottom: 5px;
+        font-family: 'Omnes_ATT Regular';
+        color: black;
+      }
+    }
+
+    .error-message-container {
+      margin-top: 26px;
+      margin-bottom: 10px;
+
+      &:hover {
+        background-color: #f0ced8;
+      }
+
+      .close-icon {
+        cursor: pointer;
+        position: absolute;
+        background-image: url('../images/close-btn-red.svg');
+        background-repeat: no-repeat;
+        background-size: 22px;
+        width: 22px;
+        height: 22px;
+        right: 15px;
+        margin-top: -8px;
+      }
+    }
+
+    .fr {
+      line-height: 22px;
+    }
+
+    &.num-weeks {
+      border-bottom: 2px solid #666;
+    }
+  }
+
+  .collapse-panel {
+    overflow: auto;
+    background-color: white;
+    .sub-header {
+      background-color: white;
+      padding: 0px 10px;
+      float: left;
+      font-size:14px;
+
+      span {
+        font-family: 'Omnes_ATT Regular';
+        color: black;
+
+        &.bb {
+          font-family: 'omnes_attmedium_italic';
+          color: #067AB4;
+        }
+      }
+
+      &.no-border {
+        border-bottom: none !important;
+      }
+    }
+
+    .panel2 {
+      clear: both;
+      border-top: 1px solid #CCC;
+
+      .rowContainer {
+        margin: 5px 0px 0px 0px;
+
+        &:first-child {
+          margin-top: 10px;
+        }
+
+        &:last-child {
+          margin-bottom: 10px;
+        }
+
+        .left {
+          display: inline-block;
+          margin-left: 5px;
+          text-align: left;
+          color: gray;
+        }
+        .right {
+          display: inline-block;
+          color: #333333;
+          font-family: 'Omnes_ATT Medium';
+          text-align: right;
+          width: 110px;
+        }
+      }
+
+      .board-list {
+        padding-top: 10px;
+        .board-list-element {
+          list-style-type: none;
+          font-family: 'Omnes_ATT Regular';
+          background: #ffffff;
+          padding-top: 10px;
+          line-height: 15px;
+
+          .board-info {
+            margin-left: 60px;
+            width: calc(100% - 25px);
+            overflow: hidden;
+            font-size:small;
+
+            .board-id {
+              color: #333;
+              font-size:115%;
+              font-weight:550;
+            }
+
+            .board-type {
+              color: #333;
+              float: right;
+              padding-right: 10px;
+            }
+
+            .board-address {
+              color: #666;
+            }
+
+            .board-cost {
+              color: #666;
+            }
+
+            .billboard-data-break {
+              margin-top: 0em;
+              margin-bottom: 0em;
+            }
+          }
+
+          .board-list-icon {
+            margin-left: 15px;
+            margin-top: 3px;
+            float: left;
+            width:27px;
+          }
+        }
+
+        hr {
+          margin-top: 7px;
+          margin-bottom: 0px;
+        }
+
+        .hoveredStatus {
+          list-style-type: none;
+          font-family: 'Omnes_ATT Regular';
+          background: #C0C0C0;
+          cursor: pointer;
+        }
+      }
+
+      .board-details {
+        .detailsHeader {
+          height: 30px;
+          width: 100%;
+          background-color: @orange;
+          color: white;
+
+          .fl {
+            .chevron-left {
+              background: url('../images/prevNextArrows.png') bottom left;
+              width: 12px;
+              height: 20px;
+              margin-top: 3px;
+              margin-left: 8px;
+              cursor: pointer;
+            }
+            .text {
+              font-family: 'omnes_attmedium_italic';
+              margin-top: 6px;
+              margin-left: 5px;
+            }
+            .chevron-right {
+              background-image: url('../images/prevNextArrows.png');
+              background-position: top left;
+              width: 12px;
+              height: 20px;
+              margin-top: 6px;
+              margin-left: 8px;
+              cursor: pointer;
+            }
+          }
+
+          .fr {
+            margin-top: 5px;
+            margin-right: 10px;
+            cursor: pointer;
+          }
+        }
+
+        .board-info-container {
+          width: 100%;
+          padding: 10px 0px;
+          line-height: 15px;
+        }
+
+        .board-list-icon {
+          margin-top: 10px;
+        }
+
+        .checkbox-container {
+          padding: 10px 0px ! ipmortant;
+        }
+      }
+    }
+
+    .checkbox-container {
+      position: relative;
+      padding-bottom: 27px;
+      padding-left: 25px;
+      width: 100%;
+
+      .show-me-checkbox {
+        float: left;
+      }
+
+      .show-me-label {
+        width: 150px;
+        font-family: 'Omnes_ATT Regular';
+        padding-left: 45px;
+        line-height: 15px;
+      }
+
+      .show-me-select {
+        position: relative;
+        top: 3px;
+        font-family: 'Omnes_ATT Regular';
+        font-size: medium;
+        bottom: 20%;
+        float: right;
+        right: 11px;
+        -moz-border-radius: 3px;
+        -moz-appearance: none;
+        -webkit-border-radius: 3px;
+        -webkit-appearance: none;
+        background: url('../images/dropdown-arrow.png')  no-repeat;
+        background-position: 44px 10px;
+        width: 65px;
+        height: 30px;
+        text-indent: 0.01px;
+        text-overflow: "";
+        border-radius: 3px;
+        background-color: #DDDDDD;
+        color: #AAAAAA;
+      }
+    }
+
+    select::-ms-expand {
+      display: none;
+    }
+
+    .board-info {
+      margin-left: 65px;
+      width: calc(100% - 25px);
+      overflow: hidden;
+
+      .board-id {
+        color: #333;
+      }
+
+      .board-type {
+        color: #333;
+        float: right;
+        padding-right: 10px;
+      }
+
+      .board-address {
+        color: #666;
+      }
+
+      .board-cost {
+        color: #666;
+      }
+
+      .billboard-data-break {
+        margin-top: 0em;
+        margin-bottom: 0em;
+      }
+    }
+
+    .board-list-icon {
+      margin-left: 15px;
+      margin-top: 3px;
+      float: left;
+    }
+
+    .plusMinusIcon {
+      display: block;
+      float: left;
+      width: 15px;
+      height: 15px;
+      background-size: 15px 15px;
+      margin-top: 7px;
+      margin-right: 5px;
+      cursor: pointer;
+
+      &.plus {
+        background-image: url('../images/plus-icon.svg');
+      }
+      &.minus {
+        background-image: url('../images/minus-icon.svg');
+      }
+    }
+
+    &.border-bottom {
+      border-bottom: 2px solid lightgrey;
+    }
+  }
+}
+
+.button-wrapper{
+  position:absolute;
+  bottom:0px;
+  width:100%;
+  height:55px;
+  background-color:#333;
+  z-index: 12;
+  div{
+    margin:11px auto 0 auto;
+    width:180px;
+  }
+}
+
+.pick-your-own-boards {
+  background-color: white;
+  padding: 8px;
+  border-top: 2px solid #ccc;
+}
+
+#define-campaign-standalone,
+.campaign-results-header.main-header {
+  .title {
+    font-family: 'omnes_ATT Medium';
+    font-size: 16px;
+    margin: 0;
+  }
+}
+
+#define-campaign-standalone {
+  &.tab {
+    padding: 0;
+  }
+
+  &.weekOptionsHeight {
+    height: 520px;
+  }
+
+  > div {
+    padding: 8px;
+  }
+
+  .header-section {
+    background-color: #666666;
+    height: 28px;
+    padding: 3px 0 0 8px;
+
+    * {
+      display: inline-block;
+      color: white;
+    }
+  }
+
+  .duration, .section-title {
+    font-style: italic;
+  }
+
+  .dates-section {
+    border-bottom: 2px solid #888;
+
+    * {
+      display: inline-block;
+    }
+    .duration {
+      width: 70px;
+    }
+    .date-range {
+      width: 188px;
+      text-align: right;
+    }
+  }
+}
+
+.edit-dates-section {
+  font-size: 0.9em;
+  display: inline-block;
+  color: white;
+  position: absolute;
+  right: 10px;
+  margin-top: 2px;
+  cursor: pointer;
+
+  div {
+    display: inline-block;
+  }
+
+  .edit-icon {
+    background: url('../images/edit-icon.svg') no-repeat center center;
+    background-size: 11px;
+    width: 12px;
+    height: 15px;
+    vertical-align: middle;
+    margin-right: 2px;
+  }
+}
+
+.add-boards {
+  padding: 8px;
+  overflow: auto;
+  border-bottom: 2px solid #666;
+  border-top: 2px solid #666;
+  background-color: white;
+
+  .top-row {
+    * {
+      display: inline-block;
+    }
+    .question-section {
+      width: 181px;
+      text-align: right;
+    }
+  }
+  .button-area {
+    text-align: right;
+    padding-top: 8px;
+  }
+  textarea {
+    width: 260px;
+    padding: 5px;
+    resize: none;
+  }
+}
+
+#div-campaign-results .add-boards textarea {
+  width: 264px;
+}
+
+.campaign-blue-text {
+  color: #067AB4;
+  font-family: 'omnes_ATT Medium';
+}
+
+/* todo: move these styles to appropriate file or create a new less file for them */
+.pick-your-own-boards-popup {
+  .text-section {
+    margin-bottom: 10px;
+  }
+
+  :last-child {
+    margin-bottom: 0;
+  }
+  position: absolute;
+  width: 210px;
+  font-size: 13px;
+  background-color: black;
+  opacity: 0.8;
+  padding: 6px;
+  color: white;
+  border-radius: 6px;
+  border: 1px solid white;
+  top: 50px;
+  left: -213px;
+  z-index: 999;
+
+  .divot {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 9px solid transparent;
+    border-bottom: 9px solid transparent;
+    border-left: 9px solid white;
+    left: 209px;
+    top: 58px;
+  }
+
+  .divot:after{
+    content: '';
+    position: absolute;
+    left: -9px;
+    top: -8px;
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 8px solid black;
+  }
+}
+
+#div-campaign-results .alternate-option {
+  padding: 8px;
+  overflow: auto;
+  background-color: white;
+  border-bottom: 5px solid white;
+}
+
+.campaign-results.tab-content {
+  background-color: white;
+}
+
+.standalone-edit-dates {
+  padding: 8px;
+  background-color: white;
+  display: inline-block;
+  width: 100%;
+
+  label[for=standaloneCampaignBegin] {
+    display: block;
+  }
+
+  .caret {
+    right: auto;
+    left: 40px;
+  }
+
+  .dropdown,
+  input.week-length {
+    display: inline-block;
+    width: 54px;
+    margin-right: 4px;
+    height: 30px;
+    border-radius: 3px;
+  }
+
+  .week-length-text {
+    display: inline-block;
+    vertical-align: top;
+
+    .digital-boards-only-msg {
+      display: block;
+      width: 160px;
+      color: #B30A3C;
+    }
+  }
+
+  .inBetweenPadding {
+    margin-bottom: 24px;
+  }
+
+  #standaloneCampaignBegin {
+    ul.dropdown-menu {
+      margin-left: -192px;
+    }
+
+    input {
+      width: 108px;
+      margin-right: 6px;
+      margin-left: 0;
+    }
+  }
+
+  .button-area {
+    border-top: 1px solid #ccc;
+    padding-top: 8px;
+    text-align: right;
+  }
+}
+
+.cancel.rollover,
+.cancel:hover {
+  color: #333;
+}
+
+.cancel-confirmation {
+  bottom: 57px;
+  right: 140px;
+  width: 210px;
+  font-size: 13px;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 6px;
+  color: white;
+  border-radius: 6px;
+  border: 1px solid white;
+  z-index: 999;
+  .button {
+    height: 35px;
+    background: #ddd;
+    border-radius: 0 0 3px 3px;
+    cursor: pointer;
+    margin-top: 7px;
+    text-align: center;
+    color: black;
+    font-size: 13px;
+    padding-top: 8px;
+    font-weight: bold;
+    font-family:"Omnes_ATT Medium";
+  }
+}
+.cip-tooltip {
+  .divot {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-right: 9px solid transparent;
+    border-left: 9px solid transparent;
+    border-top: 9px solid white;
+    left: 97px;
+    top: 90px;
+    &:after {
+      content: '';
+      position: absolute;
+      left: -9px;
+      top: -8px;
+      width: 0;
+      height: 0;
+      border-right: 8px solid transparent;
+      border-left: 8px solid transparent;
+      border-top: 8px solid black;
+    }
+  }
+}

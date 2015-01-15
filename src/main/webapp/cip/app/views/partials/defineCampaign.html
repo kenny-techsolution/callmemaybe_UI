@@ -1,0 +1,38 @@
+<div class="header">
+	<h3>OUT OF HOME</h3>
+
+	<div class="nav-panel-tabs">
+		<div class="slider">
+			<ul class="nav">
+				<li class="active" data-tab-id="define-campaign"><span>Plan a Campaign</span></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div class="tabs-container" data-scroll-box-shadow>
+	<div class="tab-content">
+		<div ng-include="'views/partials/planACampaignOption.html'"></div>
+
+		<div id="define-campaign-standalone" ng-controller="pickYourOwnBoardsCtrl" class="tab active" ng-show="pickYourOwn.pickYourOwnBoards">
+			<div class="header-section">
+				<div class="title">{{pickYourOwn.sectionTitle}}</div>
+				<div class="edit-dates-section" ng-hide="pickYourOwn.isEditDates" ng-click="pickYourOwn.showEditDates()">
+					<div class="edit-icon"/>
+					<div class="edit-dates-link">Edit Dates</div>
+				</div>
+			</div>
+			<div class="dates-section">
+				<div class="duration campaign-blue-text">{{pickYourOwn.dateForm.numWeeks}} weeks</div>
+				<div class="date-range">{{pickYourOwn.dateForm.startDate | date}} - {{pickYourOwn.dateForm.endDate | date}}</div>
+			</div>
+
+			<div ng-show="!pickYourOwn.isEditDates" class="add-boards" ng-include="'views/outOfHome/standalone-add-boards.html'" onload="makeTextAreaExpandable('boards-list')"></div>
+
+			<div ng-show="!pickYourOwn.isEditDates" class="alternate-option">Use our <a ng-click="pickYourOwn.setPickYourOwnBoards(false)" class="url campaign-blue-text">Campaign Planning Tool</a> instead if you'd like us to recommend the best boards for your budget, general location, target audience, etc.
+			</div>
+
+			<div ng-show="pickYourOwn.isEditDates" class="standalone-edit-dates" standalone-edit-dates></div>
+		</div>
+	</div>
+</div>

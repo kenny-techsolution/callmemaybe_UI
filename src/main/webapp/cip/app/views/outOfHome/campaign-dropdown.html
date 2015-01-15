@@ -1,0 +1,10 @@
+<div class="dropdown select-box pull-right {{classes}}">
+    <button focus-when="shouldFocus" class="btn" type="button" data-toggle="dropdown">
+    <div class="choice">{{lookups[type][container.form[type]]}}</div><span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+      <li ng-repeat="id in lookups[type + 'Sort']">
+     		<a ng-click="onSelect(id, container, type, resets)">{{lookups[type][id]}}</a>
+      </li>
+    </ul>
+</div>

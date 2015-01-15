@@ -1,0 +1,105 @@
+.location-list {
+  margin: 2px 0;
+  clear: both;
+  font-size: 14px;
+}
+
+.location-list .nav > ul:after {
+  content: "";
+  display: table;
+  clear: both
+}
+
+.location-list .nav {
+  width: 100%;
+  font-size: 14px;
+  font-weight: 300;
+  font-family: Helvetica, arial, Sans-Serif;
+  position: relative
+}
+
+.location-list .nav ul {
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+.location-list .nav > ul > li {
+  border-bottom: 1px solid #BBB;
+}
+
+/* there is a hidden li which is the last */
+.location-list .nav > ul > li:last-child {
+  border: none;
+  font-family: omnes_attmedium_italic, sans-serif;
+  font-size: 16px;
+  color: #333333;
+  margin: 10px 0 0 10px;
+
+}
+
+.location-list .nav > ul > li:last-child > span {
+  color: #B30A3C !important;
+}
+
+/* this is the last visible li  */
+.location-list .nav > ul > li:nth-last-child(2) {
+  border: none;
+}
+
+.location-list .nav > ul a {
+  padding: 7px;
+  display: block;
+  color: black;
+  text-decoration: none;
+  border-left: 8px solid transparent;
+  margin-left: -1px;
+}
+
+.location-list .nav ul > li > a:hover {
+  background-color: #CCC;
+}
+
+.location-list .nav .loc-dma-hover > a:hover {
+  border-color: #B30A3C;
+}
+
+.location-list .nav .loc-cbsa-hover > a:hover {
+  border-color: #EF6F00;
+}
+
+.location-list .nav .loc-county-hover > a:hover {
+  border-color: #4CA90C;
+}
+
+.location-list .nav .loc-zip-hover > a:hover {
+  border-color: #0C2577;
+}
+
+.location-list .nav .loc-censusblock-hover > a:hover {
+  border-color: #81017E;
+}
+
+.location-list .nav .loc-hover > a {
+  background-color: #CCC;
+}
+
+.location-list .nav .loc-dma > a {
+  border-color: #B30A3C;
+}
+
+.location-list .nav .loc-cbsa > a {
+  border-color: #EF6F00;
+}
+
+.location-list .nav .loc-county > a {
+  border-color: #4CA90C;
+}
+
+.location-list .nav .loc-zip > a {
+  border-color: #0C2577;
+}
+
+.location-list .nav .loc-censusblock > a {
+  border-color: #81017E;
+}

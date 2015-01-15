@@ -1,0 +1,105 @@
+<div id="campaign-detail-container" ng-controller="campaignDetailCtrl">
+	<fieldset id="campaignDates" class="fields container">
+		<div class="title blue">
+			Campaign Dates
+		</div>
+		<div class="form-group form-inline row">
+			<div class="col-xs-7">
+				<label for="lengthCampaign">Length of campaign</label>
+				<div class="dropdown select-box week-length inline" ng-show="form.default4weeks">
+					<button class="btn" focus-when="focusStates['Campaign Dates']" type="button" data-toggle="dropdown">
+						{{form.numWeeks}}
+						<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu text-right">
+						<li ng-repeat="choice in form.campaignLengthOptions">
+							<a ng-click="$parent.onChangeNumWeeks(choice)">{{choice}}</a>
+						</li>
+					</ul>
+				</div>
+				<input number-only-input focus-when="focusStates['Campaign Dates']" class="week-length form-control" ng-model="form.numWeeks" name="defaultweeks"
+				input-lessthan='100' input-decimals='0' on-change="onChangeNumWeeks(form.numWeeks)"
+				ng-show="!form.default4weeks">
+				<span>week(s)</span>
+			</div>
+			<div class="col-xs-9" ng-class="{'disabled':form.digitalBulletins===false&&form.default4weeks===true}">
+				<div class="overlay" ng-if="form.digitalBulletins===false&&form.default4weeks===true"></div>
+				<input id="standardLengths" type="checkbox" name="standardLengths" class="regular-checkbox"
+				ng-model="form.default4weeks" ng-change="onChangeDefaultWeeks()">
+				<label for="standardLengths" class="mt5 custom-checkbox">standard 4 week campaign lengths</label>
+			</div>
+		</div>
+		<div class="form-group form-inline row">
+			<div class="col-xs-10" id="campaignBegin">
+				<label for="campaignBegins"><span ng-show='errorService.errors.emptyStartDate.show' style="color:#B30A3c;">*</span>Campaign begins</label>
+				<input class="form-control" name="campaignBegins" datepicker-popup-mod="{{dateFormat}}" ng-model="form.startDate"  is-open="$parent.opened" init-date='initDate' min="minDate" max="maxDate" datepicker-options="dateOptions" show-weeks="false" ng-required="false" ng-change="onChangeStartDate(form.startDate)" ng-click="onOpenDatePicker($event)" ng-keydown="onStartDateKeyDown($event)" type="text" />
+				<span class="end-date">and ends {{form.endDate | date:dateFormat}}</span>
+			</div>
+			<div class="col-xs-6 disabled">
+				<div class="overlay"></div>
+				<input id="flexibleBy" type="checkbox" name="flexibleBy" ng-model="form.flexibleBy"/>
+				<label for="flexibleBy" class='custom-checkbox'>flexible by</label>
+				<div class="dropdown select-box week-length inline">
+					<button class="btn" type="button" data-toggle="dropdown">
+						{{form.flexByWeeks}}<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu text-right">
+						<li ng-repeat="choice in form.flexiableByOptions">
+							<a ng-click="$parent.onChangeFlexWeek(choice)">{{choice}}</a>
+						</li>
+					</ul>
+				</div>
+				<label>week(s)</label>
+			</div>
+		</div>
+		<div class="error-message-container" ng-show="errorService.errors.emptyStartDate.show||errorService.errors.incorrectStartDateRange.show||errorService.errors.incorrectWeekLength.show||errorService.errors.beyondBound.show">
+			<p ng-show='errorService.errors.emptyStartDate.show'>
+				{{errorService.errors.emptyStartDate.message}}
+			</p>
+			<p ng-show='errorService.errors.incorrectStartDateRange.show'>
+				{{errorService.errors.incorrectStartDateRange.message}}
+			</p>
+			<p ng-show='errorService.errors.incorrectWeekLength.show'>
+				{{errorService.errors.incorrectWeekLength.message}}
+			</p>
+			<p ng-show='errorService.errors.beyondBound.show'>
+				{{errorService.errors.beyondBound.message}}
+			</p>
+		</div>
+	</fieldset>
+	<fieldset id="campaignBoards" class="fields container">
+		<div class="title blue">
+			Campaign Boards
+		</div>
+		<div class="form-group">
+			<div class="col-xs-8">
+				<input id="staticBulletins" focus-when="focusStates['Campaign Boards']" type="checkbox" name="staticBulletins" class="regular-checkbox" ng-model="form.staticBulletins" ng-change="onChangeCampaignBoards()">
+				<label for="staticBulletins" class="custom-checkbox">Static Bulletins</label>
+			</div>
+			<div class="col-xs-8">
+				<input id="digitalBulletins" type="checkbox" name="digitalBulletins" class="regular-checkbox" ng-model="form.digitalBulletins" ng-change="onChangeCampaignBoards()">
+				<label for="digitalBulletins" class="custom-checkbox">Digital Bulletins</label>
+			</div>
+		</div>
+		<div class="error-message-container" ng-show="errorService.errors.noBoardsSelected.show||errorService.errors.noDigitalBoardWithCustomWeeks.show">
+			<p ng-show='errorService.errors.noBoardsSelected.show'>
+				{{errorService.errors.noBoardsSelected.message}}
+			</p>
+			<p ng-show='errorService.errors.noDigitalBoardWithCustomWeeks.show'>
+				{{errorService.errors.noDigitalBoardWithCustomWeeks.message}}
+			</p>
+		</div>
+	</fieldset>
+	<fieldset id="campaignBudget" class="fields">
+		<div class="title blue">
+			Campaign Budget
+		</div>
+		<div class="form-group form-inline">
+			<div class="col-xs-8">
+				<label for="budget">Budget $</label>
+				<input number-only-input class="form-control" focus-when="focusStates['Campaign Budget']" ng-model="form.budgetValue" input-name="form.budgetName" input-lessthan='10000000'
+				input-decimals='2' type="text">
+			</div>
+		</div>
+	</fieldset>
+</div>

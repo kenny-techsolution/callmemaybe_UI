@@ -1,0 +1,112 @@
+body[data-page-id='landing-page']{
+	background: #ffffff url(../images/layout/bg-landing-page.gif) no-repeat left center;
+	overflow-y: visible;
+
+	#content.container-fluid{
+		margin-top:30px;
+		max-width: 1400px;
+	}
+
+	h1{
+		color: @blue;
+		font-size:48px;
+		margin:150px 0px 100px 0px;
+	}
+
+	p{
+		font-size:30px;
+		margin-top:30px;
+
+		.arrow{
+			.icon-build(@height: 17px, @width: 12px, @rotate: -90deg, @opacity: .6, @icon-file: @black-arrow);
+		}
+	}
+
+	.list-group{
+		a{
+			background-color:#e0e0e0;
+			border:none;
+			border-radius:4px;
+			color:#666666;
+			cursor: default;
+			margin-bottom:20px;
+			overflow: hidden;
+			padding:20px;
+			pointer-events: none;
+			text-decoration: none;
+
+			.border{
+				background-color: @orange;
+				display:block;
+				height:7px;
+				left:70%;
+				right:0px;
+				position: absolute;
+				top:0px;
+			}
+
+			.text-right{
+				background:transparent url(../images/icons/icon-arrow-right-orange.png) no-repeat 95% 84px;
+				padding-right:60px;
+			}
+
+			&.active{
+				background-color:#e0e0e0;
+				cursor: pointer;
+				pointer-events: initial;
+
+				p{
+					color:#666666;
+				}
+
+				&:hover{
+					background-color:#e0e0e0;
+
+					p{
+						color:#666666;
+					}
+				}
+			}
+
+			&:nth-child(1){
+				.border{ background-color: @blue-highlight; }
+				.text-right{ background-image: url(../images/icons/icon-arrow-right-blue.png); }
+			}
+			&:nth-child(3){
+				.border{ background-color: @green-highlight; }
+				.text-right{ background-image: url(../images/icons/icon-arrow-right-light-green.png); }
+			}
+			&:nth-child(5){
+				.border{ background-color: @green; }
+				.text-right{ background-image: url(../images/icons/icon-arrow-right-green.png); }
+			}
+			&:nth-child(4){
+				.border{ background-color: @magenta; }
+				.text-right{ background-image: url(../images/icons/icon-arrow-right-purple.png); }
+			}
+			&:nth-child(6){
+				.border{ background-color: @orange-highlight; }
+				.text-right{ background-image: url(../images/icons/icon-arrow-right-light-orange.png); }
+			}
+		}
+
+		h3{
+			font-size:30px;
+			text-transform: capitalize;
+		}
+		p{font-size:20px;}
+
+		h3,
+		p{
+			color: #666666;
+		}
+
+		img{
+			background-color:#cdcdcd;
+			border-radius:50px;
+			height: 100px;
+			margin-right:20px;
+			width: 100px;
+		}
+	}
+}

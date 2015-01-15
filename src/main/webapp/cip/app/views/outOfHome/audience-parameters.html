@@ -1,0 +1,37 @@
+<fieldset id="audience-parameters" class="fields">
+  <div class="header">
+    <div class="title blue">Parameters</div>
+    <div class="param-note">Drag the parameters to change their rank</div>
+  </div>
+  <ul class="list-grid">
+    <li ng-repeat="key in ranking"></li>
+  </ul>
+
+  <ul sortable-list id="sortable">
+    <li ng-repeat="key in ranking" class="sortable-item {{key}}">
+      <div class="rank-box">
+        <div class="rank" ng-class="{'active':!!audienceParameters[key].value}">{{audienceParameters[key].rank}}</div>
+      </div>
+      <div class="parameter-body">
+        <div class="param-name">{{audienceParameters[key].name}}</div>
+        <div ng-switch="audienceParameters[key].inputType">
+          <input number-only-input class="form-control not-draggable" input-lessthan="1000000000000" input-decimals="0" ng-model="audienceParameters[key].value" ng-switch-when="manual">
+
+          <div class="dropdown select-box inline not-draggable" ng-switch-when="dropdown">
+            <button class="btn" focus-when="focusStates['Target Frequency']" type="button" data-toggle="dropdown">
+              <div class="selected">{{audienceParameters[key].value||frequencies[0]}}</div>
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+              <li ng-repeat="choice in frequencies">
+                <a ng-click="onChangeFrequency(choice)" class="choice">{{choice}}</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="suffix">{{audienceParameters[key].suffix}}</div>
+      </div>
+      <div class="draggable-icon"/>
+    </li>
+  </ul>
+</fieldset>

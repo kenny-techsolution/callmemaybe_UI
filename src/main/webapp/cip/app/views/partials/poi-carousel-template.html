@@ -1,0 +1,34 @@
+<div class="poi-carousel">
+        <div class="bar">
+
+            <div  class="left-btn" ng-click="prev()"></div>
+            <div  class="right-btn"  ng-click="next()"></div>
+            <div class="title" >
+                <span class="showing" ng-bind="'#' + (getSelectedIndex()+ 1 | withCommas) + ' - ' + (poisModel.allPoi.length | withCommas)"></span>
+            </div>
+        </div>
+        <div class="place-container">
+            <div class="place-icon place-pin"></div>
+
+                <div onInclude="poi = poisModel.allPoi[getSelectedIndex()]" ng-include="'carousel-place.html'"  >
+                    {{poi}}
+                </div>
+
+        </div>
+</div>
+    </div>
+</div>
+
+<script type="text/ng-template" id="carousel-place.html">
+
+    <div class="place-container">
+
+        <div class="place-icon place-pin"></div>
+            <div class="place-details">
+                <div class="place-title" ng-bind="'#' + ($index + 1  | withCommas) + '.' + poi.properties.name"></div>
+                <div class="place-address" ng-bind="poi.properties.address"></div>
+                <div class="place-address" ng-bind="poi.properties.city + ' '  + poi.properties.state + ',' + poi.properties.zip"></div>
+            </div>
+        </div>
+    </div>
+</script>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+	<!ENTITY ns_flows "http://ns.adobe.com/Flows/1.0/">
+]>
+<svg version="1.1"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 x="0px" y="0px" width="3px" height="43px" viewBox="-0.4 -0.463 3 43" enable-background="new -0.4 -0.463 3 43"
+	 xml:space="preserve">
+<defs>
+</defs>
+<g>
+	<defs>
+		<rect id="SVGID_1_" x="0.326" y="0.561" width="0.497" height="41"/>
+	</defs>
+	<clipPath id="SVGID_3_">
+		<use xlink:href="#SVGID_1_"  overflow="visible"/>
+	</clipPath>
+	<g clip-path="url(#SVGID_3_)">
+		<defs>
+			<rect id="SVGID_2_" y="0.001" width="1.92" height="42.239"/>
+		</defs>
+		<clipPath id="SVGID_4_">
+			<use xlink:href="#SVGID_2_"  overflow="visible"/>
+		</clipPath>
+		<g transform="matrix(1 0 0 1 0 9.441428e-007)" clip-path="url(#SVGID_4_)">
+			
+				<image overflow="visible" width="4" height="88" xlink:href="data:image/jpeg;base64,/9j/4AAQSkZJRgABAgEAlgCWAAD/7AARRHVja3kAAQAEAAAAHgAA/+4AIUFkb2JlAGTAAAAAAQMA
+EAMCAwYAAAGNAAABuAAAAiP/2wCEABALCwsMCxAMDBAXDw0PFxsUEBAUGx8XFxcXFx8eFxoaGhoX
+Hh4jJSclIx4vLzMzLy9AQEBAQEBAQEBAQEBAQEABEQ8PERMRFRISFRQRFBEUGhQWFhQaJhoaHBoa
+JjAjHh4eHiMwKy4nJycuKzU1MDA1NUBAP0BAQEBAQEBAQEBAQP/CABEIAFoABgMBIgACEQEDEQH/
+xAB4AAEBAQEAAAAAAAAAAAAAAAAABAMCAQEAAAAAAAAAAAAAAAAAAAAAEAACAgICAwAAAAAAAAAA
+AAACBBEFAyQgARQ0JREAAQMEAgEFAAAAAAAAAAAAAgBhAwGzBLQRMjRBwYIzBRIBAAAAAAAAAAAA
+AAAAAAAAIP/aAAwDAQACEQMRAAAAvZihQN244YCdOJ1Y/9oACAECAAEFAOX/2gAIAQMAAQUA5f/a
+AAgBAQABBQBS0sjfTD6KoRYLhvYAh3EPXl4TlzAe6se+oc2KRzZKe9//2gAIAQICBj8AX//aAAgB
+AwIGPwBf/9oACAEBAQY/AM6M8g6hHIFIx9BpXJjjrx8a8L9B5Q2o1muYbMay3Ib4LIeo3gUz8XBU
+7VpdFZLEN4FmMY7ALOaQNmNfotLHtxLO8X7A69vJj7v7r//Z" transform="matrix(0.48 0 0 -0.48 0 42.2402)">
+			</image>
+		</g>
+	</g>
+</g>
+</svg>

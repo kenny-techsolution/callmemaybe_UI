@@ -1,0 +1,31 @@
+<accordion-heading>
+<div ng-click="isAudienceOpen=!isAudienceOpen">
+    <div class='expand-collapse-icons' ng-class="{'collapse': strip.isAudienceOpen, 'expand': !strip.isAudienceOpen}"></div>
+    <span class='accordion-section-title'> Audience </span>
+</div>
+</accordion-heading>
+
+<div class="section audience" ng-repeat="(type, audience) in audiences" ng-class="{'disabledSubPane':wizardTabs.tabs[2].disabled === true}" ng-hide="type==='secondary' && !audience.included" ng-click='switchTabNfocusField(2, audience.title)'>
+   <h4>{{audience.title}}</h4>
+   <div ng-show="demographicChanged(audience, 'gender')">
+   		<span class="campaign-icon selected {{audience.form.gender|genderNumToTextFilter}}"></span>
+   		<div>{{lookup.gender[audience.form.gender]}}</div>
+   </div>
+   <div><span class="campaign-icon age selected"></span><div>Age {{lookup.age[audience.form.age]}}</div></div>
+   <div ng-show="demographicChanged(audience, 'income')"><span class="campaign-icon income selected"></span><div>Earn {{lookup.income[audience.form.income]}}</div></div>
+   <div ng-show="demographicChanged(audience, 'household')"><span class="campaign-icon household selected"></span><div><div ng-class="{'align-top':audience.form.household==='1'}">{{lookup.household[audience.form.household]}}<div ng-if='audience.form.household === "1"'>Ages {{lookup.ageOfChild[audience.form.ageOfChild]}}</div></div></div></div>
+   <div ng-show="demographicChanged(audience, 'ethnicity')"><span class="campaign-icon ethnicity selected"></span><div>{{lookup.ethnicity[audience.form.ethnicity]}}</div></div>
+</div>
+
+<div class="sub-section parameters" ng-show="isAudienceParametersActive()">
+  <h4>Parameters</h4>
+  <div ng-repeat="param in audienceParameters|orderObjectBy:'rank'">
+    <div class="box" ng-show="param.value !== ''" ng-click='switchTabNfocusField(2, param.name)'>
+      <label>{{param.name}}</label>
+      <div ng-switch="param.inputType">
+        <div ng-switch-when="manual">{{param.value*1000|number}}</div>
+        <div ng-switch-when="dropdown">{{param.value}}</div>
+      </div>
+    </div>
+  </div>
+</div>

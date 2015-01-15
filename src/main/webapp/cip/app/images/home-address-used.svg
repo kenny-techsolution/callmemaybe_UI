@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+	<!ENTITY ns_flows "http://ns.adobe.com/Flows/1.0/">
+]>
+<svg version="1.1"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 x="0px" y="0px" width="85px" height="86px" viewBox="199 36.5 85 86" enable-background="new 199 36.5 85 86"
+	 xml:space="preserve">
+<defs>
+</defs>
+<g>
+	<defs>
+		<rect id="SVGID_1_" width="390.667" height="984.5"/>
+	</defs>
+	<clipPath id="SVGID_2_">
+		<use xlink:href="#SVGID_1_"  overflow="visible"/>
+	</clipPath>
+	<path clip-path="url(#SVGID_2_)" fill="#0A7BB6" d="M284,115.841c0,3.401-2.758,6.159-6.159,6.159h-72.682
+		c-3.401,0-6.159-2.758-6.159-6.159V43.159c0-3.401,2.758-6.159,6.159-6.159h72.682c3.401,0,6.159,2.758,6.159,6.159V115.841z"/>
+	<path clip-path="url(#SVGID_2_)" fill="#FFFFFF" d="M256,79.544l0.396,0.373c0.893,0.769,2.222,0.669,2.991-0.224
+		s0.651-2.24-0.241-3.009l-18.104-15.607c-0.477-0.411-1.082-0.566-1.659-0.493c-0.58-0.073-1.185,0.082-1.66,0.493L219.62,76.684
+		c-0.893,0.769-0.993,2.116-0.223,3.009c0.77,0.893,2.263,0.993,3.155,0.224L223,79.658v17.519v0.271v0.135
+		c0,0.783,0.341,1.418,1.124,1.418h0.135h0.138h0.133h29.979c0.784,0,1.491-0.635,1.491-1.418v-0.203v-0.202V79.544z M248,96V82.795
+		c0-0.448-0.538-0.795-0.985-0.795h-6.482c-0.448,0-0.532,0.347-0.532,0.795V96h-14V77.73v-0.866l13.566-11.582L253,76.75v1.183V96
+		H248z"/>
+	<path clip-path="url(#SVGID_2_)" fill="#FFFFFF" d="M235.189,82h-3.379c-0.447,0-0.811,0.363-0.811,0.811v3.378
+		c0,0.448,0.363,0.811,0.811,0.811h3.379c0.447,0,0.811-0.363,0.811-0.811v-3.378C236,82.363,235.637,82,235.189,82"/>
+	<path clip-path="url(#SVGID_2_)" fill="#FFFFFF" d="M257.9,72.243l6.398-14.014c0.438-0.932,0.687-1.975,0.687-3.077
+		c0-3.95-3.171-7.152-7.085-7.152c-3.911,0-7.083,3.202-7.083,7.152c0,1.025,0.214,1.999,0.601,2.881L257.9,72.243z M257.938,51.688
+		c1.978,0,3.581,1.62,3.581,3.615c0,1.995-1.604,3.614-3.581,3.614s-3.578-1.619-3.578-3.614
+		C254.359,53.308,255.96,51.688,257.938,51.688"/>
+</g>
+<text transform="matrix(1 0 0 1 205.4199 112.332)"><tspan x="0" y="0" fill="#FFFFFF" font-family="'Omnes_ATT-Regular'" font-size="11">Home Add</tspan><tspan x="52.294" y="0" fill="#FFFFFF" font-family="'Omnes_ATT-Regular'" font-size="11">r</tspan><tspan x="56.298" y="0" fill="#FFFFFF" font-family="'Omnes_ATT-Regular'" font-size="11">ess</tspan></text>
+</svg>

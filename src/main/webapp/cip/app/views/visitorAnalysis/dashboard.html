@@ -1,0 +1,22 @@
+<div id="visitor-analysis" class="hard-width fill">
+
+	<!-- TODO: Modulerize the sidebar controller so that we can inject different accordion directive into it -->
+	<div class="container sidebar" sidebar-va pois-model="poiModel" dataset-selected="datasetSelected"></div>
+
+	<header id="header" header bootstrap-container="'container-fluid'" show-filterbar="true"></header>
+
+	<section id="charts" class="fill">
+		<div class="container-fluid fill">
+			<div class="row fill">
+				<div class="col-xs-16 fill">
+					<div id="chart-grid"><div></div></div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<div datasets-toggle dataset = "dataset" okay-callback = "initializeVAdashboard()"><div>
+</div>
+
+
+

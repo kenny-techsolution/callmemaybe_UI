@@ -1,0 +1,704 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.2.3.v20131216-0430 Build &lt;4.2.3.v20131216-0430></property>
+    <list-property name="propertyBindings">
+        <structure>
+            <property name="name">queryText</property>
+            <property name="id">15</property>
+        </structure>
+        <structure>
+            <property name="name">WORKSHEETS</property>
+            <property name="id">15</property>
+        </structure>
+    </list-property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">auto layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <list-property name="libraries">
+        <structure>
+            <property name="fileName">/ThemesReportItems3.rptlibrary</property>
+            <property name="namespace">ThemesReportItems3</property>
+        </structure>
+    </list-property>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.excel" name="Data Source" id="20">
+            <property name="URI">extendedData.xlsx</property>
+            <property name="INCLCOLUMNNAME">yes</property>
+            <property name="INCLTYPELINE">no</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.excel.dataSet" name="Data Set" id="15">
+            <property name="nullsOrdering">nulls lowest</property>
+            <list-property name="computedColumns">
+                <structure>
+                    <property name="name">childrenCount</property>
+                    <expression name="expression" type="javascript">var curr;&#13;
+&#13;
+if(row["children"] === ""){&#13;
+	"none";	&#13;
+}&#13;
+else if(row["children"].indexOf(",") === -1){&#13;
+	"0-2";&#13;
+}&#13;
+else if(new Date().getMilliseconds() %2 === 0){&#13;
+	"16-17";&#13;
+}&#13;
+else{&#13;
+	curr = row["children"].split(",");&#13;
+	&#13;
+	switch(curr.length){&#13;
+		case 0:&#13;
+			"none";&#13;
+			break;&#13;
+		case 1:&#13;
+			"0-2";&#13;
+			break;&#13;
+		case 2:&#13;
+			"3-5";&#13;
+			break;&#13;
+		case 3:&#13;
+			"6-10";&#13;
+			break;&#13;
+		case 4:&#13;
+			"11-15";&#13;
+			break;&#13;
+		case 5:&#13;
+			"16-17";&#13;
+			break;&#13;
+		default:&#13;
+			"16-17";&#13;
+			break;&#13;
+	}&#13;
+}</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">TotalCount</property>
+                    <property name="dataType">integer</property>
+                    <property name="aggregateFunction">COUNT</property>
+                </structure>
+            </list-property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">id</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">id</text-property>
+                    <text-property name="heading">id</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">sex</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">sex</text-property>
+                    <text-property name="heading">sex</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">children</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">children</text-property>
+                    <text-property name="heading">children</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">age</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">age</text-property>
+                    <text-property name="heading">age</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">income</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">income</text-property>
+                    <text-property name="heading">income</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">ethnicity</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">ethnicity</text-property>
+                    <text-property name="heading">ethnicity</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">datetime</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">datetime</text-property>
+                    <text-property name="heading">datetime</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">childrenCount</property>
+                    <property name="analysis">dimension</property>
+                </structure>
+                <structure>
+                    <property name="columnName">TotalCount</property>
+                    <property name="analysis">measure</property>
+                </structure>
+            </list-property>
+            <list-property name="parameters"/>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">id</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">sex</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">children</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">age</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">income</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">ethnicity</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">datetime</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">childrenCount</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">TotalCount</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">id</property>
+                    <property name="nativeName">id</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">sex</property>
+                    <property name="nativeName">sex</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">children</property>
+                    <property name="nativeName">children</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">age</property>
+                    <property name="nativeName">age</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">income</property>
+                    <property name="nativeName">income</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">ethnicity</property>
+                    <property name="nativeName">ethnicity</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">datetime</property>
+                    <property name="nativeName">datetime</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select "id", "sex", "children", "age", "income", "ethnicity", "datetime" from "/E:/cdi-bigdata-actuate/ActuateReportDesigns/CIP/extendedData.xlsx" : {"id","id",STRING;"sex","sex",STRING;"children","children",STRING;"age","age",STRING;"income","income",STRING;"ethnicity","ethnicity",STRING;"datetime","datetime",STRING}]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>id</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>id</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>id</design:label>
+            <design:formattingHints>
+              <design:displaySize>0</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>sex</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>sex</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>sex</design:label>
+            <design:formattingHints>
+              <design:displaySize>0</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>age</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>age</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>age</design:label>
+            <design:formattingHints>
+              <design:displaySize>0</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>income</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>income</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>income</design:label>
+            <design:formattingHints>
+              <design:displaySize>0</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>ethnicity</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>ethnicity</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>ethnicity</design:label>
+            <design:formattingHints>
+              <design:displaySize>0</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>children</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>children</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>children</design:label>
+            <design:formattingHints>
+              <design:displaySize>0</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>datetime</design:name>
+              <design:position>7</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>datetime</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>datetime</design:label>
+            <design:formattingHints>
+              <design:displaySize>0</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+            <property name="WORKSHEETS">convertcsv</property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <themes>
+        <report-item-theme type="Chart" name="AgeOfChildrenTheme" id="18">
+            <xml-property name="customValues"><![CDATA[<type>2</type><jstheme>
+<property name="jschart.theme" value="xAxis%3A+%7B%0D%0A%09lineWidth%3A3%2C%0D%0A%09lineColor%3A%27%23666%27%2C%0D%0A%09plotLines%3A%5B%7B%0D%0A%09%09color%3A%22%23ddd%22%2C%0D%0A%09%09width%3A1%2C%0D%0A%09%09value%3A0.9%2C%0D%0A%09%09zIndex%3A1%3B%0D%0A%09%7D%5D%0D%0A%7D%2C%0D%0Alabels%3A+%7B%0D%0A%09items%3A+%5B%0D%0A%09%09%7B%0D%0A%09%09%09html%3A+%27Age%3A%27%2C%0D%0A%09%09%09style%3A+%7B%0D%0A%09%09%09%09font-family%3A+%22Omnes_ATT+Medium%22%3B%0D%0A%09%09%09%09font-size%3A+%229pt%22%3B%0D%0A%09%09%09%09font-weight%3A+%22normal%22%3B%0D%0A%09%09%09%09color%3A+%22%23666666%22%3B%0D%0A%09%09%09%09top%3A+%27177px%27%2C%0D%0A%09%09%09%09left%3A+%2760px%27%0D%0A%09%09%09%7D%0D%0A%09%09%7D%2C%0D%0A%09%09%7B%0D%0A%09%09%09html%3A%22Unknown%3A+5%25%22%2C%0D%0A%09%09%09style%3A%7B%0D%0A%09%09%09%09font-family%3A+%22Omnes_ATT+Medium%22%3B%0D%0A%09%09%09%09font-size%3A+%229pt%22%3B%0D%0A%09%09%09%09color%3A+%22%23666666%22%3B%0D%0A%09%09%09%09top%3A+%27193px%27%2C%0D%0A%09%09%09%09left%3A+%27255px%27%0D%0A%09%09%09%7D%0D%0A%09%09%7D%0D%0A%09%5D%0D%0A%7D%2C%0D%0AplotOptions%3A%7B%0D%0A%09series%3A%7B%0D%0A%09%09enableMouseTracking%3Afalse%0D%0A%09%7D%2C%0D%0A%09column%3A%7B%0D%0A%09%09grouping%3Afalse%2C%0D%0A%09%09colorByPoint%3A+true%2C%0D%0A%09%09cursor%3A+%27pointer%27%2C%0D%0A%09%09states%3A%7B%0D%0A%09%09%09hover%3A%7B%0D%0A%09%09%09%09enabled%3Afalse%0D%0A%09%09%09%7D%0D%0A%09%09%7D%2C%0D%0A%09%09pointWidth%3A38%2C%0D%0A%09%09colors%3A%5B%0D%0A%09%09%09%27%23B30A3C%27%2C%0D%0A%09%09%09%7B+%7D%2C%0D%0A%09%09%09%7B%0D%0A%09%09%09%09linearGradient%3A%7Bx1%3A0%2Cy1%3A1%2Cx2%3A0%2C+y2%3A0%7D%2C%0D%0A%09%09%09%09stops%3A%5B%0D%0A%09%09%09%09%09%5B0%2C+%27%2381017E%27+%5D%2C%0D%0A%09%09%09%09%09%5B1%2C+%27%23C080BE%27+%5D%0D%0A%09%09%09%09%5D%0D%0A%09%09%09%7D%2C%0D%0A%09%09%09%7B%0D%0A%09%09%09%09linearGradient%3A%7Bx1%3A0%2Cy1%3A1%2Cx2%3A0%2C+y2%3A0%7D%2C%0D%0A%09%09%09%09stops%3A%5B%0D%0A%09%09%09%09%09%5B0%2C+%27%2381017E%27+%5D%2C%0D%0A%09%09%09%09%09%5B1%2C+%27%23C080BE%27+%5D%0D%0A%09%09%09%09%5D%0D%0A%09%09%09%7D%2C%0D%0A%09%09%09%7B%0D%0A%09%09%09%09linearGradient%3A%7Bx1%3A0%2Cy1%3A1%2Cx2%3A0%2C+y2%3A0%7D%2C%0D%0A%09%09%09%09stops%3A%5B%0D%0A%09%09%09%09%09%5B0%2C+%27%2381017E%27+%5D%2C%0D%0A%09%09%09%09%09%5B1%2C+%27%23C080BE%27+%5D%0D%0A%09%09%09%09%5D%0D%0A%09%09%09%7D%2C%0D%0A%09%09%09%7B%0D%0A%09%09%09%09linearGradient%3A%7Bx1%3A0%2Cy1%3A1%2Cx2%3A0%2C+y2%3A0%7D%2C%0D%0A%09%09%09%09stops%3A%5B%0D%0A%09%09%09%09%09%5B0%2C+%27%2381017E%27+%5D%2C%0D%0A%09%09%09%09%09%5B1%2C+%27%23C080BE%27+%5D%0D%0A%09%09%09%09%5D%0D%0A%09%09%09%7D%2C%0D%0A%09%09%09%7B%0D%0A%09%09%09%09linearGradient%3A%7Bx1%3A0%2Cy1%3A1%2Cx2%3A0%2C+y2%3A0%7D%2C%0D%0A%09%09%09%09stops%3A%5B%0D%0A%09%09%09%09%09%5B0%2C+%27%2381017E%27+%5D%2C%0D%0A%09%09%09%09%09%5B1%2C+%27%23C080BE%27+%5D%0D%0A%09%09%09%09%5D%0D%0A%09%09%09%7D%0D%0A%09%09%5D%0D%0A%09%7D%0D%0A%7D%2C%0D%0A%0D%0A"/>
+<property name="jschart.client.script" value="beforeGeneration%3A+function%28options%29%0D%0A%7B%0D%0A++++options.xAxis.categories.splice%281%2C0%2C+%27%27%29%3B%0D%0A++++options.series%5B0%5D.data.splice%281%2C0%2C+%7B+%27y%27%3A+0+%7D%29%3B%09%0D%0A++++options.chart.spacingBottom+%3D+20%3B%0D%0A%7D%2C%0D%0A%0D%0AbeforeDrawAxis%3A+function%28axis%2C+axisOptions%2C+chart%2C+axisIndex%29%0D%0A%7B%0D%0A++++if+%28%21axis.categories%29+%7B%0D%0A++++++++var+AxisPerc+%3D+Math.floor%28axis.max%2F6%29%3B%0D%0A++++++++var+numLines+%3D+Math.floor%28axis.max%2FAxisPerc%29%3B%0D%0A++++++++var+plotLines+%3D+%5B%5D%3B%0D%0A++++%0D%0A++++++++for+%28var+i+%3D+0%3B+i+%3C+numLines%3B+i%2B%2B%29+%7B%0D%0A++++++++++++plotLines%5Bi%5D+%3D+%7B%0D%0A++++++++++++++++color%3A+%27rgba%28255%2C255%2C255%2C0.75%29%27%2C%0D%0A++++++++++++++++width%3A+1%2C%0D%0A++++++++++++++++value%3A+AxisPerc+*+i%2C%0D%0A++++++++++++++++zIndex%3A+5%0D%0A++++++++++++%7D%3B%0D%0A++++++++%7D%0D%0A++++++++axisOptions.plotLines+%3D+plotLines%3B%0D%0A++++++++return%3B%0D%0A++++%7D%0D%0A%7D%2C%0D%0A%0D%0AbeforeRendering%3A+function%28options%2C+chart%29%0D%0A%7B%0D%0A%0D%0A%7D%2C%0D%0A%0D%0AafterRendering%3A+function%28chart%29%0D%0A%7B%0D%0A++++var+_chart+%3D+chart._chart%3B%0D%0A++++var+container+%3D+%24%28_chart.renderTo%29.attr%28%27id%27%29%3B%0D%0A%0D%0A++++%2F%2Fset+chart+properties%0D%0A++++var+chartID+%3D+%27%23%27%2Bcontainer%2B+%27+%27%3B%0D%0A++++var+seriesClass+%3D+%27+.highcharts-series+%27%3B%0D%0A++++var+axisLabels+%3D+%27+.highcharts-axis-labels+%27%3B%0D%0A++++var+dataLabels+%3D+%27+.highcharts-data-labels+%27%3B%0D%0A++++%2F%2Fcompound+selectors%0D%0A++++var+barSelector+%3D+chartID%2B+seriesClass+%2B+%27+rect%27%3B%0D%0A++++var+axisLabelsText+%3D+chartID+%2B+axisLabels+%2B+%27text%27%3B%0D%0A++++var+axisLabelsTSpan+%3D+chartID+%2B+axisLabels+%2B+%27tspan%27%3B%0D%0A++++var+dataLabelsG+%3D+chartID+%2B+dataLabels+%2B+%27g%27%3B%0D%0A++++var+dataLabelsTSpan+%3D+chartID+%2B+dataLabels+%2B+%27text+tspan%27%3B%0D%0A++++var+dataLabelsText+%3D+chartID+%2B+dataLabels+%2B+%27text%27%3B%0D%0A++++var+unknownText+%3D+chartID+%2B+%27+svg+text%3Aeq%281%29+tspan%27%3B%0D%0A%0D%0A++++%2F%2Fremove+all+current+event+handlers%0D%0A++++%24%28barSelector%29.off%28%29%3B%0D%0A++++%0D%0A++++%2F%2Fsave+original+colors%0D%0A++++chart.origColors+%3D+%5B%5D%3B%0D%0A++++%24%28barSelector%29.each%28function%28%29%7B%0D%0A++++++++chart.origColors%5B%24%28barSelector%29.index%28%24%28this%29%29%5D+%3D+%24%28this%29.attr%28%27fill%27%29%3B%0D%0A++++++++%24%28this%29.attr%28%27active%27%2C%27true%27%29%3B%0D%0A++++%7D%29%3B%0D%0A%0D%0A++++%2F%2Falter+bar+placement%0D%0A++++var+dec+%3D+15%3B%09%0D%0A++++%24%28barSelector%2B%27%3Anot%28%3Afirst%29%3Anot%28%3Alast%29%27%29.each%28function%28%29%7B%0D%0A++++++++%24%28this%29.attr%28%27x%27%2C+%24%28this%29.attr%28%27x%27%29+-+dec%29%3B%09%09%0D%0A++++++++var+index+%3D+%24%28barSelector%29.index%28%24%28this%29%29%3B%0D%0A++++++++%24%28axisLabelsTSpan%29.eq%28index%29.attr%28%27x%27%2C%24%28axisLabelsTSpan%29.eq%28index%29.attr%28%27x%27%29+-+%28dec-2%29%29%0D%0A++++++++%0D%0A++++++++if%28%24%28dataLabelsG%29.eq%28index%29.attr%28%27transform%27%29+%21%3D%3D+undefined%29%7B%0D%0A++++++++++++var+transform+%3D+%24%28dataLabelsG%29.eq%28index%29.attr%28%27transform%27%29.replace%28%27translate%28%27%2C%27%27%29.replace%28%27%29%27%2C%27%27%29%3B%0D%0A++++++++++++transform+%3D+transform.split%28%27%2C%27%29%3B%0D%0A++++++++%0D%0A++++++++++++transform%5B0%5D+%3D+transform%5B0%5D+-+%28dec-2%29%3B%0D%0A++++++++++++%24%28dataLabelsG%29.eq%28index%29.attr%28%27transform%27%2C+%27translate%28%27%2Btransform%5B0%5D%2B%27%2C%27%2Btransform%5B1%5D%2B%27%29%27+%29%3B%0D%0A++++++++%7D%0D%0A++++++++dec+-%3D3%3B%0D%0A++++%7D%29%3B%0D%0A++++%0D%0A++++%0D%0A++++%24%28barSelector%29.eq%280%29.attr%28%27x%27%2C+5.5%29%3B%0D%0A++++%24%28axisLabelsTSpan%29.eq%280%29.attr%28%27x%27%2C34%29%3B%09%0D%0A++++%24%28dataLabelsTSpan%29.eq%280%29.attr%28%27x%27%2C4%29%3B%0D%0A%0D%0A++++%0D%0A++++%2F%2Ftweak+labels%0D%0A++++%24%28axisLabelsText%29.attr%28%27y%27%2C%27233%27%29%3B%0D%0A%0D%0A++++%24%28dataLabelsG%29.eq%281%29.hide%28%29%3B%0D%0A++++%0D%0A++++%2F%2Finteractive+functions%0D%0A++++var+grey+%3D+%27%23CCC%27%3B%0D%0A++++%24%28barSelector%29.click%28function%28%29%7B%0D%0A++++++++var+index+%3D+%24%28barSelector%29.index%28%24%28this%29%29%3B%0D%0A++++++++if%28%24%28this%29.attr%28%27active%27%29+%3D%3D+%27false%27%29%7B%0D%0A++++++++++++%24%28this%29.attr%28%27fill%27%2C+chart.origColors%5Bindex%5D%29.attr%28%27active%27%2C%27true%27%29%3B%0D%0A++++++++++++%24%28dataLabelsText%29.eq%28index%29.css%28%7B%27color%27%3A%27%23666%27%2C%27fill%27%3A%27%23666%27%7D%29%3B%0D%0A++++++++++++%24%28axisLabelsText%29.eq%28index%29.css%28%7B%27color%27%3A%27%23666%27%2C%27fill%27%3A%27%23666%27%7D%29%3B%0D%0A++++++++%7D%0D%0A++++++++else%7B%0D%0A++++++++++++if%28otherBarsActive%28index%29+%3D%3D%3D+true%29%7B%2F%2Fall+active%0D%0A++++++++++++++++%24%28barSelector%29.not%28%24%28this%29%29.attr%28%27fill%27%2C+grey%29.attr%28%27active%27%2C%27false%27%29%3B%0D%0A++++++++++++++++%24%28dataLabelsText%29.not%28%24%28dataLabelsText%29.eq%28index%29%29.css%28%7B%27color%27%3A%27%23BBB%27%2C%27fill%27%3A%27%23BBB%27%7D%29%3B%0D%0A++++++++++++++++%24%28axisLabelsText%29.not%28%24%28axisLabelsText%29.eq%28index%29%29.css%28%7B%27color%27%3A%27%23BBB%27%2C%27fill%27%3A%27%23BBB%27%7D%29%3B%0D%0A++++++++++++%7D%0D%0A++++++++++++else+if%28otherBarsInactive%28index%29+%3D%3D%3D+true%29%7B%2F%2Fall+inactive%0D%0A++++++++++++++++%24%28barSelector%29.not%28%24%28this%29%29.each%28function%28%29%7B%0D%0A++++++++++++++++++++%24%28this%29.attr%28%27fill%27%2C+chart.origColors%5B%24%28barSelector%29.index%28%24%28this%29%29%5D%29.attr%28%27active%27%2C%27true%27%29%3B%0D%0A++++++++++++++++%7D%29%3B%0D%0A++++++++++++++++%24%28dataLabelsText%29.not%28%24%28dataLabelsText%29.eq%28index%29%29.css%28%7B%27color%27%3A%27%23666%27%2C%27fill%27%3A%27%23666%27%7D%29%3B%0D%0A++++++++++++++++%24%28axisLabelsText%29.not%28%24%28axisLabelsText%29.eq%28index%29%29.css%28%7B%27color%27%3A%27%23666%27%2C%27fill%27%3A%27%23666%27%7D%29%3B%0D%0A++++++++++++%7D%0D%0A++++++++++++else%7B%2F%2Fat+least+one+other+active%0D%0A++++++++++++++++%24%28barSelector%29.eq%28index%29.attr%28%27fill%27%2C+grey%29.attr%28%27active%27%2Cfalse%29.mouseover%28%29%3B%0D%0A++++++++++++++++%24%28dataLabelsText%29.eq%28index%29.css%28%7B%27color%27%3A%27%23BBB%27%2C%27fill%27%3A%27%23BBB%27%7D%29%3B%0D%0A++++++++++++++++%24%28axisLabelsText%29.eq%28index%29.css%28%7B%27color%27%3A%27%23BBB%27%2C%27fill%27%3A%27%23BBB%27%7D%29%3B%0D%0A++++++++++++%7D%0D%0A++++++++%7D%09%09%0D%0A++++%7D%29%0D%0A++++.mouseover%28function%28%29%7B%0D%0A++++++++++++var+index+%3D+%24%28barSelector%29.index%28%24%28this%29%29%3B%0D%0A++++++++++++%24%28this%29.attr%28%27fill-opacity%27%2C0.4%29%3B%0D%0A++++++++++++%24%28this%29.attr%28%27fill%27%2C+chart.origColors%5B%24%28barSelector%29.index%28%24%28this%29%29%5D%29%3B%0D%0A++++%7D%29%0D%0A++++.mouseout%28function%28%29%7B%0D%0A++++++++%24%28this%29.attr%28%27fill-opacity%27%2C1.0%29%3B%0D%0A++++++++var+index+%3D+%24%28barSelector%29.index%28%24%28this%29%29%3B%0D%0A++++++++if%28%24%28this%29.attr%28%27active%27%29+%3D%3D+%27true%27%29%7B%0D%0A++++++++++++%24%28this%29.attr%28%27fill%27%2C+chart.origColors%5B%24%28barSelector%29.index%28%24%28this%29%29%5D%29%3B%0D%0A++++++++%7D%0D%0A++++++++else%7B%0D%0A++++++++++++%24%28this%29.attr%28%27fill%27%2C%27%23CCC%27%29%3B%0D%0A++++++++%7D%0D%0A++++%7D%29%3B%0D%0A++++%0D%0A++++function+otherBarsActive%28currBarIndex%29%7B%0D%0A++++++++var+ret+%3D+true%3B%0D%0A++++++++%24%28barSelector%29.each%28function%28%29%7B%0D%0A++++++++++++if%28%24%28barSelector%29.index%28%24%28this%29%29+%21%3D%3D+currBarIndex+%26%26+%24%28this%29.attr%28%27active%27%29+%3D%3D+%27false%27%29%7B%0D%0A++++++++++++++++ret+%3D+false%3B%0D%0A++++++++++++++++return+false%3B%09%09%09%0D%0A++++++++++++%7D%0D%0A++++++++%7D%29%3B%0D%0A++++++++return+ret%3B%0D%0A++++%7D%0D%0A++++%0D%0A++++function+otherBarsInactive%28currBarIndex%29%7B%0D%0A++++++++var+ret+%3D+true%3B%0D%0A++++++++%24%28barSelector%29.each%28function%28%29%7B%0D%0A++++++++++++if%28%24%28barSelector%29.index%28%24%28this%29%29+%21%3D%3D+currBarIndex+%26%26+%24%28this%29.attr%28%27active%27%29+%3D%3D+%27true%27%29%7B%0D%0A++++++++++++++++ret+%3D+false%3B%0D%0A++++++++++++++++return+false%3B%09%0D%0A++++++++++++%7D%0D%0A++++++++%7D%29%3B%0D%0A++++++++return+ret%3B%0D%0A++++%7D%09%0D%0A++++%0D%0A++++%2F%2Funknown+popover%0D%0A++++var+timer%3B%0D%0A++++var+hoverTimeout+%3D+500%3B%0D%0A++++var+visible+%3D+false%3B%0D%0A++++var+on+%3D+true%3B%0D%0A++++var+clicked+%3D+false%3B%0D%0A++++var+popoverClassName+%3D+%27ageOfChildren-unknown-popup%27%3B%0D%0A++++%0D%0A++++function+addPopover%28%29%7B%0D%0A++++++++if%28visible+%3D%3D%3D+true%29+return%3B%0D%0A++++++++var+container+%3D+%24%28%27%3Cdiv+class%3D%22unknown-popup-container%22%3E%3C%2Fdiv%3E%27%29%3B%0D%0A++++++++var+background+%3D+%24%28%27%3Cdiv+class%3D%22unknown_popup%22%3E%3C%2Fdiv%3E%27%29%3B%0D%0A++++++++var+text+%3D+%24%28%27%3Cdiv+class%3D%22unknownStatus%22%3EUnknown+Children%3A+%3C%2Fdiv%3E%27%29%3B%0D%0A++++++++var+sp+%3D+%24%28%27%3Cspan%3E%3Cspan%3E%27%29%3B%0D%0A++++++++var+divot+%3D+%24%28%27%3Cdiv+class%3D%22divot%22%3E%3C%2Fdiv%3E%27%29%3B%0D%0A++++%0D%0A++++++++sp.html%28%28on+%3D%3D%3D+true%29%3F+%27On%27%3A%27Off%27%29%3B%0D%0A++++++++text.append%28sp%29%3B%0D%0A++++++++background.append%28text%29%3B%0D%0A++++++++container.append%28background%29%3B%0D%0A++++++++container.append%28divot%29%3B%0D%0A++++++++container.css%28%27right%27%2C%27-36px%27%29%3B%0D%0A++++++++container.css%28%27bottom%27%2C%2715px%27%29%3B%0D%0A++++++++container.css%28%27z-index%27%2C201%29%3B%0D%0A++++++++container.addClass%28popoverClassName%29%3B%0D%0A++++%0D%0A++++++++%24%28%27.ageOfChildren%27%29.append%28container%29%3B%0D%0A++++++++visible+%3D+true%3B%0D%0A++++++++%0D%0A++++++++%24%28%27.%27%2BpopoverClassName%2B%27.unknown-popup-container%27%29.css%28%7B%0D%0A++++++++++++%27font-size%27%3A+%2712px%27%2C%0D%0A++++++++++++%27position%27%3A+%27absolute%27%0D%0A++++++++%7D%29%3B%0D%0A++++++++%24%28%27.%27%2BpopoverClassName%2B%27.unknown-popup-container+.unknown_popup%27%29.css%28%7B%0D%0A++++++++++++%27background-color%27%3A+%27black%27%2C%0D%0A++++++++++++%27background%27%3A+%27rgba%280%2C+0%2C+0%2C+0.8%29%27%2C%0D%0A++++++++++++%27border-radius%27%3A+%276px%27%2C%0D%0A++++++++++++%27text-align%27%3A+%27center%27%2C%0D%0A++++++++++++%27padding%27%3A+%277px+6px%27%2C%09%09%0D%0A++++++++++++%27color%27%3A+%27white%27%2C%0D%0A++++++++++++%27white-space%27%3A+%27nowrap%27%2C%0D%0A++++++++++++%27display%27%3A+%27inline-block%27%0D%0A++++++++%7D%29%3B%0D%0A++++%0D%0A++++++++%24%28%27.%27%2BpopoverClassName%2B%27.unknown-popup-container+.unknown_popup+.unknownStatus%27%29.css%28%7B%0D%0A++++++++++++%27padding%27%3A+%270px+3px%27%2C%0D%0A++++++++++++%27font-weight%27%3A+%27bold%27%0D%0A++++++++%7D%29%3B%0D%0A++++++++++++++++%0D%0A++++++++%24%28%27.%27%2BpopoverClassName%2B%27.unknown-popup-container+.divot%27%29.css%28%7B%0D%0A++++++++++++%27border-left%27%3A+%275px+solid+transparent%27%2C%0D%0A++++++++++++%27border-right%27%3A+%275px+solid+transparent%27%2C%0D%0A++++++++++++%27border-top%27%3A+%275px+solid+rgba%280%2C+0%2C+0%2C+0.8%29%27%2C%0D%0A++++++++++++%27width%27%3A%270px%27%2C%0D%0A++++++++++++%27margin%27%3A%271px+auto+0+auto%27%0D%0A++++++++%7D%29%3B%0D%0A++++%7D%0D%0A%0D%0A++++%24%28unknownText%29.mouseover%28function%28%29%7B%09%0D%0A++++++++addPopover%28%29%3B%0D%0A++++++++%24%28this%29.css%28%27cursor%27%2C%27pointer%27%29%3B%0D%0A++++%7D%29%0D%0A++++.mouseout%28function%28%29%7B%0D%0A++++++++delay+%3D+%28clicked+%3D%3D%3D+true%29%3F0%3A2000%3B%0D%0A++++++++timer+%3D+setTimeout%28function%28%29%7B%0D%0A++++++++++++%24%28%27.%27%2BpopoverClassName%29.fadeOut%28function%28%29%7B+%24%28this%29.remove%28%29%3B+%7D%29%3B%0D%0A++++++++++++visible+%3D+false%3B%0D%0A++++++++++++clicked+%3D+false%3B%0D%0A++++++++%7D%2C+delay%29%3B%0D%0A++++++++%24%28this%29.css%28%27cursor%27%2C%27auto%27%29%3B%0D%0A++++%7D%29%0D%0A++++.click%28function%28%29%7B%0D%0A++++++++addPopover%28%29%3B%0D%0A++++++++clicked+%3D+true%3B%0D%0A++++++++setTimeout%28function%28%29%7B%0D%0A++++++++++++on+%3D+%21on%3B%0D%0A++++++++++++var+val+%3D+%28on+%3D%3D%3D+true%29%3F+%27On%27%3A%27Off%27%3B%0D%0A++++++++++++%24%28unknownText%29.parent%28%29.css%28%7B%27color%27%3A+%28on+%3D%3D%3D+true%29%3F%27%23666%27%3A%27%23CCC%27%2C%27fill%27%3A+%28on+%3D%3D%3D+true%29%3F%27%23666%27%3A%27%23CCC%27+%7D%29%3B%0D%0A++++++++++++%24%28%27.%27%2BpopoverClassName%2B%27+.unknownStatus+span%27%29.html%28val%29%3B%0D%0A++++++++%7D%2C+200%29%3B%0D%0A++++%7D%29%3B%0D%0A++++%0D%0A%0D%0A%0D%0A++++return%3B%0D%0A%7D"/>
+</jstheme>]]></xml-property>
+        </report-item-theme>
+    </themes>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <extended-item extensionName="Chart" id="17">
+            <xml-property name="xmlRepresentation"><![CDATA[<ActuateChart version="2.6.1">
+ <ChartWithAxes version="2.6.1" type="Bar Chart" subType="Side-by-side" orientation="1" reverseCategory="false">
+  <block>
+   <children _type="TitleBlock" anchor="7" visible="true">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <label>
+     <caption value="AGE OF CHILDREN IN HOUSEHOLD">
+      <font name="Omnes_ATT Regular" size="11.0"/>
+      <color _body=",255,102,102,102"/>
+     </caption>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </label>
+   </children>
+   <children _type="Plot">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <clientArea>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </clientArea>
+   </children>
+   <children _type="Legend" visible="false">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <cursor type="0"/>
+    <clientArea>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </clientArea>
+    <separator>
+     <color _nil="1"/>
+    </separator>
+    <title>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </title>
+   </children>
+   <bounds _body="0.0,0.0,572.25,286.125"/>
+   <insets _body="0.0,0.0,0.0,0.0"/>
+   <outline visible="false">
+    <color _nil="1"/>
+   </outline>
+   <background _body=",255,255,255,255"/>
+   <cursor type="0"/>
+  </block>
+  <extendedProperties name="enable.area.alt" value="false"/>
+  <extendedProperties name="enable.drill.category" value="true"/>
+  <extendedProperties name="enable.drill.series" value="true"/>
+  <extendedProperties name="jschart.glass.style" value="false"/>
+  <extendedProperties name="jschart.series.shadow" value="false"/>
+  <extendedProperties name="jschart.animation" value="true"/>
+  <sampleData>
+   <baseSampleData dataSetRepresentation="A, B, C"/>
+   <orthogonalSampleData dataSetRepresentation="5,4,12" seriesDefinitionIndex="0"/>
+  </sampleData>
+  <interactivity enable="false"/>
+  <emptyMessage>
+   <caption value="This chart contains no data."/>
+   <background _body=",64,127,127,127"/>
+   <outline>
+    <color _body=",128,127,127,127"/>
+   </outline>
+  </emptyMessage>
+  <axes staggered="false" categoryAxis="true">
+   <title visible="false">
+    <background _nil="1"/>
+    <outline>
+     <color _nil="1"/>
+    </outline>
+   </title>
+   <associatedAxes labelPosition="2" primaryAxis="true" sideBySide="false">
+    <title visible="false">
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </title>
+    <seriesDefinitions>
+     <query definition=""/>
+     <series _type="BarSeries" seriesIdentifier="Series 1" stacked="false" riser="0">
+      <label visible="true">
+       <caption>
+        <font name="Omnes_ATT Medium" size="9.0" bold="false" rotation="0.0"/>
+        <color _body=",255,102,102,102"/>
+       </caption>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <dataDefinition definition="row[&quot;id&quot;]">
+       <grouping enabled="true" aggregateExpression="Count"/>
+      </dataDefinition>
+      <dataPoint prefix="" suffix="" separator="">
+       <components type="3">
+        <formatSpecifier _type="NumberFormatSpecifier" prefix="" suffix="%" multiplier="100.0" fractionDigits="0"/>
+       </components>
+      </dataPoint>
+      <curveFitting _nil="1"/>
+      <cursor type="0"/>
+     </series>
+     <grouping _nil="1"/>
+    </seriesDefinitions>
+    <lineAttributes visible="false">
+     <color _body=",0,255,255,255"/>
+    </lineAttributes>
+    <label visible="false">
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </label>
+    <majorGrid>
+     <lineAttributes visible="false">
+      <color _nil="1"/>
+     </lineAttributes>
+     <tickAttributes visible="false">
+      <color _nil="1"/>
+     </tickAttributes>
+    </majorGrid>
+    <minorGrid>
+     <lineAttributes visible="false">
+      <color _nil="1"/>
+     </lineAttributes>
+     <tickAttributes visible="false">
+      <color _nil="1"/>
+     </tickAttributes>
+    </minorGrid>
+    <scale step="5.0"/>
+    <origin>
+     <value _nil="1"/>
+    </origin>
+   </associatedAxes>
+   <seriesDefinitions sorting="0">
+    <query definition=""/>
+    <series seriesIdentifier="">
+     <label>
+      <background _nil="1"/>
+      <outline>
+       <color _nil="1"/>
+      </outline>
+     </label>
+     <dataDefinition definition="row[&quot;childrenCount&quot;]"/>
+     <curveFitting _nil="1"/>
+    </series>
+    <grouping enabled="true"/>
+    <sortKey definition="if(row[&quot;childrenCount&quot;] === &quot;none&quot;) 0;&#13;&#10;else parseInt(row[&quot;childrenCount&quot;].substring(0,row[&quot;childrenCount&quot;].indexOf(&quot;-&quot;)))+1;"/>
+   </seriesDefinitions>
+   <lineAttributes visible="true">
+    <color _body=",255,102,102,102"/>
+   </lineAttributes>
+   <label visible="true">
+    <caption>
+     <font name="Omnes_ATT Medium" size="9.0" bold="false"/>
+     <color _body=",255,102,102,102"/>
+    </caption>
+    <background _nil="1"/>
+    <outline>
+     <color _nil="1"/>
+    </outline>
+   </label>
+   <majorGrid>
+    <lineAttributes visible="false">
+     <color _nil="1"/>
+    </lineAttributes>
+    <tickAttributes visible="false">
+     <color _nil="1"/>
+    </tickAttributes>
+   </majorGrid>
+   <minorGrid>
+    <lineAttributes visible="false">
+     <color _nil="1"/>
+    </lineAttributes>
+    <tickAttributes visible="false">
+     <color _nil="1"/>
+    </tickAttributes>
+   </minorGrid>
+   <scale tickBetweenCategories="false"/>
+   <origin>
+    <value _nil="1"/>
+   </origin>
+  </axes>
+  <rotation>
+   <angles/>
+  </rotation>
+ </ChartWithAxes>
+</ActuateChart>
+]]></xml-property>
+            <property name="outputFormat">JS</property>
+            <property name="inheritColumns">true</property>
+            <property name="height">255px</property>
+            <property name="width">350px</property>
+            <expression name="bookmark" type="javascript">"AgeOfChildren"</expression>
+            <property name="dataSet">Data Set</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">id</property>
+                    <expression name="expression" type="javascript">dataSetRow["id"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">sex</property>
+                    <expression name="expression" type="javascript">dataSetRow["sex"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">age</property>
+                    <expression name="expression" type="javascript">dataSetRow["age"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">income</property>
+                    <expression name="expression" type="javascript">dataSetRow["income"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">ethnicity</property>
+                    <expression name="expression" type="javascript">dataSetRow["ethnicity"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">children</property>
+                    <expression name="expression" type="javascript">dataSetRow["children"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">datetime</property>
+                    <expression name="expression" type="javascript">dataSetRow["datetime"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">childrenCount</property>
+                    <expression name="expression" type="javascript">dataSetRow["childrenCount"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <property name="theme">AgeOfChildrenTheme</property>
+        </extended-item>
+    </body>
+</report>

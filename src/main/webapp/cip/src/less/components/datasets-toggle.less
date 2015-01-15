@@ -1,0 +1,58 @@
+.datasets-toggle{
+  display: block;
+  margin: 0px;
+  padding: 0px;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  .modal-popup {
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid grey;
+    width: 500px;
+    height: 240px;
+    padding: 10px 45px 10px 45px;
+    margin: auto;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    p {
+      font-size: 16px;
+      font-weight: bold;
+      margin-top: 0px;
+      margin-bottom: 23px;
+    }
+    h3 {
+      color: #397ab3;
+      font-weight: bold;
+      margin-top: 17px;
+      margin-bottom: 4px;
+    }
+    button {
+      background-color: #e1e2e2;
+      font-size: 15px;
+      font-weight: bold;
+      padding: 15px 60px 15px 60px;
+      border: none;
+      outline: none;
+      &:first-child {
+        margin-right: 2px;
+      }
+      &.selected {
+        background-color: #067AB4;
+        color: white;
+      }
+    }
+    a.okay {
+      font-size: 15px;
+      padding: 5px 35px 7px 35px;
+      border-radius: 4px;
+      margin-top: 23px;
+    }
+  }
+}

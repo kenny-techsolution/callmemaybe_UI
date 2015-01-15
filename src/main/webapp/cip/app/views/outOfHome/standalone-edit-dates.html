@@ -1,0 +1,51 @@
+<div class="form-group form-inline">
+	<div class="error-message-container" ng-show="errorService.errors.emptyStartDate.show||errorService.errors.incorrectStartDateRange.show||errorService.errors.incorrectWeekLength.show||errorService.errors.beyondBound.show">
+		<p ng-show='errorService.errors.emptyStartDate.show'>
+			{{errorService.errors.emptyStartDate.message}}
+		</p>
+		<p ng-show='errorService.errors.incorrectStartDateRange.show'>
+			{{errorService.errors.incorrectStartDateRange.message}}
+		</p>
+		<p ng-show='errorService.errors.incorrectWeekLength.show'>
+			{{errorService.errors.incorrectWeekLength.message}}
+		</p>
+		<p ng-show='errorService.errors.beyondBound.show'>
+			{{errorService.errors.beyondBound.message}}
+		</p>
+	</div>
+	<div class="inBetweenPadding">
+		<input id="standaloneStandardLengths" type="checkbox" name="standaloneStandardLengths" class="regular-checkbox"
+		ng-model="pickYourOwn.editDatesForm.default4weeks" ng-change="onChangeDefaultWeeks()">
+		<label for="standaloneStandardLengths" class="mt5 custom-checkbox">standard 4 week lengths</label>
+	</div>
+	<div class="inBetweenPadding">
+		<div class="dropdown select-box" ng-show="pickYourOwn.editDatesForm.default4weeks">
+			<button class="btn" focus-when="focusStates['Campaign Dates']" type="button" data-toggle="dropdown" ng-click="updateContainerHeight()">
+				{{pickYourOwn.editDatesForm.numWeeks}}
+				<span class="caret"></span>
+			</button>
+			<ul class="dropdown-menu text-right">
+				<li ng-repeat="choice in pickYourOwn.editDatesForm.campaignLengthOptions">
+					<a ng-click="onChangeNumWeeks(choice)">{{choice}}</a>
+				</li>
+			</ul>
+		</div>
+		<input number-only-input focus-when="focusStates['Campaign Dates']" class="week-length form-control" ng-model="pickYourOwn.editDatesForm.numWeeks" name="defaultweeks"
+		input-lessthan='100' input-decimals='0' on-change="onChangeNumWeeks(pickYourOwn.editDatesForm.numWeeks)"
+		ng-show="!pickYourOwn.editDatesForm.default4weeks">
+		<div class="week-length-text">
+			<span>week campaign</span>
+			<span class="digital-boards-only-msg" ng-show="pickYourOwn.isDigitalBoardsOnly()">Digital boards only. Static boards not permitted.</span>
+		</div>
+	</div>
+</div>
+<div class="form-group form-inline">
+	<div id="standaloneCampaignBegin">
+		<label for="standaloneCampaignBegin"><span ng-show='errorService.errors.emptyStartDate.show' style="color:#B30A3c;">*</span>Campaign runs</label>
+		<input class="form-control" name="standaloneCampaignBegin" datepicker-popup-mod="{{dateFormat}}" ng-model="pickYourOwn.editDatesForm.startDate"  is-open="opened" init-date='initDate' min="minDate" max="maxDate" datepicker-options="dateOptions" show-weeks="false" ng-required="false" ng-change="onChangeStartDate(pickYourOwn.editDatesForm.startDate)" ng-click="onOpenDatePicker($event)" ng-keydown="onStartDateKeyDown($event)" type="text" /><span class="end-date">through {{pickYourOwn.editDatesForm.endDate | date:dateFormat}}</span>
+	</div>
+</div>
+<div class="button-area">
+	<a ng-click="pickYourOwn.hideEditDates()" class="left btn">Cancel</a>
+	<a class="btn btn-lg btn-primary" ng-click="submitDates()">Submit</a>
+</div>

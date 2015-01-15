@@ -1,0 +1,24 @@
+.color-bar{
+	background-color: @orange;
+	height: 8px;
+
+	&:after{
+		background-color: lighten(@orange, 60%); 
+	}
+
+	&.purple{
+		background-color: @purple;
+
+		&:after{
+			background-color: lighten(@purple, 60%); 
+		}
+	}
+
+	&.blue{
+		background-color: @blue;
+
+		&:after{
+			background-color: lighten(@blue, 60%); 
+		}
+	}
+}

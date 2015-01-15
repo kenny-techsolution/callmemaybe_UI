@@ -1,0 +1,180 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if IE 9]>         <html class="no-js ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js">
+<!--<![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+  <link rel="stylesheet" href="/styles/main.css">
+  
+
+  <!--[if lt IE 9]>
+    <script src="scripts/html5shiv.min.js"></script>
+  <![endif]-->
+</head>
+<body data-page-id="login-page">
+
+<!-- DO NOT TRANSLATE OR MODIFY any part of the hidden parameter(s) -->
+
+<!--
+  The following block of code provides users with a warning message
+  if they do not have cookies configured on their browsers.  
+  If this environment does not use cookies to maintain login sessions, 
+  simply remove or comment out the block below.
+-->
+
+
+<!-- BEGIN Cookie check block -->
+<!--
+DO NOT TRANSLATE anything inside the SCRIPT tag except the quoted 
+string warningString and the first line of the JavaScript redirection 
+instruction beginning with "// Uncomment the following ..." 
+
+i.e.	var warningString = "Translate this string";
+-->
+<script LANGUAGE=JavaScript>
+var warningString = "<B>WARNING:</B> To maintain your login session, make sure that your browser is configured to accept Cookies.";
+document.cookie = 'acceptsCookies=yes';
+if(document.cookie == ''){
+document.write(warningString);
+}
+else{
+document.cookie = 'acceptsCookies=yes; expires=Fri, 13-Apr-1970 00:00:00 GMT';
+// Uncomment the following line for JavaScript redirection
+// document.cookie = 'ISAMOriginalURL=' + encodeURIComponent(window.location) + "; Path=/;";
+}
+</script>
+<noscript>
+<B>WARNING:</B> To maintain your login session, make sure that<BR>
+your browser is configured to accept Cookies.
+</noscript>
+<!-- END Cookie check block -->
+
+<!--[if lt IE 7]>
+     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+     <![endif]-->
+<!-- Add your site or application content here -->
+
+<header id="header" class="container-fluid login">
+  <div class="row">
+    <div class="col-md-offset-1 col-md-3 col-xs-11">
+      <span title="at&t consumer insights platform" class="att-text-logo"></span>
+    </div>
+    <div class="col-md-offset-9 col-md-2 col-xs-5">
+      <img class="logo-globe" src="/images/logos/att_globe@2X.png" width="46" height="46" />
+    </div>
+  </div>
+</header>
+
+
+<section id="login" class="ng-scope">
+	<div class="container">
+
+		<div class="row">
+			<div class="content-box blue-9 col-xs-14 col-xs-offset-1 col-md-12 col-md-offset-2">
+				<div class="row">
+					<div class="col-xs-16">
+						<h1 class="text-center">Welcome to<br> <strong>Consumer Insights Platform</strong></h1>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-offset-1 col-md-7 details">
+						<p>The powerful marketing tool founded on the stability and reliability of one of the world’s most trusted providers. When world-class technology and analytics leverages AT&amp;T’s dynamic mobile and multi-screen data, this is the result.</p>
+					</div>
+					<div class="col-md-offset-1 col-md-6">
+						<form id="user-login" name="userLogin" novalidate="" class="form-login" method="post" action="/pkmslogin.form?token=%CREDATTR{tagvalue_session_index}%">
+							<div class="form-group">
+								<div class="input-group input-group-lg">
+									<span class="input-group-addon"><span class="profile-blue-icon"></span></span>
+									<input id="username" class="form-control" name="username" type="text" placeholder="username" required="required">
+								</div>
+							</div>
+
+							<div id="username-error" class="error-container hide">
+								<span class="label label-danger label-error"></span>
+							</div>
+
+							<div class="form-group">
+								<div class="input-group input-group-lg">
+									<span class="input-group-addon"><span class="lock-blue-icon"></span></span>
+									<input class="form-control" name="password" type="password" placeholder="password" required="required">
+								</div>
+							</div>
+
+							<div id="password-error" class="error-container hide">
+									<span class="label label-danger label-error"></span>
+							</div>
+							
+							%ERROR%
+							
+							<div class="form-group">
+								<div class="col-xs-8 pl0">
+									<input id="remember-me" name="rememberMe" type="checkbox">
+									<label for="remember-me">Remember Me</label>
+								</div>
+								<div class="col-xs-8 pr0">
+									<!--<a class="text-right forgot-password" href="#/password/reset" title="forgot password">Forgot Password?</a>-->
+								</div>
+							</div>
+
+							<div class="button-container mb10">
+								<button type="submit" class="btn btn-primary btn-lg btn-block" value="Login">Sign In</button>
+							</div>
+
+
+							<INPUT TYPE="HIDDEN" NAME="login-form-type" VALUE="pwd">
+						</form>
+					</div>
+				</div>
+
+				<div class="row login-uid">
+					<div class="col-xs-16">
+						<span>OR</span>
+						<p class="text-center">Do you have an ATTUID?
+							<a
+							id="csp-enviroment"
+							href="#" title="sign in with uid">Sign in with UID</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer class="row footer">
+			<div class="col-xs-14 col-xs-offset-1 col-md-12 col-md-offset-2 pl0 pr0">
+				<p>© 2013 AT&T Intellectual Property. All rights reserved. AT&T, the AT&T logo and all other AT&T marks contained herein are trademarks of AT&T Intellectual Property and/or AT&T affiliated companies. AT&T 36USC220506</p>
+			</div>
+		</footer>
+	</div>
+
+
+	
+</section></div>
+
+
+
+  <!--[if lt IE 9]>
+    <script src="/scripts/es5-shim.min.js"></script>
+    <script src="/scripts/json3.min.js"></script>
+  <![endif]-->
+
+  <script src="/scripts/modernizr.js"></script>
+  <script src="/scripts/jquery.min.js"></script>
+  <script src="/scripts/bootstrap.min.js"></script>
+  <script src="/scripts/main.js"></script>
+
+
+
+</body></html>

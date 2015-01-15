@@ -1,0 +1,3 @@
+{
+	"getPoisByBBox": "/geo-service/pois/bounding?neLat="
+}

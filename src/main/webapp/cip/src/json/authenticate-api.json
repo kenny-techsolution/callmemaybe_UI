@@ -1,0 +1,5 @@
+{
+	"login": "/cip-auth/auth",
+	"users": "/cip-auth/users",
+	"accounts": "/cip-auth/accounts"
+}

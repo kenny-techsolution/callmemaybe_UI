@@ -1,0 +1,97 @@
+.button-container {
+	clear: both;
+	overflow: hidden;
+
+	&[class^='col']{
+		clear:none;
+	}
+	
+	.btn{
+		margin-right:10px;
+
+		&.btn-default,
+		&.btn-primary,
+		&.btn-success,
+		&.btn-info,
+		&.btn-warning,
+		&.btn-danger {
+			&:first-child{
+				margin-left:10px;
+
+				&.right{
+					margin-right:0px;
+				}
+			}
+		}
+
+		&.btn-block,
+		&.btn-block:first-child{
+			margin-left:0px;
+		}
+
+		&.left{
+			float:left;
+		}
+
+		&.right{
+			float:right;
+		}
+	}
+}
+
+
+
+.btn {
+	color:#666;
+	font-family: "Omnes_ATT Medium";
+
+	&:active{
+		.box-shadow(@shadow: none);
+	}
+
+	&.center-block{
+		display: block;
+		margin:0px auto;
+	}
+
+	&.disabled,
+	&[disabled="disabled"] {
+		background: #CCC !important;
+		border-color: #CCC !important;
+		color: #EFEFEF !important;
+	}
+	
+	&.btn-primary{
+		color:#fff;
+		
+		&:hover {
+			background-color: #F28C33;
+			border-color: #F28C33;
+		}
+
+		&.disabled,
+		&[disabled="disabled"] {
+			background: #EF6F00;
+			border-color: #EF6F00;
+		}
+	}
+
+	&.btn-info{
+		.button-variant(#fff; @blue; @blue)
+	}
+	
+	&.copy {
+		color: #fff;
+		border:none;
+		background-color:#666666;
+		font-size:12px;
+		line-height:12px;
+		padding:6px;
+		width:62px;
+		white-space:normal;
+
+		&:hover {
+			background-color:#067ab4;
+		}
+	}
+}

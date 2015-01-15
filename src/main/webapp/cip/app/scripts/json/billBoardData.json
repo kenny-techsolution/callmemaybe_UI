@@ -1,0 +1,132 @@
+[
+      {
+            "geometry": {
+                  "coordinates": [
+                        {
+                              "lat": 32.911316,
+                              "lon": -96.77424
+                        }
+                  ],
+                  "type": "Point"
+            },
+            "properties": {
+                  "billboardEndTime": 1403087140000,
+                  "facingDirection": "North",
+                  "billboardStartTime": 1400495140000,
+                  "content": "Advertisment for Casad Connie MD",
+                  "sourceKey": "Casad Connie MD_32.911317_-96.774242",
+                  "category": "Health",
+                  "address": "7777 Forest Lane, Dallas",
+                  "name": "Casad Connie MD",
+                  "type": "billboard"
+            },
+            "id": null,
+            "createdAt": 1400495140000,
+            "modifiedAt": 1400495140000,
+            "entityType": "BILLBOARD"
+      },
+      {
+            "geometry": {
+                  "coordinates": [
+                        {
+                              "lat": 32.909584,
+                              "lon": -96.772125
+                        }
+                  ],
+                  "type": "Point"
+            },
+            "properties": {
+                  "billboardEndTime": 1403087140000,
+                  "facingDirection": "North",
+                  "billboardStartTime": 1400495140000,
+                  "content": "Advertisment for Medical City Children''s",
+                  "sourceKey": "Medical City Children''s_32.909583_-96.772124",
+                  "category": "Hospital",
+                  "address": null,
+                  "name": "Medical City Children''s",
+                  "type": "billboard"
+            },
+            "id": null,
+            "createdAt": 1400495140000,
+            "modifiedAt": 1400495140000,
+            "entityType": "BILLBOARD"
+      },
+      {
+            "geometry": {
+                  "coordinates": [
+                        {
+                              "lat": 32.885128,
+                              "lon": -96.76951
+                        }
+                  ],
+                  "type": "Point"
+            },
+            "properties": {
+                  "billboardEndTime": 1403087140000,
+                  "facingDirection": "North",
+                  "billboardStartTime": 1400495140000,
+                  "content": "Advertisment for Central Dentist",
+                  "sourceKey": "Central Dentist_32.885128_-96.769509",
+                  "category": "Dental",
+                  "address": "10210 N Central Expy #100, Dallas",
+                  "name": "Central Dentist",
+                  "type": "billboard"
+            },
+            "id": null,
+            "createdAt": 1400495140000,
+            "modifiedAt": 1400495140000,
+            "entityType": "BILLBOARD"
+      },
+      {
+            "geometry": {
+                  "coordinates": [
+                        {
+                              "lat": 32.91449,
+                              "lon": -96.74482
+                        }
+                  ],
+                  "type": "Point"
+            },
+            "properties": {
+                  "billboardEndTime": 1403087140000,
+                  "facingDirection": "North",
+                  "billboardStartTime": 1400495140000,
+                  "content": "Advertisment for Nobel Insurance Services",
+                  "sourceKey": "Nobel Insurance Services_32.91449_-96.74482",
+                  "category": "Insurance",
+                  "address": "12225 Greenville Avenue, Dallas",
+                  "name": "Nobel Insurance Services",
+                  "type": "billboard"
+            },
+            "id": null,
+            "createdAt": 1400495140000,
+            "modifiedAt": 1400495140000,
+            "entityType": "BILLBOARD"
+      },
+      {
+            "geometry": {
+                  "coordinates": [
+                        {
+                              "lat": 32.914143,
+                              "lon": -96.73782
+                        }
+                  ],
+                  "type": "Point"
+            },
+            "properties": {
+                  "billboardEndTime": 1403087141000,
+                  "facingDirection": "North",
+                  "billboardStartTime": 1400495141000,
+                  "content": "Advertisment for Dallas Taxi Cab & Car Service",
+                  "sourceKey": "Dallas Taxi Cab & Car Service_32.914143_-96.737826",
+                  "category": "Establishment",
+                  "address": "Dallas",
+                  "name": "Dallas Taxi Cab & Car Service",
+                  "type": "billboard"
+            },
+            "id": null,
+            "createdAt": 1400495141000,
+            "modifiedAt": 1400495141000,
+            "entityType": "BILLBOARD"
+      }
+]

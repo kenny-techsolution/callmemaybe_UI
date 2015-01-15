@@ -1,0 +1,436 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<!-- required field == *** -->
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent> <!-- *** Just to read common properties (3rd party library version) Required for every (parent) POM-->
+		<groupId>com.att.bdcoe</groupId>
+		<artifactId>bigdata-org-pom</artifactId>
+		<version>0.0.20-1</version> <!-- @parent version@ please do not remove this comment -->
+	</parent>
+
+	<artifactId>cip-actuate</artifactId> <!-- *** Replace it with your own project name-->
+	<version>${product.version}</version> <!-- *** load different version #, depending on profile, leave it as a variable here-->
+	<packaging>war</packaging> <!-- only if you are creating jar or war file -->
+
+	<properties>
+		<version.spring>3.2.6.RELEASE</version.spring> <!-- if you need to use different version from one defined in org-pom -->
+		<repo.root>http://mavencentral.it.att.com:8084</repo.root> <!-- *** our repository root-->
+		<envDomain.tguard>https://webtest.tguard.att.com</envDomain.tguard>
+		<envDomain.cspDev>https://webtest.csp.att.com</envDomain.cspDev>
+		<envDomain.cspLive>https://www.e-access.att.com</envDomain.cspLive>
+		<cip-map.openStreetMap>http://nominatim.openstreetmap.org/search/?q=</cip-map.openStreetMap>
+		<cip-map.geo-service.poisBounding>http://192.117.156.46:8080/geo-service/pois/bounding?neLat=</cip-map.geo-service.poisBounding>
+		<cip-map.geo-service.billboardsBounding>http://192.117.156.46:8080/geo-service/billboards/bounding?neLat=</cip-map.geo-service.billboardsBounding>
+		<build.number>1</build.number>
+		<maven.3rdpartyUrl>http://mavencentral.it.att.com:8084/nexus/content/repositories/BDCOE-3rd-party</maven.3rdpartyUrl>
+		<node_modules.version>1.0.3</node_modules.version>
+		<node-gyp-headers.version>1.0.3</node-gyp-headers.version>
+		<node_modules.os>offline</node_modules.os>
+		<bower_components.version>1.0</bower_components.version>
+		<product.war.version>${product.version}-${build.number}</product.war.version>
+	</properties>
+
+	<pluginRepositories> <!-- *** don't need to edit plugin Repositorires -->
+		<pluginRepository>
+			<id>central</id>
+			<url>${repo.root}/nexus/content/groups/BDCOE</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</pluginRepository>
+	</pluginRepositories>
+
+	<distributionManagement> <!-- *** don't need to edit distributionManagement -->
+		<repository>
+			<id>nexus</id>
+			<name>BDCOE-releases</name>
+			<url>${repo.root}/nexus/content/repositories/BDCOE-releases</url>
+		</repository>
+		<snapshotRepository>
+			<id>nexus</id>
+			<name>BDCOE-snapshots</name>
+			<url>${repo.root}/nexus/content/repositories/BDCOE-snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+	<profiles> <!-- **** need to have at least 3 profiles (dev, QA, release), may need to have more -->
+		<profile>
+			<id>dev</id> <!-- *** enable things you need only for SNAPSHOT (local build)-->
+				<activation>
+					<activeByDefault>true</activeByDefault> <!-- SNAPSHOT should be the default -->
+				</activation>
+			<properties>
+				<product.version>1.0.1-SNAPSHOT</product.version>
+				<grunt.task>serve</grunt.task>
+				<grunt.debug>false</grunt.debug>
+				<grunt.actuate.server>http://10.0.17.104:8700</grunt.actuate.server>
+				<grunt.actuate.username>Administrator</grunt.actuate.username>
+				<grunt.actuate.password>Administrator1</grunt.actuate.password>
+				<grunt.defaultFenceId>[{"fenceId": "STGP_2717c230-f8be-11e3-a3ac-0800200c9a66", "timeCellId": "201404m"}]</grunt.defaultFenceId>
+				<grunt.envName>localhost</grunt.envName>
+				<grunt.envDomainUrl>http://10.0.14.103</grunt.envDomainUrl>
+			</properties>
+			<build>
+				<plugins>
+					<plugin>
+						<artifactId>maven-resources-plugin</artifactId>
+						<version>2.6</version>
+						<executions>
+							<execution>
+								<id>copy-app</id>
+								<phase>validate</phase>
+								<goals>
+									<goal>copy-resources</goal>
+								</goals>
+								<configuration>
+									<outputDirectory>${basedir}/target-grunt/app</outputDirectory>
+									<resources>
+										<resource>
+											<directory>${basedir}/src/main/webapp/cip/app</directory>
+											<filtering>false</filtering>
+										</resource>
+									</resources>
+								</configuration>
+							</execution>
+							<execution>
+								<id>copy-src</id>
+								<phase>validate</phase>
+								<goals>
+									<goal>copy-resources</goal>
+								</goals>
+								<configuration>
+									<outputDirectory>${basedir}/target-grunt/src</outputDirectory>
+									<resources>
+										<resource>
+											<directory>${basedir}/src/main/webapp/cip/src</directory>
+											<filtering>false</filtering>
+										</resource>
+									</resources>
+								</configuration>
+							</execution>
+							<execution>
+								<id>copy-test</id>
+								<phase>validate</phase>
+								<goals>
+									<goal>copy-resources</goal>
+								</goals>
+								<configuration>
+									<outputDirectory>${basedir}/target-grunt/test</outputDirectory>
+									<resources>
+										<resource>
+											<directory>${basedir}/src/main/webapp/cip/test</directory>
+											<filtering>false</filtering>
+										</resource>
+									</resources>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<id>demoLake</id>
+				<activation>
+					<activeByDefault>false</activeByDefault>
+				</activation>
+			<properties>
+				<product.version>1.0.1</product.version>
+				<grunt.task>build:demoLake</grunt.task>
+				<grunt.debug>false</grunt.debug>
+				<!--<node_modules.os>linux</node_modules.os>-->
+				<grunt.actuate.server>http://10.0.17.104:8700</grunt.actuate.server>
+				<grunt.actuate.username></grunt.actuate.username>
+				<grunt.actuate.password></grunt.actuate.password>
+				<grunt.defaultFenceId>[{"fenceId": "STGP_2717c230-f8be-11e3-a3ac-0800200c9a66", "timeCellId": "201404m"}]</grunt.defaultFenceId>
+			</properties>
+		</profile>
+		<profile>
+			<id>prodNonMin</id>
+				<activation>
+					<activeByDefault>false</activeByDefault>
+				</activation>
+			<properties>
+				<product.version>1.0.0</product.version>
+				<grunt.task>build:prodNonMin</grunt.task>
+				<node_modules.os>linux</node_modules.os>
+				<grunt.debug>false</grunt.debug>
+				<grunt.actuate.server>http://135.165.67.70:8700</grunt.actuate.server>
+				<grunt.actuate.username></grunt.actuate.username>
+				<grunt.actuate.password></grunt.actuate.password>
+				<grunt.defaultFenceId>[{"fenceId": "STGP_2717c230-f8be-11e3-a3ac-0800200c9a66", "timeCellId": "201404m"}]</grunt.defaultFenceId>
+			</properties>
+		</profile>
+		<profile>
+			<id>release</id> <!-- *** enable things you need only in Release build -->
+			<activation>
+				<activeByDefault>false</activeByDefault>
+				<property>
+					<name>build_profile</name> <!-- only activate if this property is set. if you require some properties to be set for your release build-->
+					<value>release</value>
+				</property>
+			</activation>
+			<properties>
+				<product.version>${version.major}.${version.minor}.${version.patch}-${build.number}</product.version>
+				<grunt.task>build:prodNonMin</grunt.task>
+				<grunt.debug>false</grunt.debug>
+				<grunt.actuate.server>http://135.165.67.70:8700</grunt.actuate.server>
+				<grunt.actuate.username></grunt.actuate.username>
+				<grunt.actuate.password></grunt.actuate.password>
+				<grunt.defaultFenceId>[{"fenceId": "STGP_2717c230-f8be-11e3-a3ac-0800200c9a66", "timeCellId": "201404m"}]</grunt.defaultFenceId>
+			</properties>
+		</profile>
+		<profile>
+			<id>QA</id> <!-- *** enable things you need only in QA build -->
+			<activation>
+				<activeByDefault>false</activeByDefault> <!-- only activate if this property is set. if you require some properties to be set for your QA build-->
+			</activation>
+			<properties>
+				<product.version>${version.major}.${version.minor}.${version.patch}-${build.number}</product.version>
+				<grunt.task>build:demoLake</grunt.task>
+			</properties>
+			<build>
+				<plugins>
+					<plugin>
+						<artifactId>maven-antrun-plugin</artifactId>
+						<dependencies>
+							<dependency>
+								<groupId>org.apache.ant</groupId>
+								<artifactId>ant</artifactId>
+								<version>1.7.0</version>
+							</dependency>
+						</dependencies>
+						<configuration>
+							<exportAntProperties>true</exportAntProperties>
+							<tasks>
+								<property name="classpath" refid="maven.runtime.classpath" />
+								<property name="verionType" value="RELEASE" />
+								<ant antfile="version-help.xml" target="set-dependency-version" inheritRefs="true" />
+								<ant antfile="version-help.xml" target="set-parent-version" inheritRefs="true" />
+							</tasks>
+						</configuration>
+						<executions>
+							<execution>
+								<phase>initialize</phase>
+								<goals>
+									<goal>run</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+
+	<build>
+		<finalName>${project.artifactId}-${product.war.version}_${project.activeProfiles[0].id}</finalName>
+		<plugins>
+			<plugin>
+				<groupId>com.googlecode.maven-download-plugin</groupId>
+				<artifactId>download-maven-plugin</artifactId>
+				<version>1.2.0</version>
+				<executions>
+					<execution>
+						<id>download-nodemodules</id>
+						<phase>initialize</phase>
+						<goals>
+							<goal>wget</goal>
+						</goals>
+						<configuration>
+							<url>${maven.3rdpartyUrl}/downloads/npm/node_modules/${node_modules.version}/node_modules-${node_modules.version}-${node_modules.os}.tar.gz</url>
+							<unpack>false</unpack>
+							<skipCache>false</skipCache>
+							<outputDirectory>${basedir}</outputDirectory>
+						</configuration>
+					</execution>
+					<execution>
+						<id>download-bower-comp</id>
+						<phase>initialize</phase>
+						<goals>
+							<goal>wget</goal>
+						</goals>
+						<configuration>
+							<url>${maven.3rdpartyUrl}/downloads/bower/bower_components/${bower_components.version}/bower_components-${bower_components.version}.tar.gz</url>
+							<unpack>true</unpack>
+							<!--<skipCache>true</skipCache>-->
+							<outputDirectory>target-grunt/app</outputDirectory>
+						</configuration>
+					</execution>
+					<!--<execution>
+						<id>download-node-gyp</id>
+						<phase>initialize</phase>
+						<goals>
+							<goal>wget</goal>
+						</goals>
+						<configuration>
+							<url>${maven.3rdpartyUrl}/downloads/npm/node-gyp/${node-gyp-headers.version}/node-gyp-headers-${node-gyp-headers.version}.tar.gz</url>
+							<unpack>true</unpack>
+							<skipCache>true</skipCache>
+							<outputDirectory>${basedir}</outputDirectory>
+						</configuration>
+					</execution> -->
+			</executions>
+			</plugin>
+			<plugin>
+				<groupId>pl.allegro</groupId>
+				<artifactId>grunt-maven-plugin</artifactId> <!-- if your build requires grunt project, try using this plugin -->
+				<version>1.4.2-5</version>
+				<configuration>
+					<jsSourceDirectory>cip</jsSourceDirectory> <!-- relative to src/main/webapp/, default: static -->
+					<target>${grunt.task}</target> <!-- name of Grunt target to run (default Grunt target is run) -->
+					<npmOfflineModulesFilePath>${basedir}</npmOfflineModulesFilePath>
+					<npmOfflineModulesFile>node_modules-${node_modules.version}-${node_modules.os}.tar.gz</npmOfflineModulesFile>
+					<unpack>true</unpack>
+					<npmEnvironmentVar>
+						<npm_config_http_proxy>http://one.proxy.att.com:8080</npm_config_http_proxy>
+						<npm_config_https_proxy>http://one.proxy.att.com:8080</npm_config_https_proxy>
+						<workingDirectory>${basedir}/target-grunt/node_modules</workingDirectory>
+					</npmEnvironmentVar>
+					<npmOptions>
+						<npmOption>--http-proxy=http://one.proxy.att.com:8080</npmOption>
+						<npmOption>--https-proxy=http://one.proxy.att.com:8080</npmOption>
+						<npmOption>--debug</npmOption>
+						<npmOption>--no-optional</npmOption>
+					</npmOptions>
+					<npmRebuildOptions>
+						<npmRebuildOption>--http-proxy=http://one.proxy.att.com:8080</npmRebuildOption>
+						<npmRebuildOption>--https-proxy=http://one.proxy.att.com:8080</npmRebuildOption>
+					</npmRebuildOptions>
+					<filteredResources>
+						<filteredResource>**/app/modules/**</filteredResource>
+						<filteredResource>**/app/scripts/**</filteredResource>
+						<filteredResource>**/app/views/**</filteredResource>
+					</filteredResources>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>create-resources</goal>
+							<goal>npm-offline</goal>
+							<!--<goal>npm</goal>-->
+							<!--<goal>bower</goal>-->
+							<goal>grunt</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.4</version>
+				<configuration>
+				<warSourceExcludes>cip/**</warSourceExcludes>
+				<webResources>
+					<resource>
+					<!-- this is relative to the pom.xml directory.  take the results from the grunt task and put into war file -->
+					<directory>target-grunt/app</directory>
+					</resource>
+				</webResources>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>1.7</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<configuration>
+							<target>
+								<tar destfile="target/node_modules-${node_modules.version}-new.tar.gz" compression="gzip" >
+									<tarfileset dir="target-grunt" filemode="755" >
+										<include name="node_modules/**"/>
+									</tarfileset>
+								</tar>
+							</target>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+			<artifactId>maven-clean-plugin</artifactId>
+			<version>2.5</version>
+			<configuration>
+				<filesets>
+				<fileset>
+						<!-- remove the grunt target directory as well  -->
+					<directory>target-grunt</directory>
+				</fileset>
+				<fileset>
+					<directory>${basedir}</directory>
+						<includes>
+							<include>node_modules-*.tar*</include>
+							<include>**/.node-gyp/**</include>
+						</includes>
+				</fileset>
+				</filesets>
+			</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>2.6</version>
+				<executions>
+					<execution>
+						<id>copy-scripts</id>
+						<phase>generate-resources</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${basedir}/target-grunt/app/scripts</outputDirectory>
+							<resources>
+								<resource>
+									<directory>templates</directory>
+									<filtering>true</filtering>
+								</resource>
+							</resources>
+							<delimiters>
+								<delimiter>${*}</delimiter>
+							</delimiters>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<!--<plugin>
+				<groupId>com.github.searls</groupId>
+				<artifactId>jasmine-maven-plugin</artifactId>
+				<version>1.3.1.5</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>test</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<jsSrcDir>${project.basedir}/target-grunt</jsSrcDir>
+					<jsTestSrcDir>${project.basedir}/target-grunt/test</jsTestSrcDir>
+					<junitXmlReportFileName>
+						../surefire-reports/TEST-jasmine.xml</junitXmlReportFileName>
+					<sourceIncludes>
+						<include>**/*.js</include>
+					</sourceIncludes>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.12</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>test</goal>
+						</goals>
+						<phase>package</phase>
+					</execution>
+				</executions>
+			</plugin>-->
+		</plugins>
+	</build>
+</project>

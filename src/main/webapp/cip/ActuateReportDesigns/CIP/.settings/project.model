@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.actuate.istudio.analysis.model:Project xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.actuate.istudio.analysis.model="http:///com.actuate.istudio.analysis.model.ecore" name="CIP">
+  <files xsi:type="com.actuate.istudio.analysis.model:RptDesign" name="Day-of-Week.rptdesign" path="/CIP/Report Designs/Day-of-Week.rptdesign">
+    <dataSets name="Data Set">
+      <columns name="datetime"/>
+      <columns name="DayofWeek" expression="var myDate = row[&quot;datetime&quot;];&#xD;&#xA;switch(myDate.getDay()){&#xD;&#xA;&#x9;case 0:&#xD;&#xA;&#x9;&#x9;&quot;Su&quot;;&#xD;&#xA;&#x9;&#x9;break;&#xD;&#xA;&#x9;case 1:&#xD;&#xA;&#x9;&#x9;&quot;M&quot;;&#xD;&#xA;&#x9;&#x9;break;&#xD;&#xA;&#x9;case 2:&#xD;&#xA;&#x9;&#x9;&quot;Tu&quot;;&#xD;&#xA;&#x9;&#x9;break;&#xD;&#xA;&#x9;case 3:&#xD;&#xA;&#x9;&#x9;&quot;W&quot;;&#xD;&#xA;&#x9;&#x9;break;&#xD;&#xA;&#x9;case 4:&#xD;&#xA;&#x9;&#x9;&quot;Th&quot;;&#xD;&#xA;&#x9;&#x9;break;&#xD;&#xA;&#x9;case 5:&#xD;&#xA;&#x9;&#x9;&quot;F&quot;;&#xD;&#xA;&#x9;&#x9;break;&#xD;&#xA;&#x9;case 6:&#xD;&#xA;&#x9;&#x9;&quot;Sa&quot;;&#xD;&#xA;&#x9;&#x9;break;&#xD;&#xA;}"/>
+      <columns name="NumDayofWeek" expression="row[&quot;datetime&quot;].getDay() + 1;"/>
+      <columns name="DayCount"/>
+    </dataSets>
+  </files>
+</com.actuate.istudio.analysis.model:Project>

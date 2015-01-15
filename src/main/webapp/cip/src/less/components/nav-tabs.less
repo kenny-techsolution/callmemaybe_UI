@@ -1,0 +1,121 @@
+.nav-tabs{
+  &.nav-center{
+    .nav-center;
+  }
+}
+
+.nav-tabs.nav-tabs-default{
+  border: none;
+  background-color: #fff;
+  padding-top:10px;
+
+  > li {
+    margin-bottom:0px;
+    vertical-align: bottom;
+    width: 126px;
+
+    > a{
+      color:#fff;
+      background-color: #666;
+      border: 0px;
+      border-radius: 6px 6px 0 0;
+      font-family: "Omnes_ATT Medium";
+      font-size: 18px;
+      height: 55px;
+      line-height: 1em;
+      margin-right:10px;
+
+      &:hover,
+      &:focus{
+        background-color: #067AB4;
+        border:none;
+        color: #fff;
+      }
+    }
+
+    &.active{
+      &:after{
+        content: "";
+        height: 0px;
+        border-left: 60px solid transparent;
+        border-right: 60px solid transparent;
+        border-top: 20px solid #0467A4;
+        left:0px;
+        position: absolute;
+        width: 0px;
+      }
+
+      > a{
+        background-color: #067AB4;
+      }
+    }
+
+    &.disabled{
+      > a{
+        background-color:#ccc;
+      }
+    }
+
+    &.text{
+      font-size: 16px;
+      width:auto;
+    }
+  }
+}
+
+.nav-tabs.nav-tabs-secondary {
+    border:none;
+    height: 50px;
+    font-size: 16px;
+    margin:0px auto;
+    width: 734px;
+  
+  > li {
+    margin-top: 20px;
+    margin-left: 32px;
+    margin-right:10px;
+
+    > a {
+      background-color:transparent;
+      border:none;
+      color: #cbcbcb;
+      padding:0px;
+
+      &:hover {
+        border:none;
+        background-color:transparent;
+        color: #FFFFFF;
+      }
+    }
+
+    &.active {
+      a{
+        color: #FFFFFF;
+
+        &:after {
+          content: ' ';
+          height: 0;
+          position: absolute;
+          width: 0;
+          border: 10px solid transparent;
+          border-bottom-color: #dbdbdb;
+          border-left-width: 13px;
+          border-right-width: 13px;
+          margin-left: -13px;
+          left: 50%;
+          padding-top: 12px;
+        }
+      }
+    }
+  }
+}
+
+
+.nav-center{
+  text-align: center;
+
+  > li{
+    float:none;
+    display: inline-block;
+  }
+}

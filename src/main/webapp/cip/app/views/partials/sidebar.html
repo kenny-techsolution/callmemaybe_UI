@@ -1,0 +1,144 @@
+<div class="row">
+	<div class="col-xs-16 pl0 pr0">
+		<div class="toggle-nav toggle-accordion">
+			<div class="side-bar-tab active"></div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div id="nav-collapsed" class="col-xs-16 pl0 pr0 toggle-accordion">
+		<div class="color-bar"></div>
+		<div class="color-bar purple"></div>
+		<div class="color-bar blue"></div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-16 pl0 pr0">
+		<div id="nav-accordion">
+			<div id="nav-expanded">
+				<div id="product-container" class="accordion-panel">
+					<div class="color-bar"></div>
+
+					<div define-campaign> </div>
+				</div>
+
+				<!-- re-enable when business wants the readout section back.
+				<div id="read-out-container" class="accordion-panel">
+					<div class="drag-active color-bar purple ui-resizable-handle ui-resizable-n"></div>
+
+					<div class="header">
+						<h3>READOUTS</h3>
+						<input type="text" ng-model="searchReadOut" placeholder="search" />
+
+						<div class="nav-panel-tabs">
+							<div class="slider">
+								<ul class="nav nav-justified">
+									<li class="active" data-tab-id="experts"><span>Experts say...</span></li>
+									<li data-tab-id="snapshots"><span>Snapshots</span></li>
+									<li data-tab-id="trends"><span>Trends</span></li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="options">
+							<div class="left">View All</div>
+							<div class="right sort-comments">Newest on top <span class="icon"></span></div>
+						</div>
+					</div>
+
+					<div class="tabs-container" data-scroll-box-shadow>
+						<div class="tab-content">
+							<div id="experts" class="tab active">
+								<div ng-repeat="expert in experts | filter:searchReadOut | orderBy:'id'" class="comment" expertid="{{expert.id}}">
+									<p>{{expert.description}}</p>
+									<div class="footer">
+										<span class="username">UserName</span>
+										<span class="timestamp">Q1 {{expert.timestamp.getFullYear()}}</span>
+									</div>
+								</div>
+							</div>
+							<div id="snapshots" class="tab">
+								<div ng-repeat="snapshot in snapshots | filter:searchReadOut | orderBy:'id'" class="comment" snapshotid="{{snapshot.id}}">
+									<p>{{snapshot.description}}</p>
+									<div class="footer">
+										<span class="username">UserName</span>
+										<span class="timestamp">Q1 {{expert.timestamp.getFullYear()}}</span>
+									</div>
+								</div>
+							</div>
+							<div id="trends" class="tab">
+								<div ng-repeat="trend in trends | filter:searchReadOut | orderBy:'id'" class="comment" trendid="{{trend.id}}">
+									<p>{{trend.description}}</p>
+									<div class="footer">
+										<span class="username">UserName</span>
+										<span class="timestamp">Q1 {{expert.timestamp.getFullYear()}}</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				-->
+
+				<div id="charts-container" class="accordion-panel">
+					<div class="drag-active color-bar blue ui-resizable-handle ui-resizable-n"></div>
+
+					<div class="header">
+						<h3>CHARTS</h3>
+
+						<div class="nav-panel-tabs">
+							<div class="slider">
+								<ul class="nav left nav-justified">
+									<li class="active" data-tab-id="used"><span>Used</span></li>
+									<li data-tab-id="unused"><span>Unused</span></li>
+									<li class="slide-tabs" data-position="right"><span>Chart By Type</span></li>
+								</ul>
+
+								<div class="nav-tab-toggle slide-tabs" data-position="right"><span></span></div>
+
+								<ul class="nav right nav-justified">
+									<li class="active" data-tab-id="Who"><span>Who</span></li>
+									<li data-tab-id="What"><span>What</span></li>
+									<li data-tab-id="When"><span>When</span></li>
+									<li data-tab-id="Where"><span>Where</span></li>
+									<li data-tab-id="Events"><span>Events</span></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+					<div class="tabs-container slide" data-scroll-box-shadow>
+						<div class="tab-content">
+							<div class="content-left" style="display:none">
+								<div id="used" class="tab active">
+									<div ng-repeat="chart in charts | filter: { active: true }"  chart-icon="{{chart.id}}" ></div>
+								</div>
+								<div id="unused" class="tab">
+									<div ng-repeat="chart in charts | filter: { active: false }"  chart-icon="{{chart.id}}" ></div>
+								</div>
+								<div id="type" class="chart-icons-holder "> </div>
+							</div>
+							<div class="content-right">
+							<div id="Who" class="tab active">
+									<div ng-repeat="chart in charts | filter: { category: 'Who' }"  chart-icon="{{chart.id}}" ></div>
+								</div>
+								<div id="What" class="tab">
+									<div ng-repeat="chart in charts | filter: { category: 'What' }" chart-icon="{{chart.id}}" ></div>
+								</div>
+								<div id="When" class="tab">
+									<div ng-repeat="chart in charts | filter: { category: 'When' }" chart-icon="{{chart.id}}" ></div>
+								</div>
+								<div id="Where" class="tab">
+									<div ng-repeat="chart in charts | filter: { category: 'Where' }" chart-icon="{{chart.id}}" ></div>
+								</div>
+								<div id="Events" class="tab">
+									<div ng-repeat="chart in charts | filter: { category: 'Events' }" chart-icon="{{chart.id}}" ></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

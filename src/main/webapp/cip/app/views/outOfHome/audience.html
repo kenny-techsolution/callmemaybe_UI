@@ -1,0 +1,61 @@
+<div id="audience-container" ng-controller="audienceCtrl">
+	<div id="target-audience">
+		<fieldset class="fields" ng-repeat="(type, audience) in audiences" ng-class="{'disabled': type==='secondary' && !audiences.secondary.included}">
+			<div class="overlay" ng-if="type==='secondary'" ng-class="audience.title"></div>
+
+			<div class="audience-row audience-title">
+				<div class="title blue">
+					{{audience.title}}
+				</div>
+				<a ng-if="audience.canCopy" class="btn btn-sm copy pull-right" role="button" ng-click="copyPrimary()" >Copy Primary</a>
+				<span ng-if="audience.canReset" class="campaign-icon reset pull-right" ng-click="reset()" ng-class="{'hide' : !audienceChanged(audience)}"></span>
+			</div>
+
+			<div class="audience-row form-group">
+				<span class="campaign-icon gender" ng-class="{'selected': demographicChanged(audience, 'gender')}"></span>
+				<campaign-dropdown container="audience" type="'gender'" should-focus="focusStates[audience.title]" class='pull-right'></campaign-dropdown>
+			</div>
+
+			<div class="audience-row form-group">
+				<span class="campaign-icon age" ng-class="{'selected': demographicChanged(audience, 'age')}"></span>
+				<div class="description">
+					Age
+				</div>
+				<campaign-dropdown classes="'range'" container="audience" type="'age'" class='pull-right'></campaign-dropdown>
+			</div>
+
+			<div class="audience-row form-group">
+				<span class="campaign-icon income" ng-class="{'selected': demographicChanged(audience, 'income')}"></span>
+				<div class="description">
+					Income
+				</div>
+				<campaign-dropdown classes="'range'" container="audience" type="'income'" class='pull-right'></campaign-dropdown>
+			</div>
+
+			<div class="audience-row form-group">
+				<span class="campaign-icon household" ng-class="{'selected': demographicChanged(audience, 'household')}"></span>
+				<campaign-dropdown  container="audience" type="'household'" class='pull-right'></campaign-dropdown>
+			</div>
+
+			<div class="audience-row form-group household-age" ng-class="{'disabled': !isWithChildren(audience.form.household)}">
+				<div class="overlay"></div>
+				<div class="description">
+					Age
+				</div>
+				<campaign-dropdown classes="'range'" container="audience" type="'ageOfChild'" class='pull-right'></campaign-dropdown>
+			</div>
+
+			<div class="audience-row form-group">
+				<span class="campaign-icon ethnicity" ng-class="{'selected': demographicChanged(audience, 'ethnicity')}"></span>
+				<campaign-dropdown container="audience" type="'ethnicity'" class='pull-right'></campaign-dropdown>
+			</div>
+
+			<div class="col-xs-16"  ng-if="audience.canIncludeSecondary">
+				<input type="checkbox" id="includeSecondary" name="includeSecondary" class="regular-checkbox" ng-model="audiences.secondary.included">
+				<label for="includeSecondary" class="custom-checkbox">Include Secondary Audience</label>
+			</div>
+		</fieldset>
+	</div>
+
+	<div id="audience-parameters" ng-include="'views/outOfHome/audience-parameters.html'"></div>
+</div>

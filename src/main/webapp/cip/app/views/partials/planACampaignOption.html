@@ -1,0 +1,11 @@
+<div id="define-campaign" class="tab active" ng-hide="pickYourOwn.pickYourOwnBoards" ng-controller="campaignSidebarCtrl">
+	<h4>Start a New Campaign</h4>
+	<p>{{product}}</p>
+
+	<div class="buttons">
+		<a ng-click='openCampaign()' class="btn btn-lg btn-primary" role="button">Define Campaign</a>
+	</div>
+</div>
+
+<div class="pick-your-own-boards alternate-option" ng-hide="pickYourOwn.pickYourOwnBoards">Already know what boards you want to use? <a ng-click="pickYourOwn.setPickYourOwnBoards(true)" class="url campaign-blue-text">Pick your own boards</a> for your campaign.
+</div>

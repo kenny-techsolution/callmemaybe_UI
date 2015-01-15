@@ -1,0 +1,26 @@
+<header id="header" header show-filterbar="false"></header>
+
+<div class="container-fluid admin-util">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-16">
+				<a class="btn btn-info btn-sm pull-right" href="" title="add account">Add Account</a>
+				<breadcrumb updates="updateBreadcrumbs"></breadcrumb>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row mb15">
+		<div class="col-xs-6">
+			Account ID: {{accountData.id}}
+			{{accountData.status}}
+		</div>
+		<div class="col-xs-4 col-xs-offset-6 button-container">
+			<a class="btn btn-info btn-sm right" href="" title="edit">Edit</a>
+			<a class="btn btn-primary btn-sm right" ng-href="#/accounts/{{accountData.id}}/users" title="manage users">Manage Users ({{accountData.users.length}})</a>
+		</div>
+	</div>
+	{{accountData}}
+</div>

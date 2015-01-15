@@ -1,0 +1,33 @@
+<div id="out-of-home" class="hard-width fill">
+	<div class="container sidebar" sidebar ng-controller="campaignCtrl"></div>
+
+	<header id="header" header bootstrap-container="'container-fluid'" show-filterbar="true"></header>
+
+	<div class="export-section" ng-controller="exportCSVCtrl"  ng-show="csvFile.campaignSelection.campaignResponseData">
+		<a ng-click="downloadCSV()" class="btn btn-info export-csv" role="button">Export Data to CSV</a>
+	</div>
+
+	<section id="charts" class="fill">
+		<div class="container-fluid fill">
+			<div class="row fill">
+				<div class="col-xs-16 fill">
+					<div id="chart-grid">
+						<div></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="campaign" class="hard-width" ng-controller="campaignCtrl">
+		<div id="campaign-sidebar" class="sidebar" ng-controller="campaignSidebarCtrl" ng-include="'views/outOfHome/campaign-sidebar.html'"></div>
+		<div id="campaign-body" class="fill">
+			<!--this strip directive will load 1.campaign details, 2.map, & 3 audience tabs. The strip config is in WizardTabsService.js -->
+			<strip class="campaign-strip" current-template="strip.currentTemplate" tab-selected="strip.selectedTabIndex"
+			area-selected="cipMap.areaSelected(area)" cbsa-sub-types="cipMap.cbsaSubTypes" areas="cipMap.areas"
+			selected-secondary-tab="cipMap.selectedSecondaryTab" clear-search-box-request="strip.clearSearchBoxRequest"></strip>
+			<div class="form-horizontal campaign-template" ng-include="strip.currentTemplate" ng-class="{'cip-map-position-fix':strip.selectedTabIndex==1}"></div>
+		</div>
+	</section>
+</div>
+

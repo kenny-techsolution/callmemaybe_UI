@@ -1,0 +1,15 @@
+<div class="top-row">
+	<div class="section-title campaign-blue-text">Add Boards</div>
+	<div class="question-section">
+		<div class="question-mark-icon" ng-mouseover="$parent.hoverOnQuestionMark(true)" ng-mouseleave="$parent.hoverOnQuestionMark(false)"/>
+	</div>
+</div>
+<textarea id="boards-list" ng-model="pickYourOwn.boards" placeholder="e.g. 01234567,456789,678901" ng-change="commaSeparated()"></textarea>
+<div class="button-area">
+	<a class="btn btn-lg btn-primary" ng-class="{disabled: pickYourOwn.boards.length === 0}" ng-click="addBoards()">Add Boards</a>
+</div>
+<div class="pick-your-own-boards-popup" ng-show="!pickYourOwn.hasBeenAdded || (pickYourOwn.hasBeenAdded && pickYourOwn.questionMarkHovered)">
+	<div class="divot"/>
+	<div class="text-section">Enter the TAB Panel ID or Plant ID for as many boards as you like, separated with commas.</div>
+	<div class="text-section">To import board lists from a spreadsheet, simply copy & paste board numbers from a column.</div>
+</div>

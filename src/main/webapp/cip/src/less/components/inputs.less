@@ -1,0 +1,78 @@
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"] {
+  border:1px solid #cccccc !important;
+  border-radius: 3px !important;
+  font-family: 'Omnes_ATT Regular' !important;
+  height:30px;
+
+  &.inline{
+    display: inline-block;
+    vertical-align: middle;
+  }
+  &:focus{
+    border: 1px solid #66afe9 !important;
+  }
+}
+
+input[type="checkbox"] {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height:1px;
+  width:1px;
+  margin:-1px;
+  padding:0;
+  border:0;
+
+  &:checked + label {
+    background-image: url('../images/checkboxon.svg');
+  }
+  &:checked:focus + label {
+    background: url('../images/checkboxon-focus.svg') no-repeat 0px 0px;
+  }
+  + label {
+    cursor:pointer;
+    background: url('../images/checkboxoff.svg') no-repeat 0px 0px;
+    display:inline-block;
+    height:18px;
+    padding-left:26px;
+    vertical-align:middle;
+
+    &.no-text{
+      padding-left:18px;
+    }
+  }
+  &:focus + label {
+    background: url('../images/checkboxoff-focus.svg') no-repeat 0px 0px;
+  }
+}
+
+
+.disabled input[type="checkbox"] {
+  &:checked + label{
+    background-image: url("../images/checkboxon-disabled.svg");
+    color: #AAAAAA;
+  }
+  + label{
+    background-image: url("../images/checkboxoff-disabled.svg");
+    color: #AAAAAA;
+  }
+}
+
+label {
+  font-weight: normal;
+}
+

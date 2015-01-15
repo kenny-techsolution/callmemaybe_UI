@@ -1,0 +1,5 @@
+{
+	"getLayersByBounds": "/geo-service/layers/bounding?layer=",
+	"getLayerById": "/geo-service/layers/",
+	"getLayerNames": "/geo-service/layers/names?layer="
+}

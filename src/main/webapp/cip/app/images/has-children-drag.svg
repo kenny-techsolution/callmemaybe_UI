@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+	<!ENTITY ns_flows "http://ns.adobe.com/Flows/1.0/">
+]>
+<svg version="1.1"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 x="0px" y="0px" width="85px" height="86px" viewBox="105 872.5 85 86" enable-background="new 105 872.5 85 86"
+	 xml:space="preserve">
+<defs>
+</defs>
+<g>
+	<defs>
+		<rect id="SVGID_1_" width="390.667" height="984.5"/>
+	</defs>
+	<clipPath id="SVGID_2_">
+		<use xlink:href="#SVGID_1_"  overflow="visible"/>
+	</clipPath>
+	<path clip-path="url(#SVGID_2_)" fill="#333333" d="M190,951.841c0,3.401-2.758,6.159-6.159,6.159h-72.682
+		c-3.401,0-6.159-2.758-6.159-6.159v-72.682c0-3.401,2.758-6.159,6.159-6.159h72.682c3.401,0,6.159,2.758,6.159,6.159V951.841z"/>
+	<path clip-path="url(#SVGID_2_)" fill="#FFFFFF" d="M159.037,893.7c2.31,0,4.184-1.873,4.184-4.184c0-2.31-1.874-4.183-4.184-4.183
+		c-2.311,0-4.184,1.873-4.184,4.183C154.853,891.827,156.726,893.7,159.037,893.7"/>
+	<path clip-path="url(#SVGID_2_)" fill="#FFFFFF" d="M163,895h-8c-1.292,0-2.334,0.333-3.345,1.308
+		c-0.753,0.559-7.05,10.369-8.091,11.997c-0.127,0.046-0.249,0.114-0.353,0.214l-5.799,5.512c-0.003,0.003-0.004,0.008-0.008,0.011
+		C137.273,914.015,137.139,914,137,914h-5c-0.758,0-1.408,0.426-1.748,1.047c-0.005,0.008-0.013,0.011-0.018,0.019l-4.174,6.824
+		c-0.289,0.473-0.141,1.087,0.331,1.375c0.47,0.288,1.086,0.141,1.375-0.33l3.018-4.935H131v6.396V925v9.604
+		c0,0.771,0.625,1.396,1.396,1.396h0.208c0.771,0,1.396-0.625,1.396-1.396V925h2v9.604c0,0.771,0.625,1.396,1.396,1.396h0.208
+		c0.771,0,1.396-0.625,1.396-1.396V925v-0.604V918v-2c0-0.217-0.043-0.422-0.107-0.617l4.995-4.748
+		c0.689,0.423,1.592,0.227,2.038-0.454L153,902h1v11v2v19c0,1.104,0.896,2,2,2s2-0.896,2-2v-19h2v19c0,1.104,0.896,2,2,2
+		s2-0.896,2-2v-19v-2v-11h1v10.5c0,0.828,0.672,1.5,1.5,1.5s1.5-0.672,1.5-1.5V902v-1.5V900C168,897.238,165.762,895,163,895"/>
+	<path clip-path="url(#SVGID_2_)" fill="#FFFFFF" d="M135.167,912.667c1.703,0,3.083-1.381,3.083-3.083
+		c0-1.703-1.38-3.084-3.083-3.084s-3.083,1.381-3.083,3.084C132.084,911.286,133.464,912.667,135.167,912.667"/>
+</g>
+<text transform="matrix(1 0 0 1 115.7178 948.332)"><tspan x="0" y="0" fill="#FFFFFF" font-family="'Omnes_ATT-Regular'" font-size="11">Has Child</tspan><tspan x="46.64" y="0" fill="#FFFFFF" font-family="'Omnes_ATT-Regular'" font-size="11">r</tspan><tspan x="50.644" y="0" fill="#FFFFFF" font-family="'Omnes_ATT-Regular'" font-size="11">en</tspan></text>
+</svg>

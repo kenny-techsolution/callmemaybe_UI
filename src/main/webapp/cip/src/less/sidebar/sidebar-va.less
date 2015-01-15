@@ -1,0 +1,537 @@
+.sidebar-va {
+  .sidebar {
+    float: right;
+    width: 280px;
+  }
+  #product-container {
+    font-family: "Omnes_ATT Regular";
+
+    h4 {
+      color: #EF6F00;
+      font-size: 1.7rem;
+    }
+
+    .tab {
+      background-color: #ffffff;
+      padding: 8px;
+    }
+
+    .buttons {
+      margin: 15px 0px 5px;
+      text-align: center;
+    }
+  }
+
+  #read-out-container {
+    .tabs-container {
+      top: 158px !important;
+
+      .tab-content {
+        padding-top: 8px !important;
+      }
+    }
+
+    input[type=text] {
+      border-radius: 4px;
+      border: 1px solid #888888;
+      background-color: #444444;
+      width: 96%;
+      margin: 0px 2% 12px;
+
+      padding: 3px 3px 5px 8px;
+      font-family: "Omnes_ATT Regular";
+      color: #888888;
+      outline: none;
+    }
+  }
+
+  #charts-container {
+    overflow: hidden;
+    .tab {
+      > div {
+        cursor: pointer;
+        float: left;
+        width: 85px;
+        height: 86px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+      }
+      > div:nth-child(3n+3) {
+        margin-right: 0px;
+      }
+    }
+  }
+
+  .va {
+    border-left: 1px solid #333333;
+    background: white !important;
+    .clear {
+      clear: both;
+    }
+
+    .plus-minus-button {
+      width: 15px;
+      height: 15px;
+      float: left;
+    }
+
+    .cip-minus-btn {
+      background: url("../svgs/cip_minus_btn.svg") no-repeat !important;
+    }
+
+    .cip-plus-btn {
+      background: url("../svgs/cip_plus_btn.svg") no-repeat !important;
+    }
+    .places-page {
+      background: #454545;
+      position: absolute;
+      top: 52px;
+      color: white;
+      right: 0px;
+      width: 100%;
+      padding: 4px;
+
+      .left-part {
+        float: left;
+        font-size: 14pt;
+      }
+      .right-part {
+        float: right;
+        :first-child {
+          margin-right: 10px;
+        }
+        :nth-child(2){
+          color:#AAAAAA;
+        }
+      }
+      .header-pointer{
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 6px 12px 6px;
+        border-color: transparent transparent #fff transparent;
+        bottom: -1px;
+        z-index: 1000;
+        right: 84px;
+        position: absolute;
+      }
+    }
+
+    .dates {
+      background: white;
+      position: absolute;
+      top: 84px;
+      width: 100%;
+      overflow: auto;
+      bottom:0px;
+
+      .show-va-checkbox {
+        font-family: 'Omnes_ATT Regular';
+        font-size: 14px;
+        margin: 7px 0 55px 10px;
+        > div {
+          width: 160px;
+          float: left;
+        }
+
+        .select-enabled {
+          color: black !important;
+          background-color: white !important;
+        }
+
+        select {
+          float: right;
+          position: relative;
+          top: 7px;
+          font-family: 'Omnes_ATT Regular';
+          font-size: medium;
+          bottom: 20%;
+          right: 35px;
+          -moz-border-radius-bottomleft: 3px;
+          -moz-border-radius-bottomright: 3px;
+          -moz-border-radius-topleft: 3px;
+          -moz-border-radius-topright: 3px;
+          -webkit-border-bottom-left-radius: 3px;
+          -webkit-border-bottom-right-radius: 3px;
+          -webkit-border-top-left-radius: 3px;
+          -webkit-border-top-right-radius: 3px;
+          border-bottom-left-radius: 3px;
+          border-bottom-right-radius: 3px;
+          border-top-left-radius: 3px;
+          border-top-right-radius: 3px;
+          background-color: #DDDDDD;
+          color: #AAAAAA;
+        }
+      }
+
+      .top-header {
+        margin: 10px 7px 5px 7px;
+
+        > .edit {
+          color: #067ab3;
+          cursor: pointer;
+
+          svg {
+            height: 12px;
+            width: 12px;
+          }
+        }
+      }
+
+      > hr {
+        margin: 0;
+        height: 2px;
+        background: #666666;
+        border: none;
+      }
+      .bg-gray {
+        color: white;
+        background: #BBBBBB;
+        padding: 5px 0 1px 5px;
+
+        .places {
+          position: relative;
+          top: -3px;
+          left: 8px;
+          font-style: italic;
+        }
+
+        .edit {
+          cursor: pointer;
+          position: relative;
+          top: -2px;
+          float: right;
+          right: 6px;
+          svg {
+            width: 10px;
+            height: 10px;
+          }
+        }
+      }
+      .bg-orange {
+        color: white;
+        background: #f37321;
+        padding: 5px 0 1px 5px;
+
+        .places {
+          position: relative;
+          top: -3px;
+          left: 8px;
+          font-style: italic;
+        }
+
+        .edit {
+          cursor: pointer;
+          position: relative;
+          top: -2px;
+          float: right;
+          right: 6px;
+          svg {
+            width: 10px;
+            height: 10px;
+          }
+        }
+      }
+      .bg-green {
+        color: white;
+        background: #4ca80c;
+        padding: 5px 0 1px 5px;
+        .plus-minus-button svg {
+          width: 15px;
+          height: 15px;
+        }
+        .places {
+          position: relative;
+          top: -3px;
+          left: 8px;
+          font-style: italic;
+        }
+
+        .edit {
+          cursor: pointer;
+          position: relative;
+          top: -2px;
+          float: right;
+          right: 6px;
+          svg {
+            width: 10px;
+            height: 10px;
+          }
+        }
+      }
+
+    }
+    .group-green-list .poi-list .place-pin {
+      background: url("../svgs/cip_list_pin_dot_green.svg") no-repeat !important;
+    }
+    .group-gray-list .poi-list .place-pin {
+      background: url("../svgs/cip_list_pin_dot_gray.svg") no-repeat !important;
+    }
+    .group-gray-list .poi-carousel .place-pin {
+      background: url("../svgs/cip_list_pin_star_gray.svg") no-repeat !important;
+    }
+
+    .group-green-list .poi-carousel .place-pin {
+      background: url("../svgs/cip_list_pin_star_green.svg") no-repeat !important;
+    }
+
+    .group-green-list .group-name .icon {
+      background: url("../svgs/cip_circle_green.svg") no-repeat !important;
+    }
+    .group-gray-list .group-name .group-A {
+      background: url("../svgs/cip_circle_a_gray.svg") no-repeat !important;
+    }
+
+    .group-gray-list .group-name .group-B {
+      background: url("../svgs/cip_circle_b_gray.svg") no-repeat !important;
+    }
+    .poi-group {
+
+      .place-container {
+
+        line-height: 1.1;
+        padding-top: 5px;
+        white-space: nowrap;
+        width: 100%;
+
+        .place-icon {
+          background-size: 20px 26px !important;
+          float: left;
+          height: 30px;
+          margin-left: 10px;
+          margin-top: 3px;
+          width: 30px;
+
+        }
+
+        .place-details {
+          float: left;
+          width: 220px;
+          margin-bottom: 5px;
+
+        }
+        .place-address {
+          color: #989898;
+        }
+        :after {
+          clear: both;
+        }
+      }
+
+      .poi-list {
+        background-color: #FFFFFF;
+        width: 100%;
+        font-family: Omnes_ATT Medium;
+        font-size: 14px;
+
+        ul {
+          list-style: none;
+
+        }
+
+        .bar {
+          width: 100%;
+          height: 30px;
+          border: 1px solid #BBBBBB;
+          .left-btn {
+            float: left;
+          }
+          .right-btn {
+            float: right;
+          }
+          .big-btn {
+            height: 28px;
+            width: 25px;
+            margin-left: 1px;
+            margin-right: 1px;
+          }
+          .small-btn {
+            height: 28px;
+            width: 14px;
+          }
+
+          .end {
+            background: url("../svgs/cip_end_blue.svg") no-repeat;
+          }
+
+          .inactive-end {
+            background: url("../svgs/cip_end_grey.svg") no-repeat;
+          }
+          .prev {
+            background: url("../svgs/cip_prev_arrow_blue.svg") no-repeat;
+
+          }
+          .inactive-prev {
+            background: url("../svgs/cip_prev_arrow_grey.svg") no-repeat;
+
+          }
+          .next {
+            background: url("../svgs/cip_next_arrow_blue.svg") no-repeat;
+          }
+          .inactive-next {
+            background: url("../svgs/cip_next_arrow_grey.svg") no-repeat;
+          }
+          .title {
+            width: 100%;
+            text-align: center;
+            line-height: 1.8;
+            .showing {
+              color: #067ab3;
+            }
+            .total {
+              color: #989898;
+            }
+          }
+        }
+        .hovered {
+          background-color: #CCCCCC;
+        }
+        .place-container {
+
+          border-bottom: 1px solid #CBCBCB;
+          border-right: 1px solid #CBCBCB;
+          padding-top: 7px;
+          height: 62px;
+          overflow: hidden;
+          &:hover {
+            background-color: #CCCCCC;
+          }
+          .place-pin-inactive {
+            background: url("../svgs/cip_list_pin_dot_grey.svg") no-repeat;
+          }
+
+          .place-pin {
+            background: url("../svgs/cip_list_pin_dot_orange.svg") no-repeat;
+          }
+
+        }
+      }
+
+      .poi-carousel {
+        .bar {
+          width: 100%;
+          height: 26px;
+          border: 1px solid #BBBBBB;
+          font-family: Omnes_ATT Medium;
+          font-weight: bolder;
+
+          line-height: 1.0;
+          .big-btn {
+            height: 16px;
+            width: 11px;
+            margin-left: 1px;
+            margin-right: 1px;
+          }
+          .left-btn {
+            float: left;
+            background: url("../svgs/cip_white_arrow_left.svg") no-repeat;
+
+          }
+
+          .right-btn {
+            float: left;
+            background: url("../svgs/cip_white_arrow_right.svg") no-repeat;
+          }
+
+          .title {
+            float: left;
+            margin-right: 5px;
+            margin-left: 5px;
+            text-align: center;
+            color: #ffffff;
+            font-style: italic;
+
+          }
+          .viewAll {
+            margin-right: 5px;
+            float: right;
+            text-align: center;
+            cursor: pointer;
+          }
+        }
+        .place-container {
+          height: 50px;
+          .place-pin {
+            background: url("../svgs/cip_list_pin_star_orange.svg") no-repeat;
+          }
+        }
+
+      }
+      .search-group {
+        margin: 0px 0 10px 8px;
+        overflow: hidden;
+
+        .group-orange-list {
+          width: 100%;
+          height: 300px;
+        }
+
+        .show-on-charts {
+          color: #067ab3;
+          cursor: pointer;
+          margin-left: 32px;
+          height: 25px;
+        }
+        .charts-svg {
+
+          height: 25px;
+          width: 94px;
+          margin-left: 32px;
+        }
+
+        .search-input-container {
+          position: relative;
+          .search-input {
+            width: 97%;
+            padding-left: 5px;
+          }
+
+          .clear-icon {
+            background: url("../images/close-btn.svg") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+            height: 14px;
+            position: absolute;
+            right: 16px;
+            top: 8px;
+            width: 14px;
+          }
+        }
+      }
+      .group-name {
+        width: 180px;
+        position: relative;
+        left: 10px;
+
+        .icon {
+          float: left;
+          margin-right: 10px;
+          height: 38px;
+          margin-top: 5px;
+          background: url("../svgs/cip_circle_orange.svg") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+          width: 20px;
+
+        }
+
+      }
+    }
+  }
+  &.disabled {
+    .dates {
+      background-color: #d3d3d3;
+      color: #535352;
+      .top-header > .edit {
+        color: #535352;
+      }
+      .edit svg path{
+        fill: #535352;
+      }
+      input[type="checkbox"] + label {
+        color: #535352;
+      }
+    }
+    .places-page {
+      .header-pointer {
+        border-color: transparent transparent #d3d3d3 transparent;
+      }
+    }
+  }
+}

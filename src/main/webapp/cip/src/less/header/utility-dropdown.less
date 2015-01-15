@@ -1,0 +1,46 @@
+.utility-bar{
+	height: 50px;
+
+	.white-divider{
+		float:left;
+	}
+
+	.btn-group{
+		height: 100%;
+
+		button{
+			background-color:#333333;
+			border: none;
+			border-radius: 0px;
+			font-size:.8em;
+			height: 100%;
+
+			.icon{
+				.arrow-down;
+			}
+		}
+
+		&.user-settings{
+			button{
+				font-family:"Omnes_ATT Medium";
+				padding-left:40px;
+				color:#CCCCCC;
+				white-space:nowrap;
+
+				.bg-options(@bg-color: #333333, @bg-position: 12px center, @icon-file-name: @user-icon);
+			}
+			.username{
+				padding: 10px 0 10px 25px;
+				margin-right:10px;
+			}
+		}
+
+		&.file-managment{
+			button{
+				padding-left:40px;
+
+				.bg-options(@bg-color: #333333, @bg-position: 12px center, @icon-file-name: @option-icon);
+			}
+		}
+	}
+}

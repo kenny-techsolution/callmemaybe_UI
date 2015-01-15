@@ -1,0 +1,32 @@
+<table class="dynamic-table table" ng-class="classes">
+	<thead ng-if="showTableHeader">
+		<tr>
+			<th ng-if="selectableTableRows" width="20">
+				<input type="checkbox" id="select-all-{{tableId}}" ng-click="selectAllRows()" ng-model="allSelected" />
+				<label class="no-text" for="select-all-{{tableId}}"></label>
+			</th>
+			<th ng-if="tableContent.order" ng-click="updateOrderBy(key, $event)" ng-repeat="key in tableContent.order">{{tableContent.headers[key]}}</th>
+			<th ng-if="!tableContent.order" ng-click="updateOrderBy(header, $event)" ng-repeat="header in tableContent.headers">{{header}}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="trData in trDataWatch" ng-click="onClickTableRow({clickedRow:tableContent.tbody[$index]});">
+			<td ng-if="selectableTableRows" ng-click="$event.stopPropagation();">
+				<input type="checkbox" id="tr-{{tableId}}{{$index}}" ng-click="selectRow(trData)" ng-checked="allSelected || trData.selected" />
+				<label class="no-text" for="tr-{{tableId}}{{$index}}"></label>
+			</td>
+			<td ng-if="key != 'selected' && tableContent.order" ng-repeat="key in tableContent.order ">
+				<span>{{trData[key]}}</span>
+			</td>
+			<td ng-if="key != 'selected' && !tableContent.order" ng-repeat="tdData in trData">
+				<span>{{tdData}}</span>
+			</td>
+		</tr>
+	</tbody>
+	<tfoot ng-if="showTableFooter && tableContent.footers">
+		<tr>
+			<th ng-if="selectableTableRows"></th>
+			<th ng-repeat="tdData in tableContent.footers track by $index">{{tdData}}</th>
+		</tr>
+	</tfoot>
+</table>

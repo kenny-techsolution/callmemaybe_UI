@@ -1,0 +1,204 @@
+<div class="header">
+	<h3>OUT OF HOME</h3>
+	<div class="nav-panel-tabs">
+		<div class="slider">
+			<ul class="nav nav-justified">
+				<li class="active" data-tab-id="divCampaignResults"><span>Plan a Campaign</span></li>
+				<li data-tab-id=""><span></span></li>
+				<li data-tab-id=""><span></span></li>
+				<li data-tab-id=""><span></span></li>
+				<li data-tab-id=""><span></span></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="main-header full-width campaign-results-header" ng-controller="pickYourOwnBoardsCtrl">
+	<span ng-hide="pickYourOwn.isEditDates" class="fl title">{{title}}</span>
+	<span ng-show="pickYourOwn.isEditDates" class="fl title">{{pickYourOwn.sectionTitle}}</span>
+	<span class="fr" ng-hide="$root.globalStatus.createdByStandalone"><div class="pencil"></div><div class='text'>Edit</div></span>
+	<div class="edit-dates-section" ng-show="$root.globalStatus.createdByStandalone && pickYourOwn.pickYourOwnBoards && !pickYourOwn.isEditDates" ng-click="pickYourOwn.showEditDates()">
+		<div class="edit-icon"/>
+		<div class="edit-dates-link">Edit Dates</div>
+	</div>
+</div>
+<div class="tabs-container bottomBump" data-scroll-box-shadow>
+	<div class="campaign-results tab-content fill pl0imp pr0imp" ng-controller="pickYourOwnBoardsCtrl">
+		<div id="div-campaign-results" class="tab active fill p0imp" ng-show="pickYourOwn.pickYourOwnBoards || $root.globalStatus.createdByPlanner">
+			<div class="sub-header full-width num-weeks">
+				<span class="fl bb">
+					{{numWeeks}} Weeks
+				</span>
+				<span class="fr">
+					{{startDate}} - {{endDate}}
+				</span>
+				<div class="error-message-container" ng-show="errorService.errors.serverError.show">
+					<div class="close-icon" ng-click="errorService.turnOff('serverError')"/>
+					<p ng-show='errorService.errors.serverError.show'>
+						{{errorService.errors.serverError.message}}
+					</p>
+				</div>
+			</div>
+			<div ng-hide="pickYourOwn.isEditDates">
+				<div class="collapse-panel full-width">
+					<div class="sub-header full-width" ng-show="currentView">
+						<div class="plusMinusIcon fl" ng-click="toggleMenu('boards')" ng-class="{'minus':boards, 'plus': !boards}"></div>
+						<span class="fl bb">
+							{{numBoards}} Boards
+						</span>
+						<span class="fr">
+							{{totalCost}}
+						</span>
+					</div>
+					<div class="panel2 boards" ng-show="boards">
+						<div class="board-list" ng-show="currentView">
+							<div class="board-list-show-me-entry">
+								<div class="checkbox-container">
+									<input class="show-me-checkbox" name="showWherePeopleBlank" ng-model="showMe" type="checkbox" />
+									<label class="show-me-label" for="show-me">Show where people who see these boards:</label>
+									<select disabled class="show-me-select">
+										<option value="live" disabeled>Live</option>
+									</select>
+								</div>
+								<hr class="boardSeparator">
+							</div>
+							<div ng-repeat="billboard in billboards" class="board-list-element" ng-click="boardSelect(billboard, $index)" ng-mouseenter="boardHover(billboard.key[0])" ng-mouseleave="boardHover(null)" ng-class="{ hoveredStatus: isHoveredBoard(billboard) }">
+								<img class="board-list-icon" src="images/ooh_billboard_icon.svg" alt="board icon">
+								<div class="board-info">
+									<span class="board-id">{{billboard.tabCode}}</span> <span ng-if="billboard.subtype == 'Digital'" class="board-type">{{billboard.subtype}}</span>
+									<p class="billboard-data-break"></p>
+									<span class="board-address">{{billboard.panelDescription}}</span>
+									<p class="billboard-data-break"></p>
+									<span class="board-cost">${{billboard.cost}}</span>
+								</div>
+								<hr class="board-separator">
+							</div>
+						</div>
+						<div class="board-details" ng-show="!currentView">
+							<div class="detailsHeader">
+								<div class="fl">
+									<div class="nav-container">
+										<div class="chevron-left fl" ng-click="prevBoard()"></div>
+										<div class="text fl">
+											Board {{currentBoardNumber}} of {{numBoards}}
+										</div>
+										<div class="chevron-right fl" ng-click="nextBoard()"></div>
+									</div>
+								</div>
+								<div class="fr" ng-click="switchView()">
+									View All
+								</div>
+							</div>
+							<div class="content">
+								<div class="board-info-container border-bottom">
+								<img class="board-list-icon" src="images/ooh_billboard_icon.svg" alt="board icon">
+									<div class="board-info ">
+										<span class="board-id">{{currentBoard.tabCode}}</span> <span ng-if="currentBoard.subtype == 'Digital'" class="board-type">{{currentBoard.subtype}}</span>
+										<p class="billboard-data-break"></p>
+										<span class="board-address">{{currentBoard.panelDescription}}</span>
+										<p class="billboard-data-break"></p>
+										<span class="board-cost">${{currentBoard.cost}}</span>
+									</div>
+								</div>
+								<div class="board-info-container">
+									<div class="checkbox-container">
+										<input class="show-me-checkbox" name="showWherePeopleBlank" ng-model="showMe" type="checkbox" />
+										<label class="show-me-label" for="show-me">Show where people who see these boards:</label>
+										<select disabled class="show-me-select">
+											<option value="live" disabeled>Live</option>
+										</select>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="add-boards" ng-include="'views/outOfHome/standalone-add-boards.html'" onload="makeTextAreaExpandable('boards-list')" ng-show="$parent.pickYourOwn.pickYourOwnBoards"></div>
+				<div class="main-header full-width">
+					<span class="fl">
+						{{projectionTitle}}
+					</span>
+				</div>
+				<div class="collapse-panel full-width border-bottom">
+					<div class="sub-header no-border full-width">
+						<div class="plusMinusIcon fl" ng-click="toggleMenu('gross')" ng-class="{'minus':gross, 'plus': !gross}"></div>
+						<span class="fl bb">
+							Gross Audience (18+)
+						</span>
+						<span class="fr" ng-hide="gross">
+							{{impressions}}
+						</span>
+					</div>
+					<div class="panel2 gross" ng-show="gross">
+						<div ng-repeat="item in grossAudience.display | filter:isProjectionShown" class="rowContainer">
+							<div class="right">
+								{{item.value}}
+							</div>
+							<div class="left">
+								{{item.name}}
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="collapse-panel full-width border-bottom" ng-show="primaryDisplay">
+					<div class="sub-header full-width">
+						<div class="plusMinusIcon fl" ng-click="toggleMenu('primary')" ng-class="{'minus':primary, 'plus': !primary}"></div>
+						<span class="fl bb">
+							Primary Audience
+						</span>
+						<span class="fr" ng-hide="primary">
+							{{primaryImpressions}}
+						</span>
+						<span class="fl sub-header-details" ng-show="primaryAudience.demographicsSnapshot.length !== 0">
+							{{primaryAudience.demographicsSnapshot}}
+						</span>
+					</div>
+					<div class="panel2 primary" ng-show="primary">
+						<div ng-repeat="item in primaryAudience.display" class="rowContainer">
+							<div class="right">
+								{{item.value}}
+							</div>
+							<div class="left">
+								{{item.name}}
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="collapse-panel full-width border-bottom" ng-show="secondaryDisplay">
+					<div class="sub-header full-width">
+						<div class="plusMinusIcon fl" ng-click="toggleMenu('secondary')" ng-class="{'minus':secondary, 'plus': !secondary}"></div>
+						<span class="fl bb">
+							Secondary Audience
+						</span>
+						<span class="fr" ng-hide="secondary">
+							{{secondaryImpressions}}
+						</span>
+						<span class="fl sub-header-details" ng-show="secondaryAudience.demographicsSnapshot.length !== 0">
+							{{secondaryAudience.demographicsSnapshot}}
+						</span>
+					</div>
+					<div class="panel2 secondary" ng-show="secondary" >
+						<div ng-repeat="item in secondaryAudience.display" class="rowContainer">
+							<div class="right">
+								{{item.value}}
+							</div>
+							<div class="left">
+								{{item.name}}
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="alternate-option" ng-show="pickYourOwn.pickYourOwnBoards">Use our <a ng-click="pickYourOwn.setPickYourOwnBoards(false)" class="url campaign-blue-text" >Campaign Planning Tool</a> instead if you'd like us to recommend the best boards for your budget, general location, target audience, etc.
+				</div>
+			</div>
+			<div ng-show="pickYourOwn.isEditDates" class="standalone-edit-dates" standalone-edit-dates></div>
+		</div>
+		<div ng-include="'views/partials/planACampaignOption.html'" ng-hide="pickYourOwn.pickYourOwnBoards || $root.globalStatus.createdByPlanner"></div>
+	</div>
+</div>
+<div class="button-wrapper" ng-controller="pickYourOwnBoardsCtrl" ng-hide="pickYourOwn.isEditDates">
+	<div>
+		<a class="btn btn-primary" role="button">
+			Generate Proposal
+		</a>
+	</div>
+</div>
