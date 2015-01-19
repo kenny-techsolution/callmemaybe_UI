@@ -1,0 +1,53 @@
+<div>
+    <div class='container rep'>
+        <div class="row logo" ng-click="goHome()">
+            <div class="col-xs-1"><img class='product-logo' src="images/ATT.png" alt="board icon"></div>
+            <div class="col-xs-15"><h1 class='product-name'>CallMeMaybe</h1></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-11">
+                <h2>Rep Callback Activities</h2>
+            </div>
+            <div class="col-xs-5">
+                <button class="btn btn-primary pull-right create-callback" type="submit" ng-click="openCreate()">
+                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                    New Callback
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-16">
+                <ul class="nav nav-pills">
+                  <li role="presentation" class="all" ng-class="{active:selectedStatus ==''}"><a href="#"  ng-click="filterAll($event)">All</a></li>
+                  <li role="presentation" class="completed" ng-class="{active:selectedStatus =='completed'}"><a href="#" ng-click="filterCompleted($event)">Completed</a></li>
+                  <li role="presentation" class="pending" ng-class="{active:selectedStatus =='pending'}"><a href="#" ng-click="filterPending($event)">Pending</a></li>
+                  <li role="presentation" class="missed" ng-class="{active:selectedStatus =='missed'}"><a href="#" ng-click="filterMissed($event)">Missed</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="panel panel-default callback" ng-repeat="callback in callbacks|filter: { status: selectedStatus}">
+              <div class="panel-heading">
+                <span class="label inline-block" ng-class="{'label-success':callback.status==='completed', 'label-warning':callback.status==='pending', 'label-danger':callback.status==='missed'}">{{callback.status}}</span>
+                <h3 class="panel-title inline-block case-number">Case#: 1239203</h3>
+                <div class="requested-on pull-right">Requested on: 10/09/2014 1:09PM</div>
+              </div>
+              <div class="panel-body">
+                   <div class='customer-name'>
+                       <h4><span class="key">CALL </span> <span class="value">{{callback.name|uppercase}} @ {{callback.phone}}<span> </h4>
+                   </div>
+                   <p class="key">Description:</p>
+                   <p>{{callback.description}}</p>
+                   <p class="text-danger"><b># of Time Changes:</b> {{callback.changes.length}} Times</p>
+                   <timer countdown="callback.timeleft" max-time-unit="'hour'" interval="1000" ng-if="callback.status==='pending'"><span class="glyphicon glyphicon-time" aria-hidden="true"></span>{{hours}} hour{{hoursS}}, {{minutes}} minute{{minutesS}}, {{seconds}} second{{secondsS}}</timer>
+              </div>
+               <div class="panel-footer" ng-if="callback.status==='pending'">
+                   <div>
+                        <button class="btn btn-default edit" type="button" ng-click="openEdit('lg',callback)">Edit</button>
+                        <button class="btn btn-default complete" type="button" ng-click="completeCallback(callback)">Complete</button>
+                   </div>
+               </div>
+            </div>
+        </div>
+    </div>
+</div>
