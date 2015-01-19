@@ -21,6 +21,7 @@
 		<link rel="stylesheet" href="non_bower_components/Leaflet-MiniMap-master/src/Control.MiniMap.css">
 	<!-- bower:css -->
 	<link rel="stylesheet" href="bower_components/leaflet-dist/leaflet.css" />
+	<link rel="stylesheet" href="non_bower_components/angular-chart/angular-chart.css">
 	<!-- endbower -->
 	<!-- endbuild -->
 	<!-- build:css({.tmp,app}) styles/main.css -->
@@ -34,19 +35,10 @@
 		<script src="bower_components/html5shiv/dist/html5shiv.min.js"></script>
 		<![endif]-->
 </head>
-<body data-page-id="{{pageId}}" ng-app="cip" ng-class="{'pattern-fill': globalStatus.context == 'OOH'}">
-<!--[if lt IE 7]>
-		<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-		<![endif]-->
-<!-- Add your site or application content here -->
-
-	<div progress-overlay></div>
-	<div popup-modal></div>
+<body ng-app="cip" ng-controller="mainCtrl">
 
 	<div class="fill" ng-view="">
 	</div>
-
-
 
 <!--[if lt IE 9]>
 <script src="bower_components/es5-shim/es5-shim.js"></script>
@@ -76,6 +68,7 @@
 <script src="bower_components/leaflet-dist/leaflet.js"></script>
 <script src="bower_components/underscore/underscore.js"></script>
 <script src="bower_components/esri-leaflet/dist/esri-leaflet.js"></script>
+
 <!-- endbower -->
 <!-- endbuild -->
 
@@ -84,6 +77,10 @@
 <script src="non_bower_components/Leaflet-MiniMap-master/src/Control.MiniMap.js"></script>
 <script src="non_bower_components/JqueryUI/js/jquery-ui.min.js"></script>
 <script src="non_bower_components/TouchPunch/jquery.ui.touch-punch.min.js"></script>
+
+<script src="non_bower_components/angular-chart/chart.js"></script>
+<script src="non_bower_components/angular-timer/angular-timer.min.js"></script>
+<script src="non_bower_components/angular-chart/angular-chart.js"></script>
 <script src="scripts/configuration.js"></script>
 <script src="scripts/app.js"></script>
 <script src="scripts/factories/httpInterceptor.js"></script>
@@ -120,7 +117,6 @@
 <!--PAGES-->
 <script src="scripts/pages/pages.js"></script>
 <script src="scripts/pages/controllers/DashboardCtrl.js"></script>
-<script src="scripts/pages/controllers/LandingCtrl.js"></script>
 
 <!--ACCOUNT-->
 <script src="scripts/account/account.js"></script>
@@ -192,7 +188,12 @@
 <script src="scripts/services/angular-bridge-service.js"></script>
 <!-- endbuild -->
 
-<div parameters-not-met-popup ng-controller="campaignSidebarCtrl" on-continue="doContinue()" on-go-back="doGoBack()"></div>
+<!-- demo -->
+<script src="scripts/adminCtrl.js"></script>
+<script src="scripts/repCtrl.js"></script>
+<script src="scripts/landingCtrl.js"></script>
+<script src="scripts/mainCtrl.js"></script>
+<script src="scripts/modalCtrl.js"></script>
 
 </body>
 </html>
